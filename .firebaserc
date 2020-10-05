@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "soundar-75525": {
+      "hosting": {
+        "soundar": [
+          "soundar-75525"
+        ]
+      }
+    }
+  }
+}
