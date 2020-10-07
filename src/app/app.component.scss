@@ -1,3 +1,4 @@
+//headerに関するスタイル
 header {
   display: flex;
   justify-content: space-between;
@@ -30,4 +31,33 @@ a {
 }
 mat-icon {
   color: #121212;
+}
+
+//footerに関するスタイル
+footer {
+  margin-top: 48px;
+  color: #121212;
+  font-family: Skia;
+}
+.footer-grid {
+  padding: 0 160px 42px 160px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 192px;
+  column-gap: 35px;
+}
+.logo-column {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h4 {
+  margin: 0;
+}
+small {
+  display: block;
+  text-align: center;
+  padding: 14px 0;
+  margin: 0 160px;
+  border-top: 1px solid #857e71;
 }
