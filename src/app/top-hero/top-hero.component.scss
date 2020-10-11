@@ -1,41 +1,44 @@
-
 .top-hero {
   width: 100%;
-  height: 456px;
+  height: 515px;
   color: #121212;
 }
-.main-visual {
-  height: 342px;
-  margin: 0 100px 0 100px;
-  padding-top: 50px;
+.wrapper {
+  padding: 96px 40px;
+  width: 1364px;
+  margin: 0 auto;
 }
-.main-title {
+.main {
+  height: 342px;
+  //width: 1364px;
+  //margin: 0 auto;
+  position: relative;
+}
+.main__title {
   width: 726px;
-  height: 98px;
+  height: 84px;
   float: left;
 }
-.main-image {
+.main__title h2 {
+  margin: 0;
+  font-size: 44px;
+  font-family: Skia;
+}
+.main__title p {
+  font-size: 16px;
+  margin: 16px 0 0 0;
+  font-family: Skia;
+}
+.main__image {
   float: right;
   width: 420px;
-  height: 342px;
 }
-.top-socials {
-  width: 216px;
+.main__socials {
   height: 32px;
-  margin-left: 100px;
+  position: absolute;
+  bottom: 0;
 }
-.top-socials img{
+.main__socials img {
   height: 32px;
-  margin-right: 8px;
+  margin-right: 16px;
 }
-h2 {
-  margin: 0;
-  font-size: 64px;
-  font-family: Skia;
-}
-p {
-  font-size: 16px;
-  margin: 16px 0;
-  font-family: Skia;
-}
-
