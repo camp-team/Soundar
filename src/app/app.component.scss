@@ -1,3 +1,6 @@
+/*
+headerに関するスタイル
+*/
 header {
   display: flex;
   justify-content: space-between;
@@ -30,4 +33,37 @@ a {
 }
 mat-icon {
   color: #121212;
+}
+
+/*
+footerに関するスタイル
+*/
+footer {
+  color: #121212;
+  font-family: Skia;
+}
+.footer-grid {
+  width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 192px;
+  column-gap: 35px;
+}
+.footer-column {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-column__title {
+  margin: 0;
+}
+small {
+  width: 1120px;
+  display: block;
+  margin: 0 auto;
+  padding: 14px 0;
+  margin-top: 46px;
+  border-top: 1px solid #857e71;
+  text-align: center;
 }
