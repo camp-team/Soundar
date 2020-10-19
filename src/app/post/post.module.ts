@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 import { PostRoutingModule } from './post-routing.module';
 import { PostComponent } from './post.component';
 import { QuillModule } from 'ngx-quill';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     PostRoutingModule,
     QuillModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
 
   ]
 })

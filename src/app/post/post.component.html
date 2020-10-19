@@ -1,12 +1,34 @@
-<p>post works!</p>
+<div class="post">
+  <form class="editor" [formGroup]="form">
+    <!-- 記事投稿のタイトル用の入力フォーム -->
+    <mat-form-field class="editor__title" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        #input
+        maxlength="50"
+        placeholder="Insert Title Here..."
+        formControlName="title"
+        required
+      />
+      <mat-hint align="end">{{ input.value?.length || 0 }}/50</mat-hint>
+    </mat-form-field>
 
+    <!-- 記事投稿用のエディタ -->
+    <quill-editor [styles]="{ height: '400px' }" formControlName="content">
+    </quill-editor>
+  </form>
 
-  <form class="editor" [formGroup]='form'>
-  <quill-editor [styles]="{height: '400px'}" formControlName='content'></quill-editor>
-</form>
-
-
-<quill-view-html [content]="this.form.value.content" theme="bubble"></quill-view-html>
-
-<link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.bubble.css">
-
+  <!-- 保存or投稿ボタン -->
+  <div class="container">
+    <div class="containar__button">
+      <span class="container__switcher container__switcher--modified">
+        <input type="checkbox" id="switcher-1" />
+        <label for="switcher-1"></label>
+      </span>
+    </div>
+    <div class="container__submit">
+      <p>下書き保存</p>
+    </div>
+  </div>
+</div>

@@ -15,6 +15,7 @@ import { QuillModule } from 'ngx-quill';
     BrowserAnimationsModule,
     MatIconModule,
     QuillModule.forRoot({
+
     }),
   ],
   providers: [],

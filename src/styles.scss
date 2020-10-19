@@ -2,9 +2,22 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-/*
-Quill EditorのCSS
+/**
+*Quill EditorのCSS
 */
 @import '~quill/dist/quill.core.css';
 @import '~quill/dist/quill.snow.css';
+@import '~quill/dist/quill.bubble.css';
+.ql-container.ql-snow {
+  border: none;
+  box-shadow: rgba(75, 87, 169, 0.1) 0px 10px 20px;
+  background-color: #fff;
+}
+.ql-toolbar.ql-snow {
+  border: none;
+  background-color: #fff;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgba(133,126,113, 0);
 
+}
