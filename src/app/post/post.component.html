@@ -21,14 +21,20 @@
 
   <!-- 保存or投稿ボタン -->
   <div class="container">
-    <div class="containar__button">
-      <span class="container__switcher container__switcher--modified">
-        <input type="checkbox" id="switcher-1" />
-        <label for="switcher-1"></label>
+    <div class="actions">
+      <span class="actions__switcher actions__switcher--modified">
+        <input [class.actions__input--active]="isActive" (click)="active()" class="actions__input" type="checkbox" id="switcher-1" />
+        <!-- activeなら、activeクラスをつける-->
+        <div class="actions__label-wrap" [class.actions__label-wrap--active]="isActive">
+          <label
+            class="actions__label"
+            [class.actions__label--active]="isActive"
+            for="switcher-1">ON</label>
+        </div>
       </span>
     </div>
-    <div class="container__submit">
-      <p>下書き保存</p>
+    <div class="actions__submit">
+      <p class="actions__text">下書き保存</p>
     </div>
   </div>
 </div>

@@ -1,14 +1,17 @@
+//トグルボタン
+$black: #282828;
+$grey: #999999;
+$white: #ffffff;
+
 .post {
-  background-color: rgba(133,126,113, 0.2);
+  background-color: rgba(133, 126, 113, 0.2);
 }
 .editor {
   width: 1040px;
   margin: 0 auto;
   padding-bottom: 10px;
-  padding-top: 10px
+  padding-top: 10px;
 }
-
-
 
 //title部分のAngular Materialのformはインライン要素なので、blockにすると横幅いっぱいに広がる
 .editor__title {
@@ -28,131 +31,87 @@
   padding-bottom: 80px;
   margin-bottom: 80px;
 }
-
-.container__submit {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  width: 200px;
-  height: 50px;
-  background-color: #282828;
-  margin: 0 auto;
-  border-radius: 25px;
-  color: #fff;
-}
-.container__submit p {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  font-family: Skia;
-}
-//トグルボタン
-$black: #282828;
-$grey: #999999;
-$white: #ffffff;
-
-.containar__button {
-  width: 200px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  float: left;
-
-  span.container__switcher {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+.actions {
+  &__submit {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    width: 200px;
+    height: 50px;
+    background-color: #282828;
+    margin: 0 auto;
+    border-radius: 25px;
+    color: #fff;
+  }
+  &__text {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-family: Skia;
+  }
+  &__button {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    float: left;
+  }
+  &__switcher {
     position: relative;
-
     width: 200px;
     height: 50px;
     border-radius: 25px;
-
-    input {
-      appearance: none;
-
-      position: relative;
-
-      width: 200px;
-      height: 50px;
+  }
+  &__input {
+    appearance: none;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: $black;
+    outline: none;
+    &--active {
+      background-color: $white;
+    }
+  }
+  &__label-wrap {
+    transition: 1s;
+    height: 32px;
+    width: 50%;
+    background-color: #fff;
+    border-radius: 25px;
+    position: absolute;
+    top: -50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 16px;
+    &--active {
+      height: 32px;
+      width: 50%;
+      background-color: #000;
       border-radius: 25px;
-
-      background-color: $black;
-      outline: none;
-
-      font-family: Skia;
-      &:before,
-      &:after {
-        z-index: 2;
-
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-
-        color: $white;
-      }
-      &:before {
-        content: 'Draft';
-        left: 20px;
-      }
-      &:after {
-        content: 'Publish';
-        right: 20px;
-      }
-    }
-    label {
-      z-index: 1;
       position: absolute;
-      top: 10px;
-      bottom: 10px;
-
-      border-radius: 20px;
+      top: -50%;
+      left: 0;
+      transform: translateY(-50%);
+      margin-left: 16px;
     }
-    &.container__switcher--modified {
-      input {
-        margin: 0;
-        transition: 0.25s -0.1s;
-        &:checked {
-          //非選択時publishの色
-          background-color: $white;
-          &:before {
-            //draftの文字の色
-            color: $white;
-            transition: color 0.5s 0.2s;
-          }
-          &:after {
-            color: $grey;
-            transition: color 0.5s;
-          }
-          & + label {
-            left: 10px;
-            right: 100px;
-            //draft選択時の色
-            background: $black;
-
-            transition: left 0.5s, right 0.4s 0.2s;
-          }
-        }
-        &:not(:checked) {
-          //初期draftの色
-          background: $black;
-          transition: background 0.5s -0.1s;
-          &:before {
-            color: $grey;
-            transition: color 0.5s;
-          }
-          &:after {
-            //publishの文字
-            color: $black;
-            transition: color 0.5s 0.2s;
-          }
-          & + label {
-            left: 100px;
-            right: 10px;
-            //初期publishの色
-            background: $white;
-
-            transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
-          }
-        }
-      }
+  }
+  &__label {
+    color: black;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 8px;
+    font-family: 'Oswald', sans-serif;
+    &--active {
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      margin-left: 8px;
     }
   }
 }
