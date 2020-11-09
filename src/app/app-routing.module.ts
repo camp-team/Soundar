@@ -7,6 +7,12 @@ const routes: Routes = [
     pathMatch: 'full',
     loadChildren: () => import('./top/top.module').then((m) => m.TopModule),
   },
+  {
+    path: 'users',
+    loadChildren: () => import('./user-shell/user-shell.module').then(
+      (m) => m.UserShellModule
+    )
+  }
 
 ];
 
