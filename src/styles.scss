@@ -11,11 +11,11 @@ body {
 }
 .button {
   background: #e6e7ee;
-border-radius: 8px;
-box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
 }
 .button:hover {
-box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #FFFFFF;
+  box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
 }
 a {
   text-decoration: none;
@@ -24,6 +24,3 @@ a {
 h4 {
   margin: 0;
 }
-
-
-

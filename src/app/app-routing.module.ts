@@ -9,11 +9,9 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    loadChildren: () => import('./user-shell/user-shell.module').then(
-      (m) => m.UserShellModule
-    )
-  }
-
+    loadChildren: () =>
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
+  },
 ];
 
 @NgModule({
