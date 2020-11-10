@@ -1,0 +1,32 @@
+.main-visual {
+  font-family: nunito, dnp-shuei-mgothic-std;
+  max-width: 1400px;
+  max-height: 700px;
+  margin: 80px auto 128px;
+  background-image: url(/assets/images/main-visual.jpg);
+  background-size: cover;
+  font-size: 24px;
+  color: #44476a;
+}
+.main-title {
+  padding-top: 170px;
+  padding-bottom: 24px;
+  margin: 0 auto;
+}
+.main-text {
+  display: block;
+  text-align: center;
+  padding-bottom: 232px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+  font-size: 60px;
+  letter-spacing: 0.07em;
+  text-align: center;
+  color: #31344b;
+}
+p {
+  margin: 0 0 16px 0;
+}
