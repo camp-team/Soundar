@@ -3,14 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { TopRoutingModule } from './top-routing.module';
 import { TopComponent } from './top.component';
-import { TopHeroComponent } from '../top-hero/top-hero.component';
-
+import { HeroComponent } from '../hero/hero.component';
 
 @NgModule({
-  declarations: [TopComponent, TopHeroComponent],
-  imports: [
-    CommonModule,
-    TopRoutingModule
-  ]
+  declarations: [TopComponent, HeroComponent],
+  imports: [CommonModule, TopRoutingModule],
 })
-export class TopModule { }
+export class TopModule {}
