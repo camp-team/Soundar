@@ -26,7 +26,6 @@ a {
   height: 220px;
   margin-top: 128px;
   margin-bottom: 48px;
-  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
 }
 .container {
   max-width: 1110px;
@@ -58,4 +57,10 @@ p {
   padding: 13px 11px;
   border: 1px solid #d1d9e6;
   border-radius: 50%;
+}
+small {
+  text-align: center;
+  display: block;
+  padding: 48px 0;
+  border-top: 1px solid #d1d9e6;
 }
