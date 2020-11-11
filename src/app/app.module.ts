@@ -10,7 +10,6 @@ import { MemoCardComponent } from './memo-card/memo-card.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MemoCardComponent,
   ],
   imports: [
     BrowserModule,
