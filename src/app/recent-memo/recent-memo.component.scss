@@ -1,0 +1,27 @@
+.top-title {
+  margin-bottom: 80px;
+}
+.cardline {
+  width: 1338px;
+  height: 613px;
+  background: #000;
+  margin: 0 auto 80px;
+}
+.square-button {
+  position: relative;
+  min-width: 180px;
+  min-height: 40px;
+  padding: 10px;
+  border: 1px solid #d1d9e6;
+  border-radius: 8px;
+  color: #31344b;
+  display: inline-block;
+  text-align: center;
+}
+p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
