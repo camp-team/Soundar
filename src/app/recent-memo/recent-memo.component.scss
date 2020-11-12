@@ -1,10 +1,10 @@
 .top-title {
   margin-bottom: 80px;
 }
-.cardline {
+.memo-card {
+  display: flex;
   width: 1338px;
-  height: 613px;
-  background: #000;
+  max-height: 668px;
   margin: 0 auto 80px;
 }
 .square-button {
