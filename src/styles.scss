@@ -14,7 +14,25 @@ body {
 .button {
   background: #e6e7ee;
   border-radius: 8px;
+  border: 1px solid #d1d9e6;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  &--to-list {
+    position: relative;
+    min-width: 180px;
+    min-height: 40px;
+    padding: 10px;
+    color: #31344b;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 128px;
+  }
+  &--to-list__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
 }
 .button:hover {
   box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
@@ -23,7 +41,6 @@ a {
   text-decoration: none;
   color: #31344b;
 }
-
 h2 {
   margin: 0;
   color: #31344b;
@@ -36,5 +53,4 @@ h4 {
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
-
 }
