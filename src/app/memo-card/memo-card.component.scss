@@ -1,9 +1,11 @@
 .memo-card {
+  border-radius: 8px;
   max-width: 416px;
   max-height: 668px;
   padding-top: 19px;
   margin-right: 45px;
   margin-bottom: 80px;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   &__card-contents {
     max-width: 360px;
     margin: 0 auto;
@@ -54,6 +56,10 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  }
+  &__card-button:hover {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
   }
   &__card-button img {
     height: 16px;
