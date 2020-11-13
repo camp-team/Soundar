@@ -6,10 +6,9 @@ body {
 }
 body {
   margin: 0;
-
   font-family: nunito, dnp-shuei-mgothic-std, 'Helvetica Neue', sans-serif;
-
   background-color: #e6e7ee;
+  color: #44476a;
 }
 
 a {
@@ -20,6 +19,11 @@ p {
   margin: 0;
 }
 
+h4 {
+  margin: 0;
+  color: #31344b;
+}
+
 // ボタンに関するスタイル
 .button {
   color: #31344b;
@@ -28,6 +32,11 @@ p {
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   &--small {
     padding: 8px 16px;
+  }
+  &--small-social {
+    height: 16px;
+    padding: 12px;
+    border-radius: 50%;
   }
 }
 .button:hover {
@@ -54,15 +63,11 @@ p {
 //   }
 // }
 
-
 // h2 {
 //   margin: 0;
 //   color: #31344b;
 // }
-// h4 {
-//   margin: 0;
-//   color: #31344b;
-// }
+
 // .container {
 //   max-width: 1400px;
 //   margin: 0 auto;
