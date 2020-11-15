@@ -1,7 +1,10 @@
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto 128px;
+
+}
 .main-visual {
   background-image: url(/assets/images/main-visual.jpg);
-  width: 80%;
-  margin: 0 auto 128px;
   background-size: cover;
   background-position: center;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
@@ -27,4 +30,23 @@ h1 {
 .main-text p {
   margin-bottom: 16px;
   font-size: 24px;
+}
+
+/* PC用のCSSはメディアクエリの外に記述する */
+
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+  .hero-container {
+    max-width: 960px;
+    margin: 0 auto 128px;
+
+  }
+}
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .hero-container {
+    max-width: 480px;
+    margin: 0 auto 128px;
+
+  }
 }

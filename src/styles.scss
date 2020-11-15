@@ -68,11 +68,30 @@ h4 {
 // recent-contentsに関するスタイル
 
 .recent-container {
-  width: 78%;
+  max-width: 1338px;
   margin: 0 auto;
   text-align: center;
 }
 
 .recent-title {
   margin-bottom: 80px;
+}
+
+/* PC用のCSSはメディアクエリの外に記述する */
+
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+  .recent-container {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .recent-container {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
