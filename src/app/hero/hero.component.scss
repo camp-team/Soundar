@@ -1,33 +1,30 @@
 .main-visual {
-  font-family: nunito, dnp-shuei-mgothic-std;
-  max-width: 1400px;
-  max-height: 700px;
-  margin: 80px auto 128px;
   background-image: url(/assets/images/main-visual.jpg);
+  width: 80%;
+  margin: 0 auto 128px;
   background-size: cover;
-  font-size: 24px;
-  color: #44476a;
+  background-position: center;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  border-radius: 8px;
 }
+
 .main-title {
   padding-top: 170px;
   padding-bottom: 24px;
-  margin: 0 auto;
-}
-.main-text {
-  display: block;
-  text-align: center;
-  padding-bottom: 232px;
-  margin: 0 auto;
 }
 
 h1 {
-  margin: 0;
-  font-size: 60px;
   letter-spacing: 0.07em;
   text-align: center;
-  color: #31344b;
+  font-size: 60px;
 }
-p {
-  margin: 0 0 16px 0;
+
+.main-text {
+  text-align: center;
+  padding-bottom: 285px;
+}
+
+.main-text p {
+  margin-bottom: 16px;
+  font-size: 24px;
 }

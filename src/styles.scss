@@ -13,10 +13,23 @@ body {
 
 a {
   text-decoration: none;
-  // color: #31344b;
+  color: #31344b;
 }
+
 p {
   margin: 0;
+}
+
+// 見出しに関するスタイル
+
+h1 {
+  margin: 0;
+  color: #31344b;
+}
+
+h2 {
+  margin: 0;
+  color: #31344b;
 }
 
 h4 {
@@ -25,6 +38,7 @@ h4 {
 }
 
 // ボタンに関するスタイル
+
 .button {
   color: #31344b;
   border-radius: 8px;
@@ -38,38 +52,27 @@ h4 {
     padding: 12px;
     border-radius: 50%;
   }
+  &--to-list {
+    min-width: 180px;
+    margin-bottom: 128px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+  }
 }
+
 .button:hover {
   box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
 }
-// .button {
-//
-//   &--to-list {
-//     position: relative;
-//     min-width: 180px;
-//     min-height: 40px;
-//     padding: 10px;
-//     color: #31344b;
-//     display: inline-block;
-//     text-align: center;
-//     margin-bottom: 128px;
-//   }
-//   &--to-list__text {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     margin: 0;
-//   }
-// }
 
-// h2 {
-//   margin: 0;
-//   color: #31344b;
-// }
+// recent-contentsに関するスタイル
 
-// .container {
-//   max-width: 1400px;
-//   margin: 0 auto;
-//   text-align: center;
-// }
+.recent-container {
+  width: 78%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.recent-title {
+  margin-bottom: 80px;
+}
