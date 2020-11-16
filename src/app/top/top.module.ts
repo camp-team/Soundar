@@ -8,6 +8,7 @@ import { RecentMemoComponent } from '../recent-memo/recent-memo.component';
 import { MemoCardComponent } from '../memo-card/memo-card.component';
 import { RecentMagazineComponent } from '../recent-magazine/recent-magazine.component';
 import { MagazineCardComponent } from '../magazine-card/magazine-card.component';
+import { PublishGuideComponent } from '../publish-guide/publish-guide.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MagazineCardComponent } from '../magazine-card/magazine-card.component'
     MemoCardComponent,
     RecentMagazineComponent,
     MagazineCardComponent,
+    PublishGuideComponent,
   ],
   imports: [CommonModule, TopRoutingModule],
 })
