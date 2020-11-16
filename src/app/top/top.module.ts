@@ -9,6 +9,8 @@ import { MemoCardComponent } from '../memo-card/memo-card.component';
 import { RecentMagazineComponent } from '../recent-magazine/recent-magazine.component';
 import { MagazineCardComponent } from '../magazine-card/magazine-card.component';
 import { PublishGuideComponent } from '../publish-guide/publish-guide.component';
+import { RecentMusicComponent } from '../recent-music/recent-music.component';
+import { MusicCardComponent } from '../music-card/music-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { PublishGuideComponent } from '../publish-guide/publish-guide.component'
     RecentMagazineComponent,
     MagazineCardComponent,
     PublishGuideComponent,
+    RecentMusicComponent,
+    MusicCardComponent,
   ],
   imports: [CommonModule, TopRoutingModule],
 })
