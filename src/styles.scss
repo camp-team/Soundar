@@ -75,7 +75,20 @@ h4 {
 
 .recent-title {
   margin-bottom: 80px;
+  font-size: 40px;
 }
+.recent-title h2 {
+  font-size: 40px;
+}
+
+.recent-card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
 
 /* PC用のCSSはメディアクエリの外に記述する */
 
