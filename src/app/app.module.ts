@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { RecentMagazineComponent } from './recent-magazine/recent-magazine.component';
+import { MagazineCardComponent } from './magazine-card/magazine-card.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RecentMagazineComponent, MagazineCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
