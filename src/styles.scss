@@ -88,6 +88,14 @@ h4 {
   width: 100%;
   margin-bottom: 80px;
 }
+.recent-card-list__vertical {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 45px;
+  width: 100%;
+  margin-bottom: 80px;
+}
 
 // recent-contentsのカードに関するスタイル
 // memoとmagazineに関するスタイル
@@ -125,7 +133,7 @@ h4 {
   &__posted-date {
     font-size: 14px;
   }
-  &__memo-title {
+  &__title {
     font-size: 24px;
     margin-bottom: 24px;
     text-align: left;
