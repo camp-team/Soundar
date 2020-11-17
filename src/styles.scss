@@ -40,6 +40,7 @@ h4 {
 // ボタンに関するスタイル
 
 .button {
+  display: inline-block;
   color: #31344b;
   border-radius: 8px;
   border: 1px solid #d1d9e6;
@@ -75,6 +76,96 @@ h4 {
 
 .recent-title {
   margin-bottom: 80px;
+}
+.recent-title h2 {
+  font-size: 40px;
+}
+
+.recent-card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+// recent-contentsのカードに関するスタイル
+// memoとmagazineに関するスタイル
+.recent-posted-card {
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  width: 100%;
+  &--magazine {
+    margin-top: 69px;
+  }
+  &__card-contents {
+    margin: 0 28px;
+  }
+  &__card-contents--magazine {
+    padding-top: 224px;
+  }
+  &__image {
+    max-width: 378px;
+    margin: 19px 19px 25px;
+  }
+  &__user-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  &__user-name {
+    display: inline-block;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__posted-date {
+    font-size: 14px;
+  }
+  &__memo-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  &__overview {
+    font-size: 20px;
+    margin-bottom: 50px;
+    line-height: 1.65;
+  }
+  &__card-button {
+    padding: 8px 16px;
+    border: 1px solid #d1d9e6;
+    border-radius: 8px;
+    color: #31344b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  }
+  &__card-button:hover {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  }
+  &__card-button img {
+    height: 16px;
+    margin-right: 10px;
+  }
+}
+.recent-posted-author {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
 }
 
 /* PC用のCSSはメディアクエリの外に記述する */
