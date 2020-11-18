@@ -13,6 +13,7 @@ import { RecentMusicComponent } from '../recent-music/recent-music.component';
 import { MusicCardComponent } from '../music-card/music-card.component';
 import { RecentMovieComponent } from '../recent-movie/recent-movie.component';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
+import { JoinGuideComponent } from '../join-guide/join-guide.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
     MusicCardComponent,
     RecentMovieComponent,
     MovieCardComponent,
+    JoinGuideComponent,
   ],
   imports: [CommonModule, TopRoutingModule],
 })
