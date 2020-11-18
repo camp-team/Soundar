@@ -11,6 +11,9 @@ import { MagazineCardComponent } from '../magazine-card/magazine-card.component'
 import { PublishGuideComponent } from '../publish-guide/publish-guide.component';
 import { RecentMusicComponent } from '../recent-music/recent-music.component';
 import { MusicCardComponent } from '../music-card/music-card.component';
+import { RecentMovieComponent } from '../recent-movie/recent-movie.component';
+import { MovieCardComponent } from '../movie-card/movie-card.component';
+import { JoinGuideComponent } from '../join-guide/join-guide.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { MusicCardComponent } from '../music-card/music-card.component';
     PublishGuideComponent,
     RecentMusicComponent,
     MusicCardComponent,
+    RecentMovieComponent,
+    MovieCardComponent,
+    JoinGuideComponent,
   ],
   imports: [CommonModule, TopRoutingModule],
 })
