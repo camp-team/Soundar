@@ -42,6 +42,7 @@
   &__list {
     display: flex;
     align-items: center;
+    overflow: hidden;
   }
   &__list img {
     height: 36px;
@@ -54,3 +55,5 @@
     box-shadow: none;
   }
 }
+
+
