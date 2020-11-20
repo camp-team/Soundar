@@ -26,5 +26,27 @@
       <p>スキルや知見の共有ができ、ユーザーがクリエイターを応援できます。</p>
     </div>
 
+    <div class="faq-contents__list" (click)="isOpen = !isOpen">
+      <img src="assets/images/icons/question-icon.svg" alt="" />
+      <p>Soundarでできることは？</p>
+    </div>
+    <div
+      class="faq-contents__list faq-contents__list--answer"
+      [@toggle]="isOpen"
+    >
+      <img src="assets/images/icons/answer-icon.svg" alt="" />
+      <p>スキルや知見の共有ができ、ユーザーがクリエイターを応援できます。</p>
+    </div>
+    <div class="faq-contents__list" (click)="isOpen = !isOpen">
+      <img src="assets/images/icons/question-icon.svg" alt="" />
+      <p>Soundarでできることは？</p>
+    </div>
+    <div
+      class="faq-contents__list faq-contents__list--answer"
+      [@toggle]="isOpen"
+    >
+      <img src="assets/images/icons/answer-icon.svg" alt="" />
+      <p>スキルや知見の共有ができ、ユーザーがクリエイターを応援できます。</p>
+    </div>
   </div>
 </div>
