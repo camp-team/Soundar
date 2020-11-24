@@ -177,8 +177,22 @@ h4 {
 }
 
 // guideに関するスタイル
+.about-container {
+  width: 100%;
+  margin-bottom: 128px;
+}
+
+.about-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: o auto 128px;
+  max-width: 1338px;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+}
+
 .guide-container {
-  widows: 100%;
+  width: 100%;
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
   margin-bottom: 128px;
@@ -216,6 +230,9 @@ h4 {
 .guide-image {
   width: 100%;
   border-radius: 50% 0 50% 50%;
+  &--rhombus {
+    border-radius: 50% 0 50% 0;
+}
 }
 
 /* PC用のCSSはメディアクエリの外に記述する */
