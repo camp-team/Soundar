@@ -8,9 +8,9 @@ import {
 } from '@angular/animations';
 
 @Component({
-  selector: 'app-faq-contents',
-  templateUrl: './faq-contents.component.html',
-  styleUrls: ['./faq-contents.component.scss'],
+  selector: 'app-about-contents',
+  templateUrl: './about-contents.component.html',
+  styleUrls: ['./about-contents.component.scss'],
   animations: [
     trigger('toggle', [
       state(
@@ -33,7 +33,7 @@ import {
     ]),
   ],
 })
-export class FaqContentsComponent implements OnInit {
+export class AboutContentsComponent implements OnInit {
   isOpen = false;
   constructor() {}
 

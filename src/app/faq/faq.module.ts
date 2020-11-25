@@ -4,15 +4,16 @@ import { CommonModule } from '@angular/common';
 import { FaqRoutingModule } from './faq-routing.module';
 import { FaqComponent } from './faq.component';
 import { FaqHeaderComponent } from '../faq-header/faq-header.component';
-import { HeaderGuideComponent } from '../header-guide/header-guide.component';
 import { FaqContentsComponent } from '../faq-contents/faq-contents.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [FaqComponent, FaqHeaderComponent, HeaderGuideComponent, FaqContentsComponent],
+  declarations: [FaqComponent, FaqHeaderComponent,  FaqContentsComponent],
   imports: [
     CommonModule,
-    FaqRoutingModule
+    FaqRoutingModule,
+    SharedModule,
   ]
 })
 export class FaqModule { }
