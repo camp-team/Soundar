@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
+    QuillModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

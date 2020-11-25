@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-edit',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit {
-
-  constructor() { }
+  form = this.fb.group({
+    content: [''],
+  });
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
