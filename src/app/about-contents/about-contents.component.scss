@@ -9,7 +9,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 45px;
   width: 100%;
-
 }
 
 .main-container {
@@ -22,7 +21,6 @@
     height: 250px;
     margin-bottom: 80px;
     margin-top: 24px;
-
   }
   &__image img {
     display: block;
@@ -52,16 +50,16 @@
 }
 
 .consideration-image {
-max-width:240px;
-max-height: 240px;
+  max-width: 240px;
+  max-height: 240px;
 }
 
-.consideration-image img{
+.consideration-image img {
   border-radius: 50%;
   width: auto;
   height: 240px;
   object-fit: cover;
-  }
+}
 
 .top-title {
   padding: 16px 0;
@@ -75,7 +73,7 @@ max-height: 240px;
   margin-bottom: 16px;
 }
 
-.one {
+.left-contents {
   margin-right: 112px;
 }
 
@@ -87,7 +85,7 @@ max-height: 240px;
   margin-bottom: 16px;
 }
 
-h2 {
+.card-message {
   font-size: 32px;
 }
 
@@ -100,4 +98,13 @@ h2 {
 .more-wrapper {
   margin: 0 auto;
   max-width: 800px;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 80px;
+}
+
+.learn-more {
+  text-align: center;
 }

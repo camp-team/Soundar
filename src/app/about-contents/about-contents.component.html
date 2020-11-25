@@ -72,9 +72,9 @@
 <div class="message-wraaper">
   <div class="consideration-container">
     <!-- 1つ目 -->
-    <div class="one">
+    <div class="left-contents">
       <div class="consideration-title">
-        <h2>
+        <h2 class="card-message">
           情報を発信する <br />
           クリエイターが <br />対価を得られるように
         </h2>
@@ -85,7 +85,7 @@
     </div>
 
     <!-- 2つ目 -->
-    <div class="">
+    <div>
       <div class="consideration-text">
         <p>
           クリエイターには学びやアイデアを、他のクリエイターと議論したり共有する文化があります。
@@ -96,8 +96,12 @@
         <p>必ずしも対価を得られているとは限りません。</p>
         <p>Soundarでは2つの仕組みにより対価を得ることができます。</p>
       </div>
-      <h3 class="top-title">金銭サポートを受ける</h3>
-      <h3 class="under-title">マガジンを執筆して公開する</h3>
+      <h3 class="top-title" (click)="isOpen = !isOpen">金銭サポートを受ける</h3>
+      <p [@toggle]="isOpen">test</p>
+      <h3 class="under-title" (click)="isOpen = !isOpen">
+        マガジンを執筆して公開する
+      </h3>
+      <p [@toggle]="isOpen">test</p>
       <p>
         あなたのために、そしてすべての音楽制作のために、あなたの知見をシェアしましょう。
       </p>
@@ -106,6 +110,7 @@
 </div>
 
 <div class="more-wrapper">
+  <h2 class="learn-more">Learn More</h2>
   <div class="guide-icons">
     <div class="icon-box">
       <img class="icon-image" src="assets/images/icons/faq-icon.svg" alt="" />

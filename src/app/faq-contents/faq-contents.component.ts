@@ -17,27 +17,25 @@ import {
         'true',
         style({
           height: '*',
-          opacity: 1
+          opacity: 1,
         })
       ),
       state(
         'false',
         style({
           height: 0,
-          opacity: 0
+          opacity: 0,
         })
       ),
       transition('true <=> false', [
-        animate('230ms cubic-bezier(0.35, 0, 0.25, 1)')
-      ])
-    ])
-  ]
+        animate('230ms cubic-bezier(0.35, 0, 0.25, 1)'),
+      ]),
+    ]),
+  ],
 })
 export class FaqContentsComponent implements OnInit {
   isOpen = false;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
