@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
+  {
+    path: 'faq',
+    loadChildren: () =>
+      import('./faq/faq.module').then((m) => m.FaqModule),
+  },
 ];
 
 @NgModule({

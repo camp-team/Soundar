@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="faq-contents">
+    <div class="faq-contents__title">
+      <p>Q & A</p>
+    </div>
+    <div class="faq-contents__tabs">
+      <div class="">
+        <p>Soundarについて</p>
+      </div>
+      <div class="">
+        <p>購入について</p>
+      </div>
+      <div class="">
+        <p>販売について</p>
+      </div>
+    </div>
+    <div class="faq-contents__list" (click)="isOpen = !isOpen">
+      <img src="assets/images/icons/question-icon.svg" alt="" />
+      <p>Soundarでできることは？</p>
+    </div>
+    <div
+      class="faq-contents__list faq-contents__list--answer"
+      [@toggle]="isOpen"
+    >
+      <img src="assets/images/icons/answer-icon.svg" alt="" />
+      <p>スキルや知見の共有ができ、ユーザーがクリエイターを応援できます。</p>
+    </div>
+
+    <div class="faq-contents__list" (click)="isOpen = !isOpen">
+      <img src="assets/images/icons/question-icon.svg" alt="" />
+      <p>Soundarでできることは？</p>
+    </div>
+    <div
+      class="faq-contents__list faq-contents__list--answer"
+      [@toggle]="isOpen"
+    >
+      <img src="assets/images/icons/answer-icon.svg" alt="" />
+      <p>スキルや知見の共有ができ、ユーザーがクリエイターを応援できます。</p>
+    </div>
+    <div class="faq-contents__list" (click)="isOpen = !isOpen">
+      <img src="assets/images/icons/question-icon.svg" alt="" />
+      <p>Soundarでできることは？</p>
+    </div>
+    <div
+      class="faq-contents__list faq-contents__list--answer"
+      [@toggle]="isOpen"
+    >
+      <img src="assets/images/icons/answer-icon.svg" alt="" />
+      <p>スキルや知見の共有ができ、ユーザーがクリエイターを応援できます。</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+.container {
+  max-width: 1338px;
+  margin: 0 auto;
+}
+
+.faq-contents {
+  margin-bottom: 128px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  &__title {
+    padding: 80px 0 80px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  &__tabs {
+    margin: 0 auto;
+    padding-bottom: 80px;
+    max-width: 736px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__tabs p {
+    padding: 8px;
+    border: 1px solid #d1d9e6;
+    border-radius: 8px;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  }
+  &__tabs p:hover {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  }
+  &__list {
+    margin: 0 auto;
+    max-width: 1248px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  }
+  &__list:hover {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  &__list img {
+    height: 36px;
+    margin-right: 24px;
+  }
+  &__list--answer {
+    box-shadow: none;
+  }
+  &__list--answer:hover {
+    box-shadow: none;
+  }
+}
+
+

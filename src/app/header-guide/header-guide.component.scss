@@ -1,0 +1,29 @@
+.guide-icons {
+  max-width: 1056px;
+  margin: 0 auto 128px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.guide-icons img {
+  height: 36px;
+}
+
+.icon-box {
+  min-width: 174px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 28px 0px;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+}
+
+.icon-box:hover {
+  box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+}
+.icon-box p {
+  font-weight: bold;
+}
+
+.icon-image {
+  margin: 0 auto 16px;
+}
