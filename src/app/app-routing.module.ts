@@ -14,8 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'faq',
-    loadChildren: () =>
-      import('./faq/faq.module').then((m) => m.FaqModule),
+    loadChildren: () => import('./faq/faq.module').then((m) => m.FaqModule),
   },
 
   {
@@ -25,8 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'edit',
-    loadChildren: () =>
-      import('./edit/edit.module').then((m) => m.EditModule),
+    loadChildren: () => import('./edit/edit.module').then((m) => m.EditModule),
   },
 ];
 
