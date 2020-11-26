@@ -1,4 +1,20 @@
 :host {
   display: block;
-  margin: 180px;
+  margin: 80px;
+}
+
+.editor-container {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+
+
+.editor {
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+.example-full-width {
+  display: block;
 }

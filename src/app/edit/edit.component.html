@@ -1,11 +1,14 @@
+<div class="editor-container">
+<mat-form-field class="example-full-width"  >
+  <mat-label>Title</mat-label>
+  <input matInput>
+</mat-form-field>
+
 <form class="editor" [formGroup]="form">
   <quill-editor
     [styles]="{ height: '500px' }"
     formControlName="content"
   ></quill-editor>
 </form>
+</div>
 
-<quill-view-html
-  [content]="this.form.value.content"
-  theme="snow"
-></quill-view-html>

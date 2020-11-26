@@ -277,6 +277,22 @@ h4 {
 @import '~quill/dist/quill.bubble.css';
 @import '~quill/dist/quill.snow.css';
 
+.ql-toolbar.ql-snow {
+  border-radius: 8px;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  color: #31344b;
+  margin-bottom: 20px;
+}
+
+.ql-editor {
+  border-radius: 8px;
+  box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #d1d9e6;
+}
+
 /* PC用のCSSはメディアクエリの外に記述する */
 
 @media screen and (max-width: 959px) {
