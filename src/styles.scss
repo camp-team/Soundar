@@ -290,6 +290,11 @@ h4 {
   box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
 }
 
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  margin-bottom: 20px;
+
+}
+
 .ql-toolbar .ql-picker {
   color: red;
 }
