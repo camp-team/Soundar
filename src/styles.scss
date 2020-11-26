@@ -278,6 +278,7 @@ h4 {
 @import '~quill/dist/quill.snow.css';
 
 .ql-toolbar.ql-snow {
+  border: 1px solid #d1d9e6;
   border-radius: 8px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   color: #31344b;
@@ -288,6 +289,15 @@ h4 {
   border-radius: 8px;
   box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
 }
+
+.ql-toolbar .ql-picker {
+  color: red;
+}
+
+
+
+
+
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   background-color: #d1d9e6;
