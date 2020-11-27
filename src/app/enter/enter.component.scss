@@ -1,0 +1,38 @@
+
+
+.flexbox {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: space-around;
+}
+
+.container {
+  max-width: 538px;
+  margin: 128px auto;
+}
+
+.line {
+  width: 1px;
+  height: 100vh;
+  background-color: #d1d9e6;
+  margin-bottom: 128px;
+}
+
+.text {
+  margin-bottom: 60px;
+}
+
+p {
+  word-break: normal;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 24px;
+}
+
+
+
+
