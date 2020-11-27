@@ -5,12 +5,12 @@ import { EnterComponent } from './enter.component';
 const routes: Routes = [
   {
     path: '',
-    component: EnterComponent
-  }
+    component: EnterComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class EnterRoutingModule { }
+export class EnterRoutingModule {}
