@@ -58,11 +58,18 @@ h4 {
     padding: 12px;
     border-radius: 50%;
   }
-  &--to-list {
+  &--general {
     min-width: 180px;
     margin-bottom: 128px;
     padding: 10px;
-    display: inline-block;
+    text-align: center;
+  }
+  &--general-icon {
+    display: flex;
+    align-items: center;
+    min-width: 180px;
+    margin-bottom: 128px;
+    padding: 10px;
     text-align: center;
   }
 }
