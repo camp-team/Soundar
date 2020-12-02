@@ -1,10 +1,7 @@
 .wrapper {
   position: relative;
-}
-
-.container {
-  max-width: 600px;
   margin: 80px auto;
+  max-width: 1000px;
   text-align: center;
 }
 
@@ -26,8 +23,11 @@ img {
 
 .side-image {
   position: absolute;
-  margin-left: 356px;
+  left: 0;
   bottom: 0;
   width: auto;
   height: 528px;
+  @media screen and (max-width: 700px){
+    display: none;
+  }
 }
