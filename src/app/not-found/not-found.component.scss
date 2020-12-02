@@ -1,0 +1,33 @@
+.wrapper {
+  position: relative;
+}
+
+.container {
+  max-width: 600px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.image {
+  height: 480px;
+  width: auto;
+  margin-bottom: 32px;
+}
+
+img {
+  height: 100%;
+}
+
+.side-image {
+  position: absolute;
+  margin-left: 356px;
+  bottom: 0;
+  width: auto;
+  height: 528px;
+}
