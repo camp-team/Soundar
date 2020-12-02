@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'enter',
     loadChildren: () => import('./enter/enter.module').then((m) => m.EnterModule),
   },
+  {
+    path: '404',
+    loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule),
+  },
 ];
 
 @NgModule({
