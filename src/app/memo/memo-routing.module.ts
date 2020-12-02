@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MemoComponent } from './memo.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: MemoComponent,
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

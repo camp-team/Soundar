@@ -34,6 +34,10 @@ const routes: Routes = [
     path: '404',
     loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule),
   },
+  {
+    path: 'memo',
+    loadChildren: () => import('./memo/memo.module').then((m) => m.MemoModule),
+  },
 ];
 
 @NgModule({
