@@ -1,0 +1,87 @@
+.profile-card {
+  max-width: 326px;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  &__top {
+    display: flex;
+    margin-bottom: 24px;
+  }
+  &__user {
+    padding-right: 16px;
+  }
+  &__user img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &__name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  &__subject {
+    margin-bottom: 4px;
+  }
+  &__socials {
+    color: #31344b;
+    width: 14px;
+    height: 14px;
+    padding: 4px;
+    border-radius: 50%;
+    border: 1px solid #d1d9e6;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+    margin-right: 8px;
+  }
+  &__socials:hover {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  }
+  &__text {
+    color: #31344b;
+    background: #e6e7ee;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d1d9e6;
+    border-radius: 8px;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+    font-size: 8px;
+  }
+  &__text img {
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+  }
+  &__text:hover {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  }
+  &__profile {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+  &__text--support {
+    font-size: 12px;
+    width: 100%;
+  }
+  &__text--support img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.icons-box {
+  display: flex;
+  align-items: center;
+}
+.follow-box {
+  display: inline;
+}
+.support-box {
+  display: block;
+}
+
+.profile-box {
+  padding: 24px;
+}
