@@ -1,9 +1,15 @@
+.memo-contents-container {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 40px;
+}
+
 .memo-contents {
   width: 100%;
   max-width: 967px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
-  margin-right: 45px;
   border-radius: 8px;
+
   &__article {
     margin-bottom: 40px;
   }
