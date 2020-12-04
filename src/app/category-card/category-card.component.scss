@@ -17,13 +17,13 @@
 
 
 //////////
-.grid {
+.category-grid {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(2, 2fr);
   align-items: center;
 }
-.grid img {
+.category-grid img {
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -31,11 +31,11 @@
   margin-right: 16px;
 }
 
-.grid p {
+.category-grid p {
   font-size: 12px;
 }
 
-.flex {
+.category-flex {
   display: flex;
   align-items: center;
 }

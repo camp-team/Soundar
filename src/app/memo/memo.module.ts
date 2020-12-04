@@ -7,10 +7,11 @@ import { DetailHeaderComponent } from '../detail-header/detail-header.component'
 import { ProfileCardComponent } from '../profile-card/profile-card.component';
 import { MemoContentsComponent } from '../memo-contents/memo-contents.component';
 import { CategoryCardComponent } from '../category-card/category-card.component';
+import { ContentsListComponent } from '../contents-list/contents-list.component';
 
 
 @NgModule({
-  declarations: [MemoComponent, DetailHeaderComponent, ProfileCardComponent, MemoContentsComponent, CategoryCardComponent],
+  declarations: [MemoComponent, DetailHeaderComponent, ProfileCardComponent, MemoContentsComponent, CategoryCardComponent, ContentsListComponent],
   imports: [
     CommonModule,
     MemoRoutingModule
