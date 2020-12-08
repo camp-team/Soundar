@@ -1,7 +1,5 @@
-.read-next {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  &__card {
+.read-next-card {
+  &__box {
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   }
   &__image {
