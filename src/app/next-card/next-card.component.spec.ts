@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReadNextComponent } from './read-next-card.component';
+import { NextCardComponent } from './next-card.component';
 
-describe('ReadNextComponent', () => {
-  let component: ReadNextComponent;
-  let fixture: ComponentFixture<ReadNextComponent>;
+describe('NextCardComponent', () => {
+  let component: NextCardComponent;
+  let fixture: ComponentFixture<NextCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReadNextComponent ]
+      declarations: [ NextCardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReadNextComponent);
+    fixture = TestBed.createComponent(NextCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
