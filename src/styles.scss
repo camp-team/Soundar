@@ -310,6 +310,11 @@ h4 {
   color: red;
 }
 
+// angular materialに関するスタイル
+.mat-form-field-appearance-standard .mat-form-field-underline {
+  background-color: #d1d9e6;
+}
+
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   background-color: #d1d9e6;
 }

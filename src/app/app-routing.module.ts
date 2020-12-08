@@ -28,15 +28,22 @@ const routes: Routes = [
   },
   {
     path: 'enter',
-    loadChildren: () => import('./enter/enter.module').then((m) => m.EnterModule),
+    loadChildren: () =>
+      import('./enter/enter.module').then((m) => m.EnterModule),
   },
   {
     path: '404',
-    loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule),
+    loadChildren: () =>
+      import('./not-found/not-found.module').then((m) => m.NotFoundModule),
   },
   {
     path: 'memo',
     loadChildren: () => import('./memo/memo.module').then((m) => m.MemoModule),
+  },
+  {
+    path: 'search',
+    loadChildren: () =>
+      import('./search/search.module').then((m) => m.SearchModule),
   },
 ];
 
