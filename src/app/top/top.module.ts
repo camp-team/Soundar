@@ -14,13 +14,13 @@ import { MusicCardComponent } from '../music-card/music-card.component';
 import { RecentMovieComponent } from '../recent-movie/recent-movie.component';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { JoinGuideComponent } from '../join-guide/join-guide.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     TopComponent,
     HeroComponent,
     RecentMemoComponent,
-    MemoCardComponent,
     RecentMagazineComponent,
     MagazineCardComponent,
     PublishGuideComponent,
@@ -30,6 +30,6 @@ import { JoinGuideComponent } from '../join-guide/join-guide.component';
     MovieCardComponent,
     JoinGuideComponent,
   ],
-  imports: [CommonModule, TopRoutingModule],
+  imports: [CommonModule, TopRoutingModule, SharedModule],
 })
 export class TopModule {}

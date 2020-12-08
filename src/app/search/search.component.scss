@@ -1,0 +1,19 @@
+.search-container {
+  max-width: 1120px;
+  margin: 128px auto 256px;
+  text-align: center;
+}
+.search-form {
+  width: 100%;
+  font-size: 30px;
+  border-bottom: 1px solid #d1d9e6;
+  color: #44476a;
+}
+
+::ng-deep .mat-form-field-appearance-standard .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}

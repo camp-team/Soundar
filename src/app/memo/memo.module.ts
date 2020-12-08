@@ -11,6 +11,9 @@ import { ContentsListComponent } from '../contents-list/contents-list.component'
 import { AuthorComponent } from '../author/author.component';
 import { ComentsComponent } from '../coments/coments.component';
 import { MatInputModule } from '@angular/material/input';
+import { ReadNextComponent } from '../read-next/read-next.component';
+import { SharedModule } from '../shared/shared.module';
+import { NextCardComponent } from '../next-card/next-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { MatInputModule } from '@angular/material/input';
     ContentsListComponent,
     AuthorComponent,
     ComentsComponent,
+    ReadNextComponent,
+    NextCardComponent,
   ],
-  imports: [CommonModule, MemoRoutingModule, MatInputModule],
+  imports: [CommonModule, MemoRoutingModule, MatInputModule, SharedModule],
 })
 export class MemoModule {}
