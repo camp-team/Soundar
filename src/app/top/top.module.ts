@@ -30,6 +30,6 @@ import { SharedModule } from '../shared/shared.module';
     MovieCardComponent,
     JoinGuideComponent,
   ],
-    imports: [CommonModule, TopRoutingModule, SharedModule],
+  imports: [CommonModule, TopRoutingModule, SharedModule],
 })
 export class TopModule {}
