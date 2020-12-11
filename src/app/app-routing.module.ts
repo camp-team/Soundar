@@ -60,6 +60,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./terms/terms.module').then((m) => m.TermsModule),
   },
+  {
+    path: 'transaction-law',
+    loadChildren: () =>
+      import('./transaction-law/transaction-law.module').then((m) => m.TransactionLawModule),
+  },
 ];
 
 @NgModule({
