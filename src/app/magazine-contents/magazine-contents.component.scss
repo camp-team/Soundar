@@ -1,0 +1,47 @@
+.magazine-contents {
+  max-width: 1338px;
+  margin: 0 auto 128px;
+  &__text {
+    max-width: 800px;
+    margin: 0 auto 24px;
+    & h2 {
+margin-bottom: 24px;
+    }
+  }
+  &__read {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+    border-radius: 8px;
+    & button {
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: #e6e7ee;
+      border: 1px solid #d1d9e6;
+      box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+      margin-right: 24px;
+      font-size: 16px;
+      &:hover {
+        box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+      }
+    }
+  }
+  &__icons {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+    & p {
+      margin-left: 8px;
+    }
+  }
+}
+
+.read-container {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+}
