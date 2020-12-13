@@ -7,13 +7,8 @@ import { FaqHeaderComponent } from '../faq-header/faq-header.component';
 import { FaqContentsComponent } from '../faq-contents/faq-contents.component';
 import { SharedModule } from '../shared/shared.module';
 
-
 @NgModule({
-  declarations: [FaqComponent, FaqHeaderComponent,  FaqContentsComponent],
-  imports: [
-    CommonModule,
-    FaqRoutingModule,
-    SharedModule,
-  ]
+  declarations: [FaqComponent, FaqHeaderComponent, FaqContentsComponent],
+  imports: [CommonModule, FaqRoutingModule, SharedModule],
 })
-export class FaqModule { }
+export class FaqModule {}
