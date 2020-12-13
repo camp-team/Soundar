@@ -70,6 +70,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./list/list.module').then((m) => m.ListModule),
   },
+  {
+    path: 'magazine',
+    loadChildren: () =>
+      import('./magazine/magazine.module').then((m) => m.MagazineModule),
+  },
 ];
 
 @NgModule({
