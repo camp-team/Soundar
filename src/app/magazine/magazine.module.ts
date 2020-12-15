@@ -9,14 +9,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MagazineChaptersComponent } from '../magazine-chapters/magazine-chapters.component';
 import { SharedModule } from '../shared/shared.module';
 
-
 @NgModule({
-  declarations: [MagazineComponent, MagazineDetailHeaderComponent, MagazineContentsComponent, MagazineChaptersComponent],
-  imports: [
-    CommonModule,
-    MagazineRoutingModule,
-    MatIconModule,
-    SharedModule
-  ]
+  declarations: [
+    MagazineComponent,
+    MagazineDetailHeaderComponent,
+    MagazineContentsComponent,
+    MagazineChaptersComponent,
+  ],
+  imports: [CommonModule, MagazineRoutingModule, MatIconModule, SharedModule],
 })
-export class MagazineModule { }
+export class MagazineModule {}

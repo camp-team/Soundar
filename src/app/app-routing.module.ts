@@ -47,8 +47,7 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    loadChildren: () =>
-      import('./user/user.module').then((m) => m.UserModule),
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },
   {
     path: 'privacy',
@@ -63,17 +62,25 @@ const routes: Routes = [
   {
     path: 'transaction-law',
     loadChildren: () =>
-      import('./transaction-law/transaction-law.module').then((m) => m.TransactionLawModule),
+      import('./transaction-law/transaction-law.module').then(
+        (m) => m.TransactionLawModule
+      ),
   },
   {
     path: 'list',
-    loadChildren: () =>
-      import('./list/list.module').then((m) => m.ListModule),
+    loadChildren: () => import('./list/list.module').then((m) => m.ListModule),
   },
   {
     path: 'magazine',
     loadChildren: () =>
       import('./magazine/magazine.module').then((m) => m.MagazineModule),
+  },
+  {
+    path: 'magazine-viewer',
+    loadChildren: () =>
+      import('./magazine-viewer/magazine-viewer.module').then(
+        (m) => m.MagazineViewerModule
+      ),
   },
 ];
 
