@@ -8,7 +8,7 @@ import { FaqContentsComponent } from '../faq-contents/faq-contents.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [FaqComponent, FaqHeaderComponent, FaqContentsComponent],
+  declarations: [FaqComponent, FaqContentsComponent, FaqHeaderComponent],
   imports: [CommonModule, FaqRoutingModule, SharedModule],
 })
 export class FaqModule {}
