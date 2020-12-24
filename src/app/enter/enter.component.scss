@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: flex-start;
   align-content: space-around;
+  margin-bottom: 128px;
   &__container {
     max-width: 538px;
     margin: 128px auto;
@@ -13,11 +14,37 @@
   }
 }
 
-.line {
+button {
+  color: #31344b;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  background: #e6e7ee;
+  border: 1px solid #d1d9e6;
+  border-radius: 8px;
+  :hover {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  }
+}
+.button {
+  &--text {
+    padding: 8px 16px;
+    min-width: 140px;
+  }
+  &--signin {
+    min-width: 172px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    img {
+      width: 16px;
+      margin-right: 8px;
+    }
+  }
+}
+
+.vertical-line {
   width: 1px;
   height: 100vh;
   background-color: #d1d9e6;
-  margin-bottom: 128px;
 }
 
 p {
@@ -28,27 +55,56 @@ h1 {
   font-size: 40px;
   margin-bottom: 24px;
 }
+.buttons {
+  margin-bottom: 32px;
+}
 
-.enter {
-  position: relative;
-  border-radius: 8px;
-  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
-  width: 100%;
-  &__icon-button {
-    padding: 8px 16px;
-    border: 1px solid #d1d9e6;
-    border-radius: 8px;
-    color: #31344b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+/* PC用のCSSはメディアクエリの外に記述する */
+
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+  .enter {
+    padding: 24px;
+    display: block;
+    &__container {
+      max-width: 538px;
+      margin: 32px auto;
+    }
+    &__text {
+      margin-bottom: 24px;
+    }
   }
-  &__icon-button:hover {
-    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  h1 {
+    text-align: center;
   }
-  &__icon-button img {
-    height: 16px;
-    margin-right: 10px;
+  .vertical-line {
+    width: 0;
+    height: 0;
+    background-color: #d1d9e6;
+    margin-bottom: 128px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+
+  .enter {
+    padding: 24px;
+    display: block;
+    &__container {
+      max-width: 538px;
+      margin: 32px auto;
+    }
+    &__text {
+      margin-bottom: 24px;
+    }
+  }
+  h1 {
+    text-align: center;
+  }
+  .vertical-line {
+    width: 0;
+    height: 0;
+    background-color: #d1d9e6;
+    margin-bottom: 128px;
   }
 }
