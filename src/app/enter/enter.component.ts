@@ -1,28 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { logging } from 'protractor';
+import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
-
+import { User } from '../interfaces/user';
 
 @Component({
   selector: 'app-enter',
   templateUrl: './enter.component.html',
-  styleUrls: ['./enter.component.scss']
+  styleUrls: ['./enter.component.scss'],
 })
 export class EnterComponent implements OnInit {
-  user$ = this.authService.user$
+  user$: Observable<User> = this.authService.user$;
 
-  constructor(private authService:AuthService) {
-    login() {
-      this.authService.login();
-    }
+  constructor(private authService: AuthService) {}
 
-    logout() {
-      this.authService.logout();
-    }
+  ngOnInit(): void {}
 
-   }
-
-  ngOnInit(): void {
+  login() {
+    this.authService.login();
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }

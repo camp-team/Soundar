@@ -1,20 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { switchMap } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
-
+import { User } from '../interfaces/user';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AuthService implements OnInit {
   // $はObservableが入っている変数という慣習の命名
   // <User>はinterfaces/userからインポートする
   user$: Observable<User> = this.afAuth.authState.pipe(
     switchMap((afUser) => {
       if (afUser) {
-        return this.db.doc<User>('users/${afUser.uid}').valueChange();
+        return this.db.doc<User>('users/${afUser.uid}').valueChanges();
       } else {
         return of(null);
       }
@@ -29,13 +29,16 @@ export class AuthService {
     // AngularFirestoreのデータベースにアクセス
     private db: AngularFirestore
   ) {}
+  ngOnInit(): void {
+
+  }
 
   // auth.serviceのメソッド
   login() {
     const provider = new auth.GoogleAuthProvider();
 
     // 常にどのアカウントでログインするかを確認する
-    provider.setCustomParameters({ prompt: 'select_acount' });
+    provider.setCustomParameters({ prompt: 'select_account' });
 
     // どのようにログイン画面を表示するか
     this.afAuth.signInWithPopup(provider);
