@@ -15,10 +15,10 @@ export class AuthService {
   login() {
     const provider = new auth.GoogleAuthProvider();
     provider.setCustomParameters({prompt: 'select_acount'});
-    this.afAuth.auth.signInWithPopup(provider);
+    this.afAuth.signInWithPopup(provider);
   }
 
   logout() {
-    this.afAuth.auth.signOut();
+    this.afAuth.signOut();
   }
 }
