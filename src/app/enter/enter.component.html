@@ -7,7 +7,7 @@
         技術についての知見、制作環境や仕事の進め方についてのアイデアを共有し合いましょう。
       </p>
     </div>
-    <a class="button button--text">Soundarについて</a>
+    <a routerLink="/about" class="button button--text">Soundarについて</a>
   </div>
   <div class="vertical-line"></div>
 
@@ -20,12 +20,12 @@
       </p>
     </div>
     <div class="buttons">
-      <button (click)="login()" class="button button--signin">
+      <button (click)="loginGoogle()" class="button button--signin">
         <img src="assets/images/icons/google-g-logo.svg" alt="" />Sign in with
         Google
       </button>
     </div>
-    <button (click)="login()" class="button button--signin">
+    <button (click)="loginTwitter()" class="button button--signin">
       <img src="assets/images/icons/Twitter_Logo_Blue.svg" alt="" />Sign in with
       Twitter
     </button>

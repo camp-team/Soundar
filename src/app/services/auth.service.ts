@@ -34,7 +34,7 @@ export class AuthService implements OnInit {
   }
 
   // auth.serviceのメソッド
-  login() {
+  loginGoogle() {
     const provider = new auth.GoogleAuthProvider();
 
     // 常にどのアカウントでログインするかを確認する
@@ -44,6 +44,15 @@ export class AuthService implements OnInit {
     this.afAuth.signInWithPopup(provider);
   }
 
+  loginTwitter() {
+    const provider = new auth.TwitterAuthProvider();
+
+    // 常にどのアカウントでログインするかを確認する
+    provider.setCustomParameters({ prompt: 'select_account' });
+
+    // どのようにログイン画面を表示するか
+    this.afAuth.signInWithPopup(provider);
+  }
   logout() {
     this.afAuth.signOut();
   }

@@ -15,8 +15,12 @@ export class EnterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  login() {
-    this.authService.login();
+  loginGoogle() {
+    this.authService.loginGoogle();
+  }
+
+  loginTwitter() {
+    this.authService.loginTwitter();
   }
 
   logout() {
