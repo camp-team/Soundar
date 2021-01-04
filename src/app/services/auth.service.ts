@@ -1,20 +1,21 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
-import { switchMap } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { auth } from 'firebase/app';
 import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { User } from '../interfaces/user';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService implements OnInit {
+export class AuthService {
   // $はObservableが入っている変数という慣習の命名
   // <User>はinterfaces/userからインポートする
   user$: Observable<User> = this.afAuth.authState.pipe(
     switchMap((afUser) => {
+      console.log(afUser);
       if (afUser) {
-        return this.db.doc<User>('users/${afUser.uid}').valueChanges();
+        return this.db.doc<User>(`users/${afUser.uid}`).valueChanges();
       } else {
         return of(null);
       }
@@ -29,12 +30,9 @@ export class AuthService implements OnInit {
     // AngularFirestoreのデータベースにアクセス
     private db: AngularFirestore
   ) {}
-  ngOnInit(): void {
-
-  }
 
   // auth.serviceのメソッド
-  loginGoogle() {
+  loginGoogle(): void {
     const provider = new auth.GoogleAuthProvider();
 
     // 常にどのアカウントでログインするかを確認する
@@ -44,7 +42,7 @@ export class AuthService implements OnInit {
     this.afAuth.signInWithPopup(provider);
   }
 
-  loginTwitter() {
+  loginTwitter(): void {
     const provider = new auth.TwitterAuthProvider();
 
     // 常にどのアカウントでログインするかを確認する
@@ -53,7 +51,7 @@ export class AuthService implements OnInit {
     // どのようにログイン画面を表示するか
     this.afAuth.signInWithPopup(provider);
   }
-  logout() {
+  logout(): void {
     this.afAuth.signOut();
   }
 }

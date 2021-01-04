@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { User } from '../interfaces/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-enter',
@@ -10,20 +11,30 @@ import { User } from '../interfaces/user';
 })
 export class EnterComponent implements OnInit {
   user$: Observable<User> = this.authService.user$;
+  private subscription = new Subscription();
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subscription = this.authService.user$.subscribe((user) => {
+      console.log('alart');
+      if (user) {
+        console.log('hit');
+        this.router.navigate(['/']);
+      }
+    });
+  }
 
-  loginGoogle() {
+  loginGoogle(): void {
+    console.log('alart');
     this.authService.loginGoogle();
   }
 
-  loginTwitter() {
+  loginTwitter(): void {
     this.authService.loginTwitter();
   }
 
-  logout() {
+  logout(): void {
     this.authService.logout();
   }
 }
