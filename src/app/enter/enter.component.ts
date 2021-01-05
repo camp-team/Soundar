@@ -17,16 +17,13 @@ export class EnterComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscription = this.authService.user$.subscribe((user) => {
-      console.log('alart');
       if (user) {
-        console.log('hit');
         this.router.navigate(['/']);
       }
     });
   }
 
   loginGoogle(): void {
-    console.log('alart');
     this.authService.loginGoogle();
   }
 

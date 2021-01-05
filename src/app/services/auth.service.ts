@@ -13,7 +13,6 @@ export class AuthService {
   // <User>はinterfaces/userからインポートする
   user$: Observable<User> = this.afAuth.authState.pipe(
     switchMap((afUser) => {
-      console.log(afUser);
       if (afUser) {
         return this.db.doc<User>(`users/${afUser.uid}`).valueChanges();
       } else {
