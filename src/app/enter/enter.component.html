@@ -1,29 +1,33 @@
-<div class="flexbox">
-  <div class="container">
+<div class="enter">
+  <div class="enter__container">
     <h1>LOGO</h1>
-    <div class="text">
+    <div class="enter__text">
       <p>Soundarはクリエイターのための情報共有プラットフォームです。</p>
       <p>
         技術についての知見、制作環境や仕事の進め方についてのアイデアを共有し合いましょう。
       </p>
     </div>
-    <div class="button button--general"><p>Soundarについて</p></div>
+    <a routerLink="/about" class="button button--text">Soundarについて</a>
   </div>
-  <div class="line"></div>
+  <div class="vertical-line"></div>
 
-  <div class="container">
+  <div class="enter__container">
     <h1>Sign In</h1>
-    <div class="text">
+    <div class="enter__text">
       <p>新規登録、ログインのどちらも以下のリンクから行うことができます。</p>
       <p>
         利用規約、プライバシーポリシーに同意したうえでログインしてください。
       </p>
     </div>
-    <div class="button-row">
-      <div class="enter__icon-button">
-        <img src="assets/images/icons/google-g-logo.svg" alt="" />
-        <p>Sign in with Google</p>
-      </div>
+    <div class="buttons">
+      <button (click)="loginGoogle()" class="button button--signin">
+        <img src="assets/images/icons/google-g-logo.svg" alt="" />Sign in with
+        Google
+      </button>
     </div>
+    <button (click)="loginTwitter()" class="button button--signin">
+      <img src="assets/images/icons/Twitter_Logo_Blue.svg" alt="" />Sign in with
+      Twitter
+    </button>
   </div>
 </div>

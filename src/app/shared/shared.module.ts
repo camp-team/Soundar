@@ -9,8 +9,20 @@ import { NextPageButtonComponent } from '../next-page-button/next-page-button.co
 import { AuthorComponent } from '../author/author.component';
 
 @NgModule({
-  declarations: [HeaderGuideComponent, MemoCardComponent, NextCardComponent, NextPageButtonComponent, AuthorComponent],
+  declarations: [
+    AuthorComponent,
+    HeaderGuideComponent,
+    MemoCardComponent,
+    NextCardComponent,
+    NextPageButtonComponent,
+  ],
   imports: [CommonModule, SharedRoutingModule],
-  exports: [HeaderGuideComponent, MemoCardComponent, NextCardComponent, NextPageButtonComponent,AuthorComponent],
+  exports: [
+    AuthorComponent,
+    HeaderGuideComponent,
+    MemoCardComponent,
+    NextCardComponent,
+    NextPageButtonComponent,
+  ],
 })
 export class SharedModule {}

@@ -16,12 +16,12 @@ import { MemoComponent } from './memo.component';
 @NgModule({
   declarations: [
     MemoComponent,
-    DetailHeaderComponent,
-    ProfileCardComponent,
-    MemoContentsComponent,
     CategoryCardComponent,
-    ContentsListComponent,
     ComentsComponent,
+    ContentsListComponent,
+    DetailHeaderComponent,
+    MemoContentsComponent,
+    ProfileCardComponent,
     ReadNextComponent,
   ],
   imports: [CommonModule, MemoRoutingModule, MatInputModule, SharedModule],

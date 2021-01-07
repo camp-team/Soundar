@@ -12,9 +12,9 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     MagazineComponent,
-    MagazineDetailHeaderComponent,
-    MagazineContentsComponent,
     MagazineChaptersComponent,
+    MagazineContentsComponent,
+    MagazineDetailHeaderComponent,
   ],
   imports: [CommonModule, MagazineRoutingModule, MatIconModule, SharedModule],
 })
