@@ -45,5 +45,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# public配下はビルド結果が格納される箇所なので、ignore
+# public配下はビルド結果が格納される箇所なので、ignoreする
 public/index.html
