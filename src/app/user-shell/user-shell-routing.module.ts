@@ -5,7 +5,17 @@ import { UserShellComponent } from './user-shell/user-shell.component';
 const routes: Routes = [
   {
     path: '',
-    component: UserShellComponent
+    component: UserShellComponent,
+    children: [
+      {
+        path: 'edit',
+        loadChildren: () => import('../edit/edit.module').then((m) => m.EditModule),
+      },
+      {
+        path: '',
+        loadChildren: () => import('../top/top.module').then((m) => m.TopModule),
+      },
+    ]
   }
 ];
 
