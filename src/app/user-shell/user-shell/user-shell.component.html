@@ -1,7 +1,29 @@
 <header>
   <div class="header-navigation">
     <p>SoundarLogo</p>
-    <a href="#" class="button button--small" routerLink="enter">Sign In</a>
+    <ng-container *ngIf="authService.user$ | async as user; else notLogin">
+      <img
+        [matMenuTriggerFor]="menuRef"
+        class="header__account"
+        [src]="user.avatarURL"
+        alt=""
+      />
+    </ng-container>
+    <mat-menu #menuRef="matMenu">
+      <button mat-menu-item routerLink="/settings/profile">
+        <mat-icon>account_box</mat-icon>
+        <span>アカウント設定</span>
+      </button>
+
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>ログアウト</span>
+      </button>
+
+    </mat-menu>
+    <ng-template #notLogin>
+      <a href="#" class="button button--small" routerLink="enter">Sign In</a>
+    </ng-template>
   </div>
 </header>
 <router-outlet></router-outlet>

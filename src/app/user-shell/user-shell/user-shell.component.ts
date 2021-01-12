@@ -16,4 +16,7 @@ export class UserShellComponent implements OnInit {
   constructor(public authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
+  logout(): void {
+    this.authService.logout();
+  }
 }
