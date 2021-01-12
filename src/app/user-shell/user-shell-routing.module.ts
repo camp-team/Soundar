@@ -8,19 +8,21 @@ const routes: Routes = [
     component: UserShellComponent,
     children: [
       {
-        path: 'edit',
-        loadChildren: () => import('../edit/edit.module').then((m) => m.EditModule),
+        path: '',
+        loadChildren: () =>
+          import('../top/top.module').then((m) => m.TopModule),
       },
       {
-        path: '',
-        loadChildren: () => import('../top/top.module').then((m) => m.TopModule),
+        path: 'edit',
+        loadChildren: () =>
+          import('../edit/edit.module').then((m) => m.EditModule),
       },
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UserShellRoutingModule { }
+export class UserShellRoutingModule {}
