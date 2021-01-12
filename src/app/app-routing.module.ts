@@ -8,7 +8,7 @@ const routes: Routes = [
       import('./about/about.module').then((m) => m.AboutModule),
   },
   {
-    path: 'edit',
+    path: '',
     loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
