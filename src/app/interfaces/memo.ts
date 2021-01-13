@@ -8,4 +8,5 @@ export interface Memo {
   likeCount: number;
   createdAt: Date;
   updatedAt: Date;
+  uid: string;
 }

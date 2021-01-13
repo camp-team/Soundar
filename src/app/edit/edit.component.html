@@ -1,24 +1,42 @@
 <div class="editor-container">
-  <mat-form-field class="example-full-width">
-    <mat-label>Title</mat-label>
-    <input matInput />
-  </mat-form-field>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        formControlName="title"
+        required
+        autocomplete="off"
+        placeholder="メモタイトル"
+      />
+      <mat-error *ngIf="titleControl.hasError('required')"
+        >必須項目です</mat-error
+      >
+      <!-- <mat-error *ngIf="titleControl.hasError('maxlength')"
+          >タイトルは{{ titleMaxLength }}文字以内です</mat-error
+        > -->
+    </mat-form-field>
 
-  <form class="editor" [formGroup]="form">
-    <quill-editor
-      [styles]="{ height: '500px' }"
-      formControlName="content"
-    ></quill-editor>
+    <div class="editor">
+      <quill-editor
+        [styles]="{ height: '500px' }"
+        formControlName="content"
+      ></quill-editor>
+
+      <!-- ここからトグル  -->
+      <div class="flexbox">
+        <div class="switcher">
+          <input formControlName="isPublic" type="checkbox" id="" />
+          <label for=""></label>
+        </div>
+        <button
+          class="button button--text"
+          [disabled]="form.invalid || form.pristine"
+          (click)="submit()"
+        >
+          {{ isPublicControl.value ? '記事を公開' : '下書き保存' }}
+        </button>
+      </div>
+    </div>
   </form>
-
-  <!-- ここからトグル  -->
-  <div class="flexbox">
-    <div class="switcher">
-      <input type="checkbox" id="" />
-      <label for=""></label>
-    </div>
-    <div class="button button--general">
-      <p>下書き保存</p>
-    </div>
-  </div>
 </div>
