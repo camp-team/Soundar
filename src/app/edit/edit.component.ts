@@ -16,6 +16,8 @@ export class EditComponent implements OnInit {
   });
 
   private user: User;
+  inProgress: boolean;
+  titleMaxLength = 50;
 
   get titleControl(): FormControl {
     return this.form.get('title') as FormControl;
@@ -31,7 +33,7 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {}
 
   submit(): void {
-    // this.inProgress = true;
+    this.inProgress = true;
     const formData = this.form.value;
     const sendData: Omit<
       Memo,
