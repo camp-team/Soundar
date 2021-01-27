@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Memo } from '../interfaces/memo';
 import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
+import { MemoService } from '../services/memo.service';
 
 @Component({
   selector: 'app-edit',
@@ -18,7 +19,7 @@ export class EditComponent implements OnInit {
   });
 
   // userのIDをとる
-  private user: Observable<User> = this.authService.user$;
+  private user: Observable<User>;
 
   inProgress: boolean;
   titleMaxLength = 50;
@@ -26,6 +27,7 @@ export class EditComponent implements OnInit {
   get titleControl(): FormControl {
     return this.form.get('title') as FormControl;
   }
+
   get contentControl(): FormControl {
     return this.form.get('content') as FormControl;
   }
@@ -34,24 +36,28 @@ export class EditComponent implements OnInit {
     return this.form.get('isPublic') as FormControl;
   }
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private memoService: MemoService
+  ) {}
 
   ngOnInit(): void {}
 
-  submit(): void {
+  submit(uid): void {
     // console.log('alert');
-    this.inProgress = true;
     const formData = this.form.value;
     const sendData: Omit<
       Memo,
       'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'tags'
     > = {
-      uid: this.user.uid,
+      uid,
       thumbnailUrl: null,
       title: formData.title,
       text: formData.editorContent,
       isPublic: formData.isPublic,
     };
+    this.memoService.createMemo(sendData);
   }
   // alert(): void {
   //   console.log(this.isPublicControl);
