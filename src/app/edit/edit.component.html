@@ -1,5 +1,7 @@
 <div class="editor-container">
+  <!-- ここからフォーム -->
   <form [formGroup]="form" (ngSubmit)="submit()">
+    <!-- メモタイトルの入力フォーム -->
     <mat-form-field class="example-full-width">
       <mat-label>Title</mat-label>
       <input
@@ -13,15 +15,20 @@
         >必須項目です</mat-error
       >
       <mat-error *ngIf="titleControl.hasError('maxlength')"
-          >タイトルは{{ titleMaxLength }}文字以内です</mat-error
-        >
+        >タイトルは{{ titleMaxLength }}文字以内です</mat-error
+      >
     </mat-form-field>
+    <!-- メモタイトルの入力フォームここまで -->
 
+    <!-- メモコンテンツの入力エディター -->
     <div class="editor">
       <quill-editor
         [styles]="{ height: '500px' }"
         formControlName="content"
       ></quill-editor>
+      <mat-error *ngIf="contentControl.hasError('required')"
+        >必須項目です</mat-error
+      >
 
       <!-- ここからトグル  -->
       <div class="flexbox">
@@ -36,6 +43,7 @@
         >
           {{ isPublicControl.value ? '記事を公開' : '下書き保存' }}
         </button>
+        <!-- <button (click)="alert()"></button> -->
       </div>
     </div>
   </form>

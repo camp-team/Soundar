@@ -6,7 +6,7 @@ export interface Memo {
   text: string;
   isPublic: boolean;
   likeCount: number;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: firebase.firestore.Timestamp;
+  updatedAt: firebase.firestore.Timestamp;
   uid: string;
 }
