@@ -20,6 +20,7 @@ export class EditComponent implements OnInit {
 
   // userのIDをとる
   private user: Observable<User>;
+  uid = this.authService.uid;
 
   inProgress: boolean;
   titleMaxLength = 50;

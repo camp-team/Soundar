@@ -11,9 +11,11 @@ import { User } from '../interfaces/user';
 export class AuthService {
   // $はObservableが入っている変数という慣習の命名
   // <User>はinterfaces/userからインポートする
+  uid: string;
   user$: Observable<User> = this.afAuth.authState.pipe(
     switchMap((afUser) => {
       if (afUser) {
+        this.uid = afUser && afUser.uid;
         return this.db.doc<User>(`users/${afUser.uid}`).valueChanges();
       } else {
         return of(null);
