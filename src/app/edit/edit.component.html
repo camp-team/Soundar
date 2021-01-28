@@ -22,10 +22,8 @@
 
     <!-- メモコンテンツの入力エディター -->
     <div class="editor">
-      <quill-editor
-        [styles]="{ height: '500px' }"
-        formControlName="text"
-      ></quill-editor>
+      <quill-editor [styles]="{ height: '500px' }" formControlName="text">
+      </quill-editor>
       <mat-error *ngIf="textControl.hasError('required')"
         >必須項目です</mat-error
       >

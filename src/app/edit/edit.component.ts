@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Memo } from '../interfaces/memo';
 import { User } from '../interfaces/user';
@@ -40,7 +42,9 @@ export class EditComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private memoService: MemoService
+    private memoService: MemoService,
+    private router: Router,
+    private snackBer: MatSnackBar
   ) {}
 
   ngOnInit(): void {}
@@ -58,5 +62,12 @@ export class EditComponent implements OnInit {
       isPublic: formData.isPublic,
     };
     this.memoService.createMemo(sendData);
+    const msg = formData.isPublic
+      ? '記事を投稿しました！おめでとうございます。'
+      : '下書きを保存しました！おつかれさまです。';
+    this.snackBer.open('投稿しました', null, {
+      duration: 3000
+    });
+    this.router.navigateByUrl('/');
   }
 }
