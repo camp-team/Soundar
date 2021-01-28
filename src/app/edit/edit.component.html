@@ -34,13 +34,21 @@
           <input formControlName="isPublic" type="checkbox" id="" />
           <label for=""></label>
         </div>
-        <button
-          class="button button--text"
+        <button class="button button--invalid"
+          *ngIf="form.invalid; else valid"
           [disabled]="form.invalid || form.pristine"
-          (click)="submit()"
         >
           {{ isPublicControl.value ? '記事を公開' : '下書き保存' }}
         </button>
+        <ng-template #valid
+          ><button
+            class="button button--text"
+            [disabled]="form.invalid || form.pristine"
+            (click)="submit()"
+          >
+            {{ isPublicControl.value ? '記事を公開' : '下書き保存' }}
+          </button></ng-template
+        >
       </div>
     </div>
   </form>
