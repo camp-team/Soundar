@@ -24,9 +24,9 @@
     <div class="editor">
       <quill-editor
         [styles]="{ height: '500px' }"
-        formControlName="content"
+        formControlName="text"
       ></quill-editor>
-      <mat-error *ngIf="contentControl.hasError('required')"
+      <mat-error *ngIf="textControl.hasError('required')"
         >必須項目です</mat-error
       >
 
@@ -43,7 +43,6 @@
         >
           {{ isPublicControl.value ? '記事を公開' : '下書き保存' }}
         </button>
-        <!-- <button (click)="alert()"></button> -->
       </div>
     </div>
   </form>

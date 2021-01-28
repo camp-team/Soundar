@@ -14,7 +14,7 @@ import { MemoService } from '../services/memo.service';
 export class EditComponent implements OnInit {
   form = this.fb.group({
     title: ['', [Validators.required, Validators.maxLength(50)]],
-    content: ['', [Validators.required]],
+    text: ['', [Validators.required]],
     isPublic: [false],
   });
 
@@ -29,8 +29,8 @@ export class EditComponent implements OnInit {
     return this.form.get('title') as FormControl;
   }
 
-  get contentControl(): FormControl {
-    return this.form.get('content') as FormControl;
+  get textControl(): FormControl {
+    return this.form.get('text') as FormControl;
   }
 
   get isPublicControl(): FormControl {
@@ -45,22 +45,18 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  submit(uid): void {
-    // console.log('alert');
+  submit(): void {
     const formData = this.form.value;
     const sendData: Omit<
       Memo,
       'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'tags'
     > = {
-      uid,
+      uid: this.authService.uid,
       thumbnailUrl: null,
       title: formData.title,
-      text: formData.editorContent,
+      text: formData.text,
       isPublic: formData.isPublic,
     };
     this.memoService.createMemo(sendData);
   }
-  // alert(): void {
-  //   console.log(this.isPublicControl);
-  // }
 }
