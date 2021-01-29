@@ -22,9 +22,13 @@
 
     <!-- メモコンテンツの入力エディター -->
     <div class="editor">
-      <quill-editor [styles]="{ height: '500px' }" formControlName="text">
+      <quill-editor
+        [required]="true"
+        [styles]="{ height: '500px' }"
+        formControlName="text"
+      >
       </quill-editor>
-      <mat-error *ngIf="textControl.hasError('required')"
+      <mat-error *ngIf="textControl.hasError('required') && form.touched"
         >必須項目です</mat-error
       >
 
@@ -34,21 +38,12 @@
           <input formControlName="isPublic" type="checkbox" id="" />
           <label for=""></label>
         </div>
-        <button class="button button--invalid"
-          *ngIf="form.invalid; else valid"
+        <button
+          class="button button--{{form.invalid ? 'invalid' : 'text'}}"
           [disabled]="form.invalid || form.pristine"
         >
           {{ isPublicControl.value ? '記事を公開' : '下書き保存' }}
-        </button>
-        <ng-template #valid
-          ><button
-            class="button button--text"
-            [disabled]="form.invalid || form.pristine"
-            (click)="submit()"
-          >
-            {{ isPublicControl.value ? '記事を公開' : '下書き保存' }}
-          </button></ng-template
-        >
+      </button>
       </div>
     </div>
   </form>

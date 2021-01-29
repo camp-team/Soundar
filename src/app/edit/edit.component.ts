@@ -23,6 +23,7 @@ export class EditComponent implements OnInit {
   // userのIDをとる
   private user: Observable<User>;
   uid = this.authService.uid;
+  msg: string;
 
   inProgress: boolean;
   titleMaxLength = 50;
@@ -63,10 +64,10 @@ export class EditComponent implements OnInit {
     };
     this.memoService.createMemo(sendData);
     const msg = formData.isPublic
-      ? '記事を投稿しました！おめでとうございます。'
-      : '下書きを保存しました！おつかれさまです。';
-    this.snackBer.open('投稿しました', null, {
-      duration: 3000
+      ? '記事を投稿しました！'
+      : '下書きを保存しました！';
+    this.snackBer.open(msg, null, {
+      duration: 3000,
     });
     this.router.navigateByUrl('/');
   }
