@@ -5,12 +5,29 @@ import { UserShellComponent } from './user-shell/user-shell.component';
 const routes: Routes = [
   {
     path: '',
-    component: UserShellComponent
-  }
+    component: UserShellComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../top/top.module').then((m) => m.TopModule),
+      },
+      {
+        path: 'edit',
+        loadChildren: () =>
+          import('../edit/edit.module').then((m) => m.EditModule),
+      },
+      {
+        path: 'enter',
+        loadChildren: () =>
+          import('../enter/enter.module').then((m) => m.EnterModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UserShellRoutingModule { }
+export class UserShellRoutingModule {}
