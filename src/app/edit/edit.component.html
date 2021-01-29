@@ -12,7 +12,7 @@
         placeholder="メモタイトル"
       />
       <mat-error *ngIf="titleControl.hasError('required')"
-        >必須項目です</mat-error
+        >タイトルは必須項目です</mat-error
       >
       <mat-error *ngIf="titleControl.hasError('maxlength')"
         >タイトルは{{ titleMaxLength }}文字以内です</mat-error
@@ -28,9 +28,9 @@
         formControlName="text"
       >
       </quill-editor>
-      <mat-error *ngIf="textControl.hasError('required') && form.touched"
-        >必須項目です</mat-error
-      >
+      <p class="error" *ngIf="textControl.hasError('required') && form.touched">
+        本文は必須項目です
+      </p>
 
       <!-- ここからトグル  -->
       <div class="flexbox">
@@ -39,11 +39,11 @@
           <label for=""></label>
         </div>
         <button
-          class="button button--{{form.invalid ? 'invalid' : 'text'}}"
+          class="button button--{{ form.invalid ? 'invalid' : 'text' }}"
           [disabled]="form.invalid || form.pristine"
         >
           {{ isPublicControl.value ? '記事を公開' : '下書き保存' }}
-      </button>
+        </button>
       </div>
     </div>
   </form>
