@@ -17,11 +17,6 @@ const routes: Routes = [
         loadChildren: () =>
           import('../edit/edit.module').then((m) => m.EditModule),
       },
-      {
-        path: 'enter',
-        loadChildren: () =>
-          import('../enter/enter.module').then((m) => m.EnterModule),
-      },
     ],
   },
 ];
