@@ -296,6 +296,17 @@ h4 {
   color: #31344b;
   margin-bottom: 20px;
 }
+.ql-snow .ql-stroke {
+  stroke: #31344b;
+}
+.ql-snow .ql-fill,
+.ql-snow .ql-stroke.ql-fill {
+  fill: #31344b;
+}
+
+.ql-container.ql-snow {
+  border: 0px;
+}
 
 .ql-editor {
   border-radius: 8px;
@@ -307,7 +318,7 @@ h4 {
 }
 
 .ql-toolbar .ql-picker {
-  color: red;
+  color: #31344b;
 }
 
 // angular materialに関するスタイル
