@@ -1,8 +1,12 @@
+@import 'mixins';
+
 // headerに関するスタイル
 
 header {
   width: 100%;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  @include sm {
+  }
 }
 .header__account {
   border-radius: 50%;
@@ -23,12 +27,27 @@ header {
   width: 62%;
   padding: 25px 0;
   margin: 0 auto;
+  @include sm {
+    width: 100%;
+    font-size: 12px;
+    padding: 20px 0;
+    margin: 0 8px;
+  }
+}
+.sign-in {
+  @include sm {
+    margin-right: 16px;
+  }
 }
 
 // footerに関するスタイル
 
 footer {
   width: 100%;
+  @include sm {
+    width: 272px;
+    padding: 0 24px;
+  }
 }
 .footer-container {
   width: 62%;
@@ -36,6 +55,14 @@ footer {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-column-gap: 24px;
+  @include sm {
+    width: 100%;
+    display: block;
+    font-size: 12px;
+    h4 {
+      font-size: 14px;
+    }
+  }
 }
 
 .logo-column {

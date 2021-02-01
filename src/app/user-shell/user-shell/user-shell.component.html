@@ -2,15 +2,14 @@
   <div class="header-navigation">
     <p>SoundarLogo</p>
     <div>
-    <ng-container *ngIf="authService.user$ | async as user; else notLogin">
-      <img
-        [matMenuTriggerFor]="menuRef"
-        class="header__account"
-        [src]="user.avatarURL"
-        alt=""
-      />
-    </ng-container>
-
+      <ng-container *ngIf="authService.user$ | async as user; else notLogin">
+        <img
+          [matMenuTriggerFor]="menuRef"
+          class="header__account"
+          [src]="user.avatarURL"
+          alt=""
+        />
+      </ng-container>
 
       <mat-menu #menuRef="matMenu">
         <button mat-menu-item routerLink="/settings/profile">
@@ -24,9 +23,11 @@
         </button>
       </mat-menu>
       <ng-template #notLogin>
-        <a href="#" class="button button--small" routerLink="/enter">Sign In</a>
+        <div class="sign-in">
+          <a href="#" class="button button--small">Sign In</a>
+        </div>
       </ng-template>
-      </div>
+    </div>
   </div>
 </header>
 <router-outlet></router-outlet>
