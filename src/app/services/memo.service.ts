@@ -28,7 +28,6 @@ export class MemoService {
       createdAt: firestore.Timestamp.now(),
       updatedAt: firestore.Timestamp.now(),
     };
-    console.log(resultMemo);
     return this.db.doc(`memos/${id}`).set(resultMemo);
   }
 }
