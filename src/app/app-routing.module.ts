@@ -8,8 +8,8 @@ const routes: Routes = [
       import('./about/about.module').then((m) => m.AboutModule),
   },
   {
-    path: 'edit',
-    loadChildren: () => import('./edit/edit.module').then((m) => m.EditModule),
+    path: '',
+    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'enter',
@@ -63,7 +63,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: () => import('./top/top.module').then((m) => m.TopModule),
+    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'transaction-law',
