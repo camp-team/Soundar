@@ -15,37 +15,44 @@ import { CropperOptions } from '@deer-inc/ngx-croppie';
   styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {
-  form = this.fb.group({
-    title: ['', [Validators.required, Validators.maxLength(50)]],
-    category: [''],
-    text: ['', [Validators.required]],
-    isPublic: [false],
+  form = this.fb.group({ // formというform groupの中に
+    title: ['', [Validators.required, Validators.maxLength(50)]], // titleというcontrolを定義
+    category: [''], // categoryというcontrolを定義
+    text: ['', [Validators.required]], // textというcontrolを定義
+    isPublic: [false], // isPublicというcontrolを定義
   });
 
   // userのIDをとる
-  private user: Observable<User>;
-  uid = this.authService.uid;
-  msg: string;
+  private user: Observable<User>; // userはObservableのUserの型
+  uid = this.authService.uid; // uidはauthServiceのuid
+  msg: string; // msgの型の定義
 
   inProgress: boolean;
   titleMaxLength = 50;
 
+
+  // titleControlに、titleのformControlNameを返す
   get titleControl(): FormControl {
     return this.form.get('title') as FormControl;
   }
 
+  // textControlに、textのformControlNameを返す
   get textControl(): FormControl {
     return this.form.get('text') as FormControl;
   }
 
+  // categoryControlに、categoryのformControlNameを返す
   get categoryControl(): FormControl {
     return this.form.get('category') as FormControl;
   }
 
+  // isPublicControlに、isPublicのformControlNameを返す
   get isPublicControl(): FormControl {
     return this.form.get('isPublic') as FormControl;
   }
 
+
+  // croppieのoption
   options: CropperOptions = {
     aspectRatio: 4 / 3, // width / height
     oldImageUrl: 'http://fakeimg.pl/400x400?font=lobster',
@@ -56,6 +63,7 @@ export class EditComponent implements OnInit {
     // image
   }
 
+  // constructorの引数で、使いたい機能を定義
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -66,9 +74,9 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  submit(): void {
-    const formData = this.form.value;
-    const sendData: Omit<
+  submit(): void { // submitの関数には引数（input）がない
+    const formData = this.form.value; // formDataを、formの中身と定義
+    const sendData: Omit< // sendDataを、uid,thumbnailUrl,title,text,isPublicと定義
       Memo,
       'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'categories'
     > = {
@@ -78,13 +86,13 @@ export class EditComponent implements OnInit {
       text: formData.text,
       isPublic: formData.isPublic,
     };
-    this.memoService.createMemo(sendData);
-    const msg = formData.isPublic
-      ? '記事を投稿しました！'
-      : '下書きを保存しました！';
-    this.snackBer.open(msg, null, {
+    this.memoService.createMemo(sendData); // memoServiceのcreateMemoの引数にsendDataが入る
+    const msg = formData.isPublic // msgにformDataのisPublicの値を入れ、
+      ? '記事を投稿しました！' // trueなら、記事を投稿しました
+      : '下書きを保存しました！'; // falseなら下書きを保存しました
+    this.snackBer.open(msg, null, { // snackBerでmsgを表示
       duration: 3000,
     });
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
   }
 }

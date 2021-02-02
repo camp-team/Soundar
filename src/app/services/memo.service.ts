@@ -14,20 +14,20 @@ export class MemoService {
 
   constructor(private db: AngularFirestore, private authService: AuthService) {}
 
-  createMemo(
+  createMemo( // createMemoの自販機のinputには、memoが入る（omitの中身は除外する）
     memo: Omit<
       Memo,
       'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'categories'
     >
   ): Promise<void> {
-    const id = this.db.createId();
-    const resultMemo = {
+    const id = this.db.createId(); // idにFirestoreのdbのcreateIdを入れる
+    const resultMemo = { // resultMemoのオブジェクトを定義
       memoId: id,
       ...memo,
       likeCount: 0,
       createdAt: firestore.Timestamp.now(),
       updatedAt: firestore.Timestamp.now(),
     };
-    return this.db.doc(`memos/${id}`).set(resultMemo);
+    return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdに、resultMemoの中身を入れる
   }
 }
