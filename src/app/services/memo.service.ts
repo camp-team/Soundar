@@ -17,7 +17,7 @@ export class MemoService {
   createMemo(
     memo: Omit<
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'tags'
+      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'categories'
     >
   ): Promise<void> {
     const id = this.db.createId();
