@@ -32,10 +32,13 @@
   align-items: center;
   width: 160px;
   height: 120px;
-  box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   border: 1px solid #d1d9e6;
   border-radius: 8px;
   overflow: hidden;
+  &:hover {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  }
   &__icon {
     width: 32px;
     height: 32px;
