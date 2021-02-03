@@ -48,8 +48,8 @@
 
       <div class="thumbnail" (click)="crop.input.nativeElement.click()">
         <img
-          class="{{imageFile ? 'thumbnail__image' : 'thumbnail__icon' }}"
-          [src]="imageFile ? imageFile: thumbnailIcon"
+          class="{{ imageFile ? 'thumbnail__image' : 'thumbnail__icon' }}"
+          [src]="imageFile ? imageFile : thumbnailIcon"
           alt=""
         />
         <deer-crop-trigger
@@ -58,8 +58,6 @@
           [options]="options"
           (image)="onCroppedImage($event)"
         ></deer-crop-trigger>
-        <!-- 追加したサムネイルを表示 -->
-        <!-- 追加したサムネイルのurl -->
       </div>
       <!-- ここからトグル  -->
       <div class="flexbox">
