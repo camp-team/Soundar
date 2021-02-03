@@ -27,7 +27,7 @@
         matInput
         formControlName="category"
         autocomplete="off"
-        placeholder="複数カテゴリーを追加するには、「, 」（カンマ半角スペース）でカテゴリーを記入してください。"
+        placeholder="複数カテゴリーを追加するには、「,」（カンマ）区切りでカテゴリーを記入してください。"
       />
     </mat-form-field>
     <!-- カテゴリーの入力フォームここまで -->
@@ -43,20 +43,31 @@
       <p class="error" *ngIf="textControl.hasError('required') && form.touched">
         本文は必須項目です
       </p>
+      <!-- サムネイル追加 -->
+      <p class="thumbnail__text">サムネイル追加</p>
 
+      <div class="thumbnail" (click)="crop.input.nativeElement.click()">
+        <img
+          class="{{imageFile ? 'thumbnail__image' : 'thumbnail__icon' }}"
+          [src]="imageFile ? imageFile: thumbnailIcon"
+          alt=""
+        />
+        <deer-crop-trigger
+          class="croppie"
+          #crop
+          [options]="options"
+          (image)="onCroppedImage($event)"
+        ></deer-crop-trigger>
+        <!-- 追加したサムネイルを表示 -->
+        <!-- 追加したサムネイルのurl -->
+      </div>
       <!-- ここからトグル  -->
       <div class="flexbox">
         <div class="switcher">
           <input formControlName="isPublic" type="checkbox" id="" />
           <label for=""></label>
         </div>
-        <!-- サムネイル追加 -->
-        <div class="thumbnail">
-          <deer-crop-trigger
-            [options]="options"
-            (image)="onCroppedImage($event)"
-          ></deer-crop-trigger>
-        </div>
+
         <button
           class="button button--{{ form.invalid ? 'invalid' : 'text' }}"
           [disabled]="form.invalid || form.pristine"

@@ -15,7 +15,8 @@ import { CropperOptions } from '@deer-inc/ngx-croppie';
   styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {
-  form = this.fb.group({ // formというform groupの中に
+  form = this.fb.group({
+    // formというform groupの中に
     title: ['', [Validators.required, Validators.maxLength(50)]], // titleというcontrolを定義
     category: [''], // categoryというcontrolを定義
     text: ['', [Validators.required]], // textというcontrolを定義
@@ -26,10 +27,11 @@ export class EditComponent implements OnInit {
   private user: Observable<User>; // userはObservableのUserの型
   uid = this.authService.uid; // uidはauthServiceのuid
   msg: string; // msgの型の定義
+  imageFile: string;
 
+  thumbnailIcon = 'assets/images/icons/add-thumbnail.svg';
   inProgress: boolean;
   titleMaxLength = 50;
-
 
   // titleControlに、titleのformControlNameを返す
   get titleControl(): FormControl {
@@ -51,16 +53,14 @@ export class EditComponent implements OnInit {
     return this.form.get('isPublic') as FormControl;
   }
 
-
   // croppieのoption
   options: CropperOptions = {
     aspectRatio: 4 / 3, // width / height
-    oldImageUrl: 'http://fakeimg.pl/400x400?font=lobster',
     width: 420,
     resultType: 'base64', // base64 | blob
   };
   onCroppedImage(image: string): void {
-    // image
+    this.imageFile = image; // image
   }
 
   // constructorの引数で、使いたい機能を定義
@@ -74,23 +74,27 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  submit(): void { // submitの関数には引数（input）がない
+  submit(): void {
+    // submitの関数には引数（input）がない
     const formData = this.form.value; // formDataを、formの中身と定義
-    const sendData: Omit< // sendDataを、uid,thumbnailUrl,title,text,isPublicと定義
+    const sendData: Omit<
+      // sendDataを、uid,thumbnailUrl,title,text,isPublicと定義
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'categories'
+      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount'
     > = {
       uid: this.authService.uid,
-      thumbnailUrl: null,
+      thumbnailUrl: this.imageFile,
       title: formData.title,
       text: formData.text,
       isPublic: formData.isPublic,
+      categories: formData.category.split(','),
     };
     this.memoService.createMemo(sendData); // memoServiceのcreateMemoの引数にsendDataが入る
     const msg = formData.isPublic // msgにformDataのisPublicの値を入れ、
       ? '記事を投稿しました！' // trueなら、記事を投稿しました
       : '下書きを保存しました！'; // falseなら下書きを保存しました
-    this.snackBer.open(msg, null, { // snackBerでmsgを表示
+    this.snackBer.open(msg, null, {
+      // snackBerでmsgを表示
       duration: 3000,
     });
     this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
