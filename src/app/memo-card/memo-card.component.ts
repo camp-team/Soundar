@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Memo } from '../interfaces/memo';
 
 @Component({
   selector: 'app-memo-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./memo-card.component.scss'],
 })
 export class MemoCardComponent implements OnInit {
+  @Input() memo: Memo; // htmlは親からデータを受け取って見た目を作るため、componentで親からデータを受け取るために@Inputで指定する
+
   constructor() {}
 
   ngOnInit(): void {}
