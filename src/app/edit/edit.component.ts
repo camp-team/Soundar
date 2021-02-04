@@ -99,4 +99,11 @@ export class EditComponent implements OnInit {
     });
     this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
   }
+  getThumbnailUrl(): Promise<void> {
+    return this.memoService.getThumbnailUrl(this.authService.uid, this.imageFile);
+  }
+
+  test(): void {
+    console.log(this.getThumbnailUrl);
+  }
 }
