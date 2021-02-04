@@ -37,14 +37,19 @@ export class MemoService {
     };
     return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdに、resultMemoの中身を入れる
   }
-// サムネイル画像をstorageに保存し、そのURLを取得する
-async getThumbnailUrl(uid: string, url: string): Promise<void> { // uidとurlの２つの値を受け取る
-  const result = await this.storage
-    .ref(`users/${uid}`) // usersのディレクトリの、第１引数で受け渡したuidのディレクトリに、第２引数で受け取ったurlを、resultという変数に代入
-    .put(url);
-  const photoUrl = await result.ref.getDownloadURL(); // resultの変数の中には、URLを取得するための関数getDownloadURL()が含まれている。awaitで待って、その後photoURLに代入する
-  return this.db.doc(`users/${uid}`).update({ // usersのuidディレクトリのavatarUrkをupdate(更新)
-    photoUrl,
-  });
-}
+  // サムネイル画像をstorageに保存し、そのURLを取得する
+  async getThumbnailUrl(uid: string, base64Image: string): Promise<void> {
+    // uidとurlの２つの値を受け取る
+    console.log(uid);
+    const result = await this.storage
+      .ref(`users/${uid}`) // usersのディレクトリの、第１引数で受け渡したuidのディレクトリに、第２引数で受け取ったurlを、resultという変数に代入
+      .putString(base64Image, 'data_url', {
+        contentType: 'image/png',
+      });
+    const photoUrl = await result.ref.getDownloadURL(); // resultの変数の中には、URLを取得するための関数getDownloadURL()が含まれている。awaitで待って、その後photoURLに代入する
+    return this.db.doc(`users/${uid}`).update({
+      // usersのuidディレクトリのavatarUrkをupdate(更新)
+      photoUrl,
+    });
+  }
 }

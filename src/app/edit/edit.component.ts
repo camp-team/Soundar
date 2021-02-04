@@ -24,7 +24,7 @@ export class EditComponent implements OnInit {
   });
 
   // userのIDをとる
-  private user: Observable<User>; // userはObservableのUserの型
+  user$: Observable<User> = this.authService.user$; // userはObservableのUserの型
   uid = this.authService.uid; // uidはauthServiceのuid
   msg: string; // msgの型の定義
   imageFile: string;
@@ -72,7 +72,9 @@ export class EditComponent implements OnInit {
     private snackBer: MatSnackBar
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.authService.uid);
+  }
 
   submit(): void {
     // submitの関数には引数（input）がない
@@ -99,11 +101,11 @@ export class EditComponent implements OnInit {
     });
     this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
   }
-  getThumbnailUrl(): Promise<void> {
-    return this.memoService.getThumbnailUrl(this.authService.uid, this.imageFile);
+  getThumbnailUrl(uid: string): void {
+    this.memoService.getThumbnailUrl(uid, this.imageFile);
   }
 
-  test(): void {
-    console.log(this.getThumbnailUrl);
-  }
+  // test(): void {
+  //   console.log(this.getThumbnailUrl);
+  // }
 }

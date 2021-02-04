@@ -44,25 +44,24 @@
         本文は必須項目です
       </p>
       <!-- サムネイル追加 -->
-      <p class="thumbnail__text">サムネイル追加</p>
-
-      <div class="thumbnail" (click)="crop.input.nativeElement.click()">
-        <img
-          class="{{ imageFile ? 'thumbnail__image' : 'thumbnail__icon' }}"
-          [src]="imageFile ? imageFile : thumbnailIcon"
-          alt=""
-        />
-        <deer-crop-trigger
-          class="croppie"
-          #crop
-          [options]="options"
-          (image)="onCroppedImage($event)"
-        ></deer-crop-trigger>
+      <div class="thumbnail__text" *ngIf="user$ | async as user">
+        <div class="thumbnail" (click)="crop.input.nativeElement.click()">
+          <img
+            class="{{ imageFile ? 'thumbnail__image' : 'thumbnail__icon' }}"
+            [src]="imageFile ? imageFile : thumbnailIcon"
+            alt=""
+          />
+          <deer-crop-trigger
+            class="croppie"
+            #crop
+            [options]="options"
+            (image)="onCroppedImage($event)"
+          ></deer-crop-trigger>
+        </div>
+        <button type="button" class="test" (click)="getThumbnailUrl(user.uid)">
+          テスト
+        </button>
       </div>
-      <button class="test" (click)="test()">
-        テスト
-      </button>
-
       <!-- ここからトグル  -->
       <div class="flexbox">
         <div class="switcher">
