@@ -8,6 +8,7 @@ import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
 import { MemoService } from '../services/memo.service';
 import { CropperOptions } from '@deer-inc/ngx-croppie';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-edit',
@@ -92,6 +93,7 @@ export class EditComponent implements OnInit {
       categories: formData.category.split(','),
     };
     this.memoService.createMemo(sendData); // memoServiceのcreateMemoの引数にsendDataが入る
+    this.memoService.getThumbnailUrl(this.authService.uid, this.imageFile);
     const msg = formData.isPublic // msgにformDataのisPublicの値を入れ、
       ? '記事を投稿しました！' // trueなら、記事を投稿しました
       : '下書きを保存しました！'; // falseなら下書きを保存しました
@@ -101,9 +103,9 @@ export class EditComponent implements OnInit {
     });
     this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
   }
-  getThumbnailUrl(uid: string): void {
-    this.memoService.getThumbnailUrl(uid, this.imageFile);
-  }
+  // getThumbnailUrl(uid: string): void {
+  //   this.memoService.getThumbnailUrl(uid, this.imageFile);
+  // }
 
   // test(): void {
   //   console.log(this.getThumbnailUrl);
