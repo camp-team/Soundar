@@ -82,17 +82,16 @@ export class EditComponent implements OnInit {
     const sendData: Omit<
       // sendDataを、uid,thumbnailUrl,title,text,isPublicと定義
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount'
+      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl'
     > = {
       uid: this.authService.uid,
-      thumbnailUrl: this.imageFile,
       title: formData.title,
       text: formData.text,
       isPublic: formData.isPublic,
       categories: formData.category.split(','),
     };
-    this.memoService.createMemo(sendData); // memoServiceのcreateMemoの引数にsendDataが入る
-    this.memoService.getThumbnailUrl(this.authService.uid, this.imageFile);
+    this.memoService.createMemo(sendData, this.imageFile); // memoServiceのcreateMemoの引数にsendDataが入る
+    // this.memoService.getThumbnailUrl(this.authService.uid, this.imageFile);
     const msg = formData.isPublic // msgにformDataのisPublicの値を入れ、
       ? '記事を投稿しました！' // trueなら、記事を投稿しました
       : '下書きを保存しました！'; // falseなら下書きを保存しました
