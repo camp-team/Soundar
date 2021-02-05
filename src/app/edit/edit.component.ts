@@ -8,7 +8,6 @@ import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
 import { MemoService } from '../services/memo.service';
 import { CropperOptions } from '@deer-inc/ngx-croppie';
-import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-edit',
@@ -103,11 +102,5 @@ export class EditComponent implements OnInit {
     });
     this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
   }
-  // getThumbnailUrl(uid: string): void {
-  //   this.memoService.getThumbnailUrl(uid, this.imageFile);
-  // }
 
-  // test(): void {
-  //   console.log(this.getThumbnailUrl);
-  // }
 }
