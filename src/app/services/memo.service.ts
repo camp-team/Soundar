@@ -38,8 +38,7 @@ export class MemoService {
     return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdに、resultMemoの中身を入れる
   }
   // サムネイル画像をstorageに保存し、そのURLを取得する
-  async getThumbnailUrl(memoId: string, base64Image: string): Promise<void> {
-    // uidとurlの２つの値を受け取る
+  async getThumbnailUrl(memoId: string, base64Image: string): Promise<void> { // memoIdとbase64Imageの２つの値を受け取る
     const result = await this.storage
       .ref(`memos/${memoId}`) // usersのディレクトリの、第１引数で受け渡したuidのディレクトリに、第２引数で受け取ったurlを、resultという変数に代入
       .putString(base64Image, 'data_url', {
