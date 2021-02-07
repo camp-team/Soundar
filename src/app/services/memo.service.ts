@@ -23,7 +23,7 @@ export class MemoService {
     // createMemoの自販機のinputには、memoが入る（omitの中身は除外する）
     memo: Omit<
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'categories' | 'thumbnailUrl'
+      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl'
     >,
     dataUrl: string
   ): Promise<void> {
@@ -37,7 +37,6 @@ export class MemoService {
       likeCount: 0,
       createdAt: firestore.Timestamp.now(),
       updatedAt: firestore.Timestamp.now(),
-      categories: null,
     };
     return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdに、resultMemoの中身を入れる
   }

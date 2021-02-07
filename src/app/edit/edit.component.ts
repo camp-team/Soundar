@@ -72,9 +72,7 @@ export class EditComponent implements OnInit {
     private snackBer: MatSnackBar
   ) {}
 
-  ngOnInit(): void {
-    console.log(this.authService.uid);
-  }
+  ngOnInit(): void {}
 
   submit(): void {
     // submitの関数には引数（input）がない
@@ -91,7 +89,6 @@ export class EditComponent implements OnInit {
       categories: formData.category.split(','),
     };
     this.memoService.createMemo(sendData, this.imageFile); // memoServiceのcreateMemoの引数にsendDataが入る
-    // this.memoService.getThumbnailUrl(this.authService.uid, this.imageFile);
     const msg = formData.isPublic // msgにformDataのisPublicの値を入れ、
       ? '記事を投稿しました！' // trueなら、記事を投稿しました
       : '下書きを保存しました！'; // falseなら下書きを保存しました
