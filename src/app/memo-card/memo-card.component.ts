@@ -12,4 +12,8 @@ export class MemoCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  like(): void {
+    alert('like!');
+  }
 }

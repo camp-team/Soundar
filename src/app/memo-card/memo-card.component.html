@@ -41,8 +41,8 @@
 
     <!-- メモカード下部ボタンのボックス     -->
     <div class="button-row">
-      <a routerLink="/memo" class="recent-posted-card__card-button">もっとみる</a>
-      <div class="recent-posted-card__card-button">
+      <a [routerLink]="['/memo', memo.memoId]" class="recent-posted-card__card-button">もっとみる</a>
+      <div class="recent-posted-card__card-button" (click)="like()">
         <img src="assets/images/favorite.svg" alt="" />
         <p>{{memo.likeCount}}</p>
       </div>
