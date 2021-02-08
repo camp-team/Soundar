@@ -4,7 +4,7 @@ import { MemoComponent } from './memo.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: MemoComponent,
   }
 ];

@@ -1,3 +1,6 @@
+import * as firebase from 'firebase/app';
+
+
 export interface Memo {
   memoId: string;
   thumbnailUrl: string;

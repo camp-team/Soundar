@@ -3,9 +3,8 @@
     <h2>Recent Memos</h2>
   </div>
   <div class="recent-card-list">
-    <app-memo-card></app-memo-card>
-    <app-memo-card></app-memo-card>
-    <app-memo-card></app-memo-card>
+    <!-- ngForでrecentMemoを回す。さらに[memo]にインプットでrecentMemoを渡す。 -->
+    <app-memo-card [memo]="recentMemo "*ngFor="let recentMemo of recentMemos"></app-memo-card>
   </div>
   <div class="button button--general">
     <p>メモの一覧へ</p>
