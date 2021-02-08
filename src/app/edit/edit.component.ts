@@ -76,9 +76,9 @@ export class EditComponent implements OnInit {
 
   submit(): void {
     // submitの関数には引数（input）がない
-    const formData = this.form.value; // formDataを、formの中身と定義
+    const formData = this.form.value; // formDataを、formの中身の値と定義
     const sendData: Omit<
-      // sendDataを、uid,thumbnailUrl,title,text,isPublicと定義
+      // sendDataを、uid,title,text,isPublic,categoriesと定義
       Memo,
       'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl'
     > = {
@@ -88,7 +88,8 @@ export class EditComponent implements OnInit {
       isPublic: formData.isPublic,
       categories: formData.category.split(','),
     };
-    this.memoService.createMemo(sendData, this.imageFile); // memoServiceのcreateMemoの引数にsendDataが入る
+    // addThumbnailUrl()走るために、画像データを引数で渡す
+    this.memoService.createMemo(sendData, this.imageFile); // memoServiceのcreateMemoの引数にsendDataと画像データが入る
     const msg = formData.isPublic // msgにformDataのisPublicの値を入れ、
       ? '記事を投稿しました！' // trueなら、記事を投稿しました
       : '下書きを保存しました！'; // falseなら下書きを保存しました

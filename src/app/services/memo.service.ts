@@ -19,7 +19,6 @@ export class MemoService {
     private authService: AuthService
   ) {}
 
-
   // addThumbnailUrl()のメソッドをcreateMemoに混ぜてしまえば良い
   // resultMemoにthumbnailUrlを入れたい→34行目
   // createMemoの引数に画像を設定する（thumbnailをメモに混ぜるため）→32行目
@@ -33,10 +32,9 @@ export class MemoService {
     >,
     dataUrl: string
   ): Promise<void> {
-    const id = this.db.createId(); // idにFirestoreのdbのcreateIdを入れる
+    const id = this.db.createId(); // idをfirestoreのcreateId()で作られるidと定義
     const thumbnailUrl = await this.addThumbnailUrl(id, dataUrl);
-    const resultMemo: Memo = {
-      // resultMemoのオブジェクトを定義
+    const resultMemo: Memo = { // resultMemoのオブジェクトを定義
       memoId: id,
       ...memo,
       thumbnailUrl,
@@ -44,10 +42,10 @@ export class MemoService {
       createdAt: firestore.Timestamp.now(),
       updatedAt: firestore.Timestamp.now(),
     };
-    return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdに、resultMemoの中身を入れる
+    return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdのドキュメントに、resultMemoの中身を入れる(set)
   }
-  // サムネイル画像をstorageに保存し、そのURLを取得する
-  // URLを返すので、型はstring
+  // サムネイル画像をstorageに保存(addThumbnailUrl())
+  // URLを返すので、型はstring(Promise<string>)
   async addThumbnailUrl(memoId: string, base64Image: string): Promise<string> {
     // memoIdとbase64Imageの２つの値を受け取る
     const result = await this.storage
