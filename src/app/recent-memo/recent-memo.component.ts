@@ -3,6 +3,7 @@ import { Memo } from '../interfaces/memo';
 import * as firebase from 'firebase/app';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { MemoService } from '../services/memo.service';
 
 @Component({
   selector: 'app-recent-memo',
@@ -11,11 +12,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class RecentMemoComponent implements OnInit {
   // @Input() memo: Memo;
-  memo: Memo;
+  private memo: Memo;
 
   recentMemos: Memo[] = new Array(3).fill(
     {
-      memoId: this.memo.memoId,
+      memoId: this.memoService.getMemoId(this.memo.memoId),
       thumbnailUrl: 'http://localhost:4200/assets/images/user-icon-example.jpg',
       title: 'xxx',
       categories: 'xxx',
@@ -30,7 +31,8 @@ export class RecentMemoComponent implements OnInit {
 
   constructor(
     private storage: AngularFireStorage,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private memoService: MemoService
   ) {}
 
   ngOnInit(): void {}

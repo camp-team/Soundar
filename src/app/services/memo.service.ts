@@ -30,4 +30,8 @@ export class MemoService {
     };
     return this.db.doc(`memos/${id}`).set(resultMemo);
   }
+
+  getMemoId(memoId: string): Observable<Memo> {
+    return this.db.doc<Memo>(`memos/${memoId}`).valueChanges();
+  }
 }
