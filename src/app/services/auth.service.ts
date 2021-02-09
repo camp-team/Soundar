@@ -26,32 +26,21 @@ export class AuthService {
 
   // constructorの引数で、使いたい機能を定義する
   constructor(
-    // AngularFireAuth（認証機能）を定義
-    public afAuth: AngularFireAuth,
-
-    // AngularFirestoreのデータベースにアクセス
-    private db: AngularFirestore
+    public afAuth: AngularFireAuth, // AngularFireAuth（認証機能）を定義
+    private db: AngularFirestore // AngularFirestoreのデータベースにアクセス
   ) {}
 
   // auth.serviceのメソッド
   loginGoogle(): void {
     const provider = new auth.GoogleAuthProvider();
-
-    // 常にどのアカウントでログインするかを確認する
-    provider.setCustomParameters({ prompt: 'select_account' });
-
-    // どのようにログイン画面を表示するか
-    this.afAuth.signInWithPopup(provider);
+    provider.setCustomParameters({ prompt: 'select_account' }); // 常にどのアカウントでログインするかを確認する
+    this.afAuth.signInWithPopup(provider); // どのようにログイン画面を表示するか
   }
 
   loginTwitter(): void {
     const provider = new auth.TwitterAuthProvider();
-
-    // 常にどのアカウントでログインするかを確認する
-    provider.setCustomParameters({ prompt: 'select_account' });
-
-    // どのようにログイン画面を表示するか
-    this.afAuth.signInWithPopup(provider);
+    provider.setCustomParameters({ prompt: 'select_account' }); // 常にどのアカウントでログインするかを確認する
+    this.afAuth.signInWithPopup(provider); // どのようにログイン画面を表示するか
   }
   logout(): void {
     this.afAuth.signOut();

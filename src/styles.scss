@@ -330,6 +330,24 @@ h4 {
   background-color: #d1d9e6;
 }
 
+// croppieに関するスタイル
+.cr-viewport {
+  box-sizing: border-box;
+}
+
+.image {
+  :before {
+    background: rgba(0, 0, 0, 0.9);
+    bottom: 0;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
 /* PC用のCSSはメディアクエリの外に記述する */
 
 @media screen and (max-width: 959px) {
