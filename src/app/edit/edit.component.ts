@@ -7,6 +7,7 @@ import { Memo } from '../interfaces/memo';
 import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
 import { MemoService } from '../services/memo.service';
+import { CropperOptions } from '@deer-inc/ngx-croppie';
 
 @Component({
   selector: 'app-edit',
@@ -15,31 +16,54 @@ import { MemoService } from '../services/memo.service';
 })
 export class EditComponent implements OnInit {
   form = this.fb.group({
-    title: ['', [Validators.required, Validators.maxLength(50)]],
-    text: ['', [Validators.required]],
-    isPublic: [false],
+    // formというform groupの中に
+    title: ['', [Validators.required, Validators.maxLength(50)]], // titleというcontrolを定義
+    category: [''], // categoryというcontrolを定義
+    text: ['', [Validators.required]], // textというcontrolを定義
+    isPublic: [false], // isPublicというcontrolを定義
   });
 
   // userのIDをとる
-  private user: Observable<User>;
-  uid = this.authService.uid;
-  msg: string;
+  user$: Observable<User> = this.authService.user$; // userはObservableのUserの型
+  uid = this.authService.uid; // uidはauthServiceのuid
+  msg: string; // msgの型の定義
+  imageFile: string;
 
+  thumbnailIcon = 'assets/images/icons/add-thumbnail.svg';
   inProgress: boolean;
   titleMaxLength = 50;
 
+  // titleControlに、titleのformControlNameを返す
   get titleControl(): FormControl {
     return this.form.get('title') as FormControl;
   }
 
+  // textControlに、textのformControlNameを返す
   get textControl(): FormControl {
     return this.form.get('text') as FormControl;
   }
 
+  // categoryControlに、categoryのformControlNameを返す
+  get categoryControl(): FormControl {
+    return this.form.get('category') as FormControl;
+  }
+
+  // isPublicControlに、isPublicのformControlNameを返す
   get isPublicControl(): FormControl {
     return this.form.get('isPublic') as FormControl;
   }
 
+  // croppieのoption
+  options: CropperOptions = {
+    aspectRatio: 4 / 3, // width / height
+    width: 420,
+    resultType: 'base64', // base64 | blob
+  };
+  onCroppedImage(image: string): void {
+    this.imageFile = image; // image
+  }
+
+  // constructorの引数で、使いたい機能を定義
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -51,25 +75,29 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {}
 
   submit(): void {
-    const formData = this.form.value;
+    // submitの関数には引数（input）がない
+    const formData = this.form.value; // formDataを、formの中身の値と定義
     const sendData: Omit<
+      // sendDataを、uid,title,text,isPublic,categoriesと定義
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'tags'
+      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl'
     > = {
       uid: this.authService.uid,
-      thumbnailUrl: null,
       title: formData.title,
       text: formData.text,
       isPublic: formData.isPublic,
-      author: this.authService.name
+      categories: formData.category.split(','),
+      author: this.authService.name,
     };
-    this.memoService.createMemo(sendData);
-    const msg = formData.isPublic
-      ? '記事を投稿しました！'
-      : '下書きを保存しました！';
+    // addThumbnailUrl()走るために、画像データを引数で渡す
+    this.memoService.createMemo(sendData, this.imageFile); // memoServiceのcreateMemoの引数にsendDataと画像データが入る
+    const msg = formData.isPublic // msgにformDataのisPublicの値を入れ、
+      ? '記事を投稿しました！' // trueなら、記事を投稿しました
+      : '下書きを保存しました！'; // falseなら下書きを保存しました
     this.snackBer.open(msg, null, {
+      // snackBerでmsgを表示
       duration: 3000,
     });
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
   }
 }
