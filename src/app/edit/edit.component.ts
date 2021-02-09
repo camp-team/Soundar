@@ -61,6 +61,7 @@ export class EditComponent implements OnInit {
       title: formData.title,
       text: formData.text,
       isPublic: formData.isPublic,
+      author: this.authService.name
     };
     this.memoService.createMemo(sendData);
     const msg = formData.isPublic
