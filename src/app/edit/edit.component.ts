@@ -87,7 +87,7 @@ export class EditComponent implements OnInit {
       text: formData.text,
       isPublic: formData.isPublic,
       categories: formData.category.split(','),
-      // author: this.authService.name,
+      author: this.authService.name,
     };
     // addThumbnailUrl()走るために、画像データを引数で渡す
     this.memoService.createMemo(sendData, this.imageFile); // memoServiceのcreateMemoの引数にsendDataと画像データが入る
