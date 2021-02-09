@@ -1,8 +1,7 @@
-import { query } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { firestore } from 'firebase';
-import { stringify } from 'querystring';
 import { Observable } from 'rxjs';
 import { Memo } from '../interfaces/memo';
 import { User } from '../interfaces/user';
@@ -14,23 +13,47 @@ import { AuthService } from './auth.service';
 export class MemoService {
   private user: Observable<User> = this.authService.user$;
 
-  constructor(private db: AngularFirestore, private authService: AuthService) {}
+  constructor(
+    private storage: AngularFireStorage,
+    private db: AngularFirestore,
+    private authService: AuthService
+  ) {}
 
-  createMemo(
+  // addThumbnailUrl()のメソッドをcreateMemoに混ぜてしまえば良い
+  // resultMemoにthumbnailUrlを入れたい→34行目
+  // createMemoの引数に画像を設定する（thumbnailをメモに混ぜるため）→32行目
+  // URLを取得するためにgetDownloadURL()をreturnで返す→57行目　（57行目に）promiseは勝手に解決されるので、awaitは書かなくていい
+  // promiseの中身の値を受け取るには、awaitが必要（37行目）、さらにawaitつけるためには、親の関数にasyncをつけておく（28行目）
+  async createMemo(
+    // createMemoの自販機のinputには、memo（Memoの型）とdataUrl（サムネイル画像）が入る（omitの中身は除外する）
     memo: Omit<
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'tags'
-    >
+      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl'
+    >,
+    dataUrl: string
   ): Promise<void> {
-    const id = this.db.createId();
-    const resultMemo = {
+    const id = this.db.createId(); // idをfirestoreのcreateId()で作られるidと定義
+    const thumbnailUrl = await this.addThumbnailUrl(id, dataUrl);
+    const resultMemo: Memo = { // resultMemoのオブジェクトを定義
       memoId: id,
       ...memo,
+      thumbnailUrl,
       likeCount: 0,
       createdAt: firestore.Timestamp.now(),
       updatedAt: firestore.Timestamp.now(),
     };
-    return this.db.doc(`memos/${id}`).set(resultMemo);
+    return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdのドキュメントに、resultMemoの中身を入れる(set)
+  }
+  // サムネイル画像をstorageに保存(addThumbnailUrl())
+  // URLを返すので、型はstring(Promise<string>)
+  async addThumbnailUrl(memoId: string, base64Image: string): Promise<string> {
+    // memoIdとbase64Imageの２つの値を受け取る
+    const result = await this.storage
+      .ref(`memos/${memoId}`) // usersのディレクトリの、第１引数で受け渡したuidのディレクトリに、第２引数で受け取ったurlを、resultという変数に代入
+      .putString(base64Image, 'data_url', {
+        contentType: 'image/png',
+      });
+    return result.ref.getDownloadURL(); // resultの変数の中には、URLを取得するための関数getDownloadURL()が含まれている。awaitで待って、その後photoURLに代入する
   }
 
   // FireStoreのmemosコレクションのドキュメントをとってくる（一覧）
