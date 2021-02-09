@@ -1,6 +1,8 @@
+import { query } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { firestore } from 'firebase';
+import { stringify } from 'querystring';
 import { Observable } from 'rxjs';
 import { Memo } from '../interfaces/memo';
 import { User } from '../interfaces/user';
@@ -31,7 +33,40 @@ export class MemoService {
     return this.db.doc(`memos/${id}`).set(resultMemo);
   }
 
-  getMemoId(memoId: string): Observable<Memo> {
-    return this.db.doc<Memo>(`memos/${memoId}`).valueChanges();
+  // FireStoreのmemosコレクションのドキュメントをとってくる（一覧）
+  // observable - データの流れ道
+  getMemos(): Observable<Memo[]> {
+    return this.db.collection<Memo>(`memos`).valueChanges();
   }
+
+  // FireStoreのmemosコレクションのドキュメントを一つ取ってくる（詳細）
+  // getMemo(): Observable<Memo> {
+  //   return this.db.doc<Memo>(`memos/${memoId}`).valueChanges();
+  // }
+
+  // 最新のmemo（recent memo）を3件取ってくる(recent memo)
+  // getRecentMemos(
+  //   uid: string,
+  //   lastNote?: Memo,
+  // ): Observable<{ memos: Memos[]; lastNote: Memo }> {
+  // const memo$ = this.db.collection<Memo>('memos', (ref) => {
+  //   let query = ref
+  //   .where('uid', '==', uid)
+  //   .orderBy('createdAt', 'desc')
+  //   .limit(3);
+  //   if (lastNote) {
+  //     query = query.startAfter(lastNote.createdAt);
+  //   }
+  //   return query;
+  // })
+  // .valueChanges();
+  // retrun memo$.pipe(
+  //   map((memos) => {
+  //     return {
+  //       memos,
+  //       lastNote: memos[memos.length - 1],
+  //     };
+  //   })
+  // );
+  // }
 }
