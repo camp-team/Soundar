@@ -34,7 +34,8 @@ export class MemoService {
   ): Promise<void> {
     const id = this.db.createId(); // idをfirestoreのcreateId()で作られるidと定義
     const thumbnailUrl = await this.addThumbnailUrl(id, dataUrl);
-    const resultMemo: Memo = { // resultMemoのオブジェクトを定義
+    const resultMemo: Memo = {
+      // resultMemoのオブジェクトを定義
       memoId: id,
       ...memo,
       thumbnailUrl,
@@ -54,6 +55,11 @@ export class MemoService {
         contentType: 'image/png',
       });
     return result.ref.getDownloadURL(); // resultの変数の中には、URLを取得するための関数getDownloadURL()が含まれている。awaitで待って、その後photoURLに代入する
+  }
+
+  // メモを書いたユーザーの名前を取得する
+  getAuthor(uid: string): Observable<User> {
+    return this.db.doc<User>(`users/${name}`).valueChanges();
   }
 
   // FireStoreのmemosコレクションのドキュメントをとってくる（一覧）

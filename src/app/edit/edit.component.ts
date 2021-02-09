@@ -8,6 +8,7 @@ import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
 import { MemoService } from '../services/memo.service';
 import { CropperOptions } from '@deer-inc/ngx-croppie';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-edit',
@@ -69,7 +70,8 @@ export class EditComponent implements OnInit {
     private authService: AuthService,
     private memoService: MemoService,
     private router: Router,
-    private snackBer: MatSnackBar
+    private snackBer: MatSnackBar,
+    private db: AngularFirestore
   ) {}
 
   ngOnInit(): void {}
@@ -87,7 +89,7 @@ export class EditComponent implements OnInit {
       text: formData.text,
       isPublic: formData.isPublic,
       categories: formData.category.split(','),
-      author: this.authService.name,
+      // author: this.memoService.getAuthor(this.uid),
     };
     // addThumbnailUrl()走るために、画像データを引数で渡す
     this.memoService.createMemo(sendData, this.imageFile); // memoServiceのcreateMemoの引数にsendDataと画像データが入る

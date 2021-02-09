@@ -13,7 +13,6 @@ import { Observable } from 'rxjs';
 })
 export class RecentMemoComponent implements OnInit {
   memos$: Observable<Memo[]> = this.memoService.getMemos();
-  // recentMemos$: Observable<Memo[]> = this.memoService.getRecentMemos();
 
 
 
