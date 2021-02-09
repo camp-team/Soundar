@@ -12,7 +12,7 @@ export class AuthService {
   // $はObservableが入っている変数という慣習の命名
   // <User>はinterfaces/userからインポートする
   uid: string;
-  name: string;
+  // name: string;
   user$: Observable<User> = this.afAuth.authState.pipe(
     switchMap((afUser) => {
       if (afUser) {
