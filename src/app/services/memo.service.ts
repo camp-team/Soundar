@@ -74,28 +74,14 @@ export class MemoService {
   // }
 
   // 最新のmemo（recent memo）を3件取ってくる(recent memo)
-  // getRecentMemos(
-  //   uid: string,
-  //   lastNote?: Memo,
-  // ): Observable<{ memos: Memos[]; lastNote: Memo }> {
-  // const memo$ = this.db.collection<Memo>('memos', (ref) => {
-  //   let query = ref
-  //   .where('uid', '==', uid)
-  //   .orderBy('createdAt', 'desc')
-  //   .limit(3);
-  //   if (lastNote) {
-  //     query = query.startAfter(lastNote.createdAt);
-  //   }
-  //   return query;
-  // })
-  // .valueChanges();
-  // retrun memo$.pipe(
-  //   map((memos) => {
-  //     return {
-  //       memos,
-  //       lastNote: memos[memos.length - 1],
-  //     };
-  //   })
-  // );
-  // }
+  getRecentMemos(): Observable<Memo[]> {
+    return this.db
+      .collection<Memo>(`memos`, (ref) => {
+        return ref
+          // .where('category', '==', 'it')
+          .orderBy('createdAt', 'desc')
+          .limit(3);
+      })
+      .valueChanges();
+  }
 }

@@ -3,7 +3,7 @@
     <h2>Recent Memos</h2>
   </div>
   <div class="recent-card-list">
-    <!-- ngForでrecentMemoを回す。さらに[memo]にインプットでrecentMemoを渡す。 -->
+    <!-- ngForでmemoを回す。さらにmemoを[memo](memo-card.component.tsでinputした)を代入 -->
     <app-memo-card [memo]="memo "*ngFor="let memo of memos$ | async"></app-memo-card>
   </div>
   <div class="button button--general">
