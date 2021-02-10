@@ -102,4 +102,5 @@ export class EditComponent implements OnInit {
     });
     this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
   }
+
 }

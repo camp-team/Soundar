@@ -69,19 +69,16 @@ export class MemoService {
   }
 
   // FireStoreのmemosコレクションのドキュメントを一つ取ってくる（詳細）
-  // getMemo(): Observable<Memo> {
-  //   return this.db.doc<Memo>(`memos/${memoId}`).valueChanges();
-  // }
 
   // 最新のmemo（recent memo）を3件取ってくる(recent memo)
   getRecentMemos(): Observable<Memo[]> {
     return this.db
       .collection<Memo>(`memos`, (ref) => {
-        return ref
-          // .where('category', '==', 'it')
-          .orderBy('createdAt', 'desc')
-          .limit(3);
+        return ref.orderBy('createdAt', 'desc').limit(3);
       })
       .valueChanges();
   }
+
+  // 投稿に入ってしまう<p>を消去する
+
 }
