@@ -2,7 +2,7 @@ export interface Memo {
   memoId: string;
   thumbnailUrl: string;
   title: string;
-  tags: string[];
+  categories: string[];
   text: string;
   isPublic: boolean;
   likeCount: number;

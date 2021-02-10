@@ -22,6 +22,8 @@
     "@angular/platform-browser": "~10.1.3",
     "@angular/platform-browser-dynamic": "~10.1.3",
     "@angular/router": "~10.1.3",
+    "@deer-inc/ngx-croppie": "0.0.17",
+    "croppie": "^2.6.5",
     "firebase": "^7.13.1",
     "ngx-quill": "^13.0.0",
     "quill": "^1.3.7",

@@ -25,6 +25,37 @@
   margin-bottom: 8px;
 }
 
+.thumbnail {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 120px;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  border: 1px solid #d1d9e6;
+  border-radius: 8px;
+  overflow: hidden;
+  &:hover {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
+  }
+  &__icon {
+    width: 32px;
+    height: 32px;
+  }
+  &__text {
+    color: rgb(59, 59, 59);
+    font-size: 14px;
+  }
+  &__image {
+    width: 100%;
+  }
+}
+
+.croppie {
+  display: none;
+}
+
 // style.scssに移動できる内容
 .button {
   color: #31344b;
