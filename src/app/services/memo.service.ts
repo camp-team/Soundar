@@ -78,7 +78,4 @@ export class MemoService {
       })
       .valueChanges();
   }
-
-  // 投稿に入ってしまう<p>を消去する
-
 }

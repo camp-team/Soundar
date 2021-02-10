@@ -76,6 +76,8 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {}
 
+
+
   submit(): void {
     // submitの関数には引数（input）がない
     const formData = this.form.value; // formDataを、formの中身の値と定義
@@ -86,10 +88,9 @@ export class EditComponent implements OnInit {
     > = {
       uid: this.authService.uid,
       title: formData.title,
-      text: formData.text,
+      text: this.noIncludeHtmlText(),
       isPublic: formData.isPublic,
       categories: formData.category.split(','),
-      // author: this.memoService.getAuthor(this.uid),
     };
     // addThumbnailUrl()走るために、画像データを引数で渡す
     this.memoService.createMemo(sendData, this.imageFile); // memoServiceのcreateMemoの引数にsendDataと画像データが入る
@@ -103,4 +104,33 @@ export class EditComponent implements OnInit {
     this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
   }
 
+  // 投稿に入ってしまう<p>を消去する
+  // Memoのtextから<p>をstriptagを使って消去する
+  noIncludeHtmlText(): string {
+    const striptags = require('striptags'); // striptagsをrequire()によって読み込む
+    const originalText = this.form.value.text;
+
+    return striptags(originalText, null, '\n');
+  }
+
+  // test(): void {
+  //   const striptags = require('striptags'); // striptagsをrequire()によって読み込む
+  //   // memoのtextの内容を取得する
+  //   this.getMemoText();
+  //   html = this.form.value.text,
+
+  //   // const html =
+  //   //   '<a href="https://example.com">' +
+  //   //   'lorem ipsum <strong>dolor</strong> <em>sit</em> amet' +
+  //   //   '</a>';
+
+  //   striptags(html);
+  //   console.log(striptags(html));
+  // }
+
+  // getMemoText() {
+  //   const html = {
+  //     text: this.form.value.text,
+  //   };
+  // }
 }

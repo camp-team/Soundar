@@ -43,6 +43,7 @@
       <p class="error" *ngIf="textControl.hasError('required') && form.touched">
         本文は必須項目です
       </p>
+      <!-- <quill-view-html [content]="this.form.value.content" theme="snow"></quill-view-html> -->
       <!-- サムネイル追加 -->
       <div class="thumbnail__text" *ngIf="user$ | async as user">
         <div class="thumbnail" (click)="crop.input.nativeElement.click()">
@@ -60,8 +61,7 @@
         </div>
       </div>
 
-      <div class="test-button">
-      </div>
+      <div class="test-button"></div>
       <!-- ここからトグル  -->
       <div class="flexbox">
         <div class="switcher">
