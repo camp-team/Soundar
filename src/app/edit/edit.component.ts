@@ -76,8 +76,6 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {}
 
-
-
   submit(): void {
     // submitの関数には引数（input）がない
     const formData = this.form.value; // formDataを、formの中身の値と定義
@@ -109,7 +107,6 @@ export class EditComponent implements OnInit {
   noIncludeHtmlText(): string {
     const striptags = require('striptags'); // striptagsをrequire()によって読み込む
     const originalText = this.form.value.text;
-
     return striptags(originalText, null, '\n');
   }
 
