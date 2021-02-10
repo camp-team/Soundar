@@ -106,8 +106,8 @@ export class EditComponent implements OnInit {
   // Memoのtextから<p>をstriptagを使って消去する
   noIncludeHtmlText(): string {
     const striptags = require('striptags'); // striptagsをrequire()によって読み込む
-    const originalText = this.form.value.text;
-    return striptags(originalText, null, '\n');
+    const originalText = this.form.value.text; // editorの本文をoriginalTextの変数に代入
+    return striptags(originalText, null, '\n'); // originalTextからhtmlのタグを削除、残したいタグはなし、第3引数で改行の設定
   }
 
   // test(): void {
