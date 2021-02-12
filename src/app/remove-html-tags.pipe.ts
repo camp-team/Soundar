@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'removeHtmlTag'
+  name: 'removeHtmlTags'
 })
-export class RemoveHtmlTagPipe implements PipeTransform {
+export class RemoveHtmlTagsPipe implements PipeTransform {
 
   transform(value: unknown, ...args: unknown[]): unknown {
     return null;
