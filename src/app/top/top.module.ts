@@ -15,6 +15,7 @@ import { RecentMovieComponent } from '../recent-movie/recent-movie.component';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { JoinGuideComponent } from '../join-guide/join-guide.component';
 import { SharedModule } from '../shared/shared.module';
+import { RemoveHtmlTagPipe } from '../remove-html-tag.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SharedModule } from '../shared/shared.module';
     RecentMemoComponent,
     RecentMovieComponent,
     RecentMusicComponent,
+    RemoveHtmlTagPipe,
   ],
   imports: [CommonModule, TopRoutingModule, SharedModule],
 })

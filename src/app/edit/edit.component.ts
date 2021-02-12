@@ -86,7 +86,7 @@ export class EditComponent implements OnInit {
     > = {
       uid: this.authService.uid,
       title: formData.title,
-      text: this.noIncludeHtmlText(),
+      text: formData.text,
       isPublic: formData.isPublic,
       categories: formData.category.split(','),
     };
@@ -104,30 +104,9 @@ export class EditComponent implements OnInit {
 
   // 投稿に入ってしまう<p>を消去する
   // Memoのtextから<p>をstriptagを使って消去する
-  noIncludeHtmlText(): string {
+  removeHtmlTags(): string {
     const striptags = require('striptags'); // striptagsをrequire()によって読み込む
     const originalText = this.form.value.text; // editorの本文をoriginalTextの変数に代入
     return striptags(originalText, null, '\n'); // originalTextからhtmlのタグを削除、残したいタグはなし、第3引数で改行の設定
   }
-
-  // test(): void {
-  //   const striptags = require('striptags'); // striptagsをrequire()によって読み込む
-  //   // memoのtextの内容を取得する
-  //   this.getMemoText();
-  //   html = this.form.value.text,
-
-  //   // const html =
-  //   //   '<a href="https://example.com">' +
-  //   //   'lorem ipsum <strong>dolor</strong> <em>sit</em> amet' +
-  //   //   '</a>';
-
-  //   striptags(html);
-  //   console.log(striptags(html));
-  // }
-
-  // getMemoText() {
-  //   const html = {
-  //     text: this.form.value.text,
-  //   };
-  // }
 }
