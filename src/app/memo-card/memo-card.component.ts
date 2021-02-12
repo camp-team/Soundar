@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Memo } from '../interfaces/memo';
 import { AuthService } from '../services/auth.service';
+// import { RemoveHtmlTagsPipe} from '../remove-html-tags.pipe';
 
 @Component({
   selector: 'app-memo-card',
@@ -12,7 +13,7 @@ export class MemoCardComponent implements OnInit {
   user$ = this.authService.user$; // userをauthServiceのuser$と定義
   // 上の2行を、combineLatestで、User and Memoをつくる
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, ) {}
 
   ngOnInit(): void {
   }
