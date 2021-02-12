@@ -14,7 +14,8 @@ export class MemoCardComponent implements OnInit {
 
   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   like(): void {
     alert('like!');
