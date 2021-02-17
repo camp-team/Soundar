@@ -18,6 +18,8 @@ a {
 
 p {
   margin: 0;
+  @include sm {
+  }
 }
 
 // 見出しに関するスタイル
@@ -81,6 +83,12 @@ h4 {
     margin-bottom: 128px;
     padding: 10px;
     text-align: center;
+    p {
+      font-size: 16px;
+      @include sm {
+        font-size: 14px;
+      }
+    }
   }
   &--general-icon {
     display: flex;
@@ -117,7 +125,6 @@ h4 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 45px;
-  width: 100%;
   margin-bottom: 80px;
   @include sm {
     display: grid;
@@ -153,8 +160,14 @@ h4 {
     padding-top: 224px;
   }
   &__image {
-    max-width: 378px;
+    // display: block;
+    // max-width: 378px;
+    // width: 100%;
     margin: 19px 19px 25px;
+    @include sm {
+      max-width: 338px;
+      margin: 18px 18px 20px;
+    }
   }
   &__user-icon {
     width: 48px;
@@ -168,22 +181,35 @@ h4 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    @include sm {
+      font-size: 16px;
+    }
   }
   &__posted-date {
     font-size: 14px;
+    @include sm {
+      font-size: 12px;
+    }
   }
   &__title {
     font-size: 24px;
     margin-bottom: 24px;
     text-align: left;
+    @include sm {
+      font-size: 20px;
+    }
   }
 
   &__overview {
     font-size: 20px;
     margin-bottom: 50px;
     line-height: 1.65;
+    @include sm {
+      font-size: 14px;
+    }
   }
   &__card-button {
+    font-size: 16px;
     padding: 8px 16px;
     border: 1px solid #d1d9e6;
     border-radius: 8px;
@@ -192,6 +218,9 @@ h4 {
     justify-content: center;
     align-items: center;
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+    @include sm {
+      font-size: 14px;
+    }
   }
   &__card-button:hover {
     box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
