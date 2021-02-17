@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import 'mixins';
 html,
 body {
   height: 100%;
@@ -47,8 +47,16 @@ h4 {
 // Containerに関するスタイル
 .container {
   max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
   &--hero {
     margin: 80px auto 128px;
+    @include sm {
+      margin: 80px auto 80px;
+    }
+  }
+  &--recent {
+    max-width: 1338px;
   }
 }
 
@@ -95,17 +103,14 @@ h4 {
 
 // recent-contentsに関するスタイル
 
-.recent-container {
-  max-width: 1338px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .recent-title {
   margin-bottom: 80px;
 }
 .recent-title h2 {
   font-size: 40px;
+  @include sm {
+    font-size: 32px;
+  }
 }
 
 .recent-card-list {
@@ -114,6 +119,13 @@ h4 {
   gap: 45px;
   width: 100%;
   margin-bottom: 80px;
+  @include sm {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    // gap: 45px;
+    // width: 100%;
+    margin-bottom: 80px;
+  }
 }
 .recent-card-list__vertical {
   display: grid;
