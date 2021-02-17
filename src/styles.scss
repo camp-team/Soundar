@@ -60,6 +60,12 @@ h4 {
   &--recent {
     max-width: 1338px;
   }
+  &--guide {
+    width: 100%;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    margin-bottom: 128px;
+  }
 }
 
 // ボタンに関するスタイル
@@ -72,6 +78,9 @@ h4 {
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   &--small {
     padding: 8px 16px;
+    @include sm {
+      font-size: 14px;
+    }
   }
   &--small-social {
     height: 16px;
@@ -269,13 +278,6 @@ h4 {
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
 }
 
-.guide-container {
-  width: 100%;
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
-  margin-bottom: 128px;
-}
-
 .guide-card {
   display: flex;
   justify-content: space-between;
@@ -283,11 +285,19 @@ h4 {
   margin: 128px auto;
   max-width: 1338px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  @include sm {
+    display: block;
+    margin: 80px auto;
+  }
 }
 
 .guide-text {
   padding-left: 100px;
   padding-right: 56px;
+  @include sm {
+    padding: 28px;
+
+  }
   .guide-text__title {
     margin: 0;
   }
@@ -295,9 +305,16 @@ h4 {
 .guide-text h2 {
   font-size: 42px;
   margin-bottom: 48px;
+  @include sm {
+    font-size: 32px;
+  }
 }
 .text-box {
   margin-bottom: 48px;
+  @include sm {
+    font-size: 14px;
+    text-align: left;
+  }
 }
 
 .image-box {
