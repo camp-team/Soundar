@@ -1,13 +1,20 @@
+@import 'mixins';
+.soundcloud-player {
+  font-size: 10px;
+  color: #31344b;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: nunito, dnp-shuei-mgothic-std, 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  font-weight: 100;
+}
 .embed-sc {
   object-fit: cover;
   padding: 24px 0;
   margin: 0 auto;
-}
-.embed-sc img {
-  border-radius: 8px;
-  object-fit: cover;
-  margin: 0 auto;
-  max-width: 100%;
 }
 
 .posted-part {
@@ -56,35 +63,6 @@
   height: 16px;
   width: auto;
   margin-right: 8px;
-}
-
-.posted-card-container {
-  padding: 16px;
-}
-
-.posted-card {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid #d1d9e6;
-  border-radius: 8px;
-  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
-  &__image {
-    width: 300px;
-    height: 150px;
-  }
-  &__image img {
-    object-fit: cover;
-    height: 100%;
-    border-radius: 8px;
-  }
-  &__text p {
-    margin-bottom: 8px;
-    font-size: 12px;
-  }
-  &__text--bold p {
-    font-size: 16px;
-    font-weight: bold;
-  }
 }
 
 .posted-card:hover {
