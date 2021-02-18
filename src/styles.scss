@@ -301,6 +301,9 @@ h4 {
   }
   .guide-text__title {
     margin: 0;
+    @include sm {
+      margin-bottom: 8px;
+    }
   }
 }
 .guide-text h2 {
