@@ -67,6 +67,9 @@ footer {
     }
   }
 }
+.footer-links a {
+  display: block;
+}
 
 .logo-column {
   grid-column: 1/3;
