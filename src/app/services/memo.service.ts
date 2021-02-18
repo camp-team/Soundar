@@ -78,4 +78,8 @@ export class MemoService {
       })
       .valueChanges();
   }
+  // メモのドキュメントを取得
+  getMemo(id: string): Observable<Memo> {
+    return this.db.doc<Memo>(`memos/${id}`).valueChanges();
+  }
 }
