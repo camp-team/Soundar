@@ -18,9 +18,9 @@
             <p>{{ memo.categories[2] }}</p>
           </div>
           <div class="icons">
-            <div class="recent-posted-card__card-button">
+            <div class="recent-posted-card__card-button" (click)="like()">
               <img src="assets/images/favorite.svg" alt="" />
-              <p>123</p>
+              <p>{{ memo.likeCount }}</p>
             </div>
             <div>
               <a href="https://twitter.com/home" target="blank">

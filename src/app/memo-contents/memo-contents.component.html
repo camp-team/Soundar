@@ -5,23 +5,15 @@
         <div class="memo-contents__article">
           <h2>目次1</h2>
           <div class="">{{ memo.text | removeHtmlTags }}</div>
-          <h2>目次2</h2>
-
-          <h2>目次3</h2>
-
-          <h2>目次4</h2>
-
-          <h2>目次5</h2>
-
-          <h2>目次6</h2>
         </div>
         <div class="memo-contents__under-buttons">
-          <div class="memo-contents__button">
-            <img src="assets/images/favorite.svg" alt="" />123
+          <div class="memo-contents__button" (click)="like()">
+            <img src="assets/images/favorite.svg" alt="" />
+            <p>{{ memo.likeCount }}</p>
           </div>
-          <div class="memo-contents__button memo-contents__button--twitter">
+          <a class="memo-contents__button memo-contents__button--twitter">
             <img src="assets/images/twitter.svg" alt="" />
-          </div>
+          </a>
         </div>
       </div>
     </div>

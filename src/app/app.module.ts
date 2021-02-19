@@ -27,10 +27,9 @@ import { SharedModule } from './shared/shared.module';
     AngularFirestoreModule,
     AngularFireFunctionsModule,
     AngularFireStorageModule,
+    SharedModule,
   ],
-  providers: [
-    { provide: REGION, useValue: 'asia-northeast1' }
-  ],
+  providers: [{ provide: REGION, useValue: 'asia-northeast1' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

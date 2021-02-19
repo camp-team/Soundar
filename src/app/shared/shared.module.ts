@@ -25,6 +25,7 @@ import { RemoveHtmlTagsPipe } from '../remove-html-tags.pipe';
     MemoCardComponent,
     NextCardComponent,
     NextPageButtonComponent,
+    RemoveHtmlTagsPipe,
   ],
 })
 export class SharedModule {}
