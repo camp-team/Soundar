@@ -66,6 +66,16 @@ h4 {
     border-bottom: 1px solid #ffffff;
     margin-bottom: 128px;
   }
+  &--memo-header {
+    max-width: 100%;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 112px;
+    margin: 112px auto 80px;
+    @include sm {
+      padding-bottom: 40px;
+      margin: 40px auto;
+    }
+  }
 }
 
 // ボタンに関するスタイル
@@ -297,7 +307,6 @@ h4 {
   padding-right: 56px;
   @include sm {
     padding: 28px;
-
   }
   .guide-text__title {
     margin: 0;

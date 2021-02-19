@@ -12,6 +12,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,7 @@ import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireFunctionsModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   providers: [
     { provide: REGION, useValue: 'asia-northeast1' }

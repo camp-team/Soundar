@@ -13,12 +13,11 @@ import { MemoService } from '../services/memo.service';
 export class DetailHeaderComponent implements OnInit {
   memoId: string; // MemoServisでmemoIdからMemoをとってくる memoIdのいれもの
   memo$: Observable<Memo>;
-  constructor(private route: ActivatedRoute, private memoService: MemoService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private memoService: MemoService
+  ) {}
 
-
-  // getMemo(): void {
-  //   this.getMemo();
-  // }
   ngOnInit(): void {
     this.memo$ = this.route.paramMap.pipe(
       switchMap((param) => {
