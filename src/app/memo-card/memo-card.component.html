@@ -20,8 +20,8 @@
         </div>
 
         <div class="recent-posted-card__posted-date">
-          <!-- firestoreのデータなので、toDate()を走らせるd -->
-          <p>{{ memo.createdAt.toDate() | date: 'yyyy/mm/dd' }}</p>
+          <!-- firestoreのデータなので、toDate()を走らせる -->
+          <p>{{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}</p>
         </div>
       </div>
 

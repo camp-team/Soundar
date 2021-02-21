@@ -1,6 +1,6 @@
 <header>
   <div class="header-navigation">
-    <a routerLink="/">SoundarLogo</a>
+    <a class="header__logo" routerLink="/">SoundarLogo</a>
     <div>
       <ng-container *ngIf="authService.user$ | async as user; else notLogin">
         <img
@@ -24,7 +24,9 @@
       </mat-menu>
       <ng-template #notLogin>
         <div class="sign-in">
-          <a href="#" class="button button--small">Sign In</a>
+          <a routerLink="/enter" href="#" class="button button--small"
+            >Sign In</a
+          >
         </div>
       </ng-template>
     </div>
@@ -34,29 +36,31 @@
 <footer>
   <div class="footer-container">
     <div class="logo-column">
-      <p>SoundarLogo</p>
+      <a routerLink="/">SoundarLogo</a>
       <p>クリエイターのための情報共有コミュニティ</p>
-      <img
-        class="button button--small-social"
-        src="assets/images/twitter.svg"
-        alt=""
-      />
+
+      <a href="https://twitter.com/" target="blank"
+        ><img
+          class="button button--small-social"
+          src="assets/images/twitter.svg"
+          alt=""
+      /></a>
     </div>
-    <div>
+    <div class="footer-links">
       <h4 class="footer-column-title">About</h4>
-      <p>Soundarについて</p>
-      <p>使い方</p>
-      <p>よくある質問</p>
+      <a routerLink="/about">Soundarについて</a>
+      <a routerLink="/about">使い方</a>
+      <a routerLink="faq">よくある質問</a>
     </div>
-    <div>
+    <div class="footer-links">
       <h4 class="footer-column-title">Legal</h4>
-      <p>利用規約</p>
-      <p>プライバシーポリシー</p>
-      <p>特定法表記</p>
+      <a routerLink="terms">利用規約</a>
+      <a routerLink="privacy">プライバシーポリシー</a>
+      <a routerLink="transaction-law">特定法表記</a>
     </div>
     <div class="contact-column">
       <h4 class="footer-column-title">Contact</h4>
-      <p>お問い合わせ</p>
+      <a routerLink="/" class="footer-links">お問い合わせ</a>
     </div>
   </div>
   <small>&copy; 2020 Soundar.com</small>
