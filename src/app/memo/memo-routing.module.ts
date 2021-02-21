@@ -4,7 +4,7 @@ import { MemoComponent } from './memo.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: MemoComponent,
   }
 ];
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MemoRoutingModule { }
+export class MemoRoutingModule {}

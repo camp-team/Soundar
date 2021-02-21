@@ -1,6 +1,6 @@
 <header>
   <div class="header-navigation">
-    <p>SoundarLogo</p>
+    <a routerLink="/">SoundarLogo</a>
     <div>
       <ng-container *ngIf="authService.user$ | async as user; else notLogin">
         <img

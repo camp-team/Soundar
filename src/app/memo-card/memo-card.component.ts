@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Memo } from '../interfaces/memo';
+import { AuthService } from '../services/auth.service';
+// import { RemoveHtmlTagsPipe} from '../remove-html-tags.pipe';
 
 @Component({
   selector: 'app-memo-card',
@@ -6,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./memo-card.component.scss'],
 })
 export class MemoCardComponent implements OnInit {
-  constructor() {}
+  @Input() memo: Memo; // htmlは親からデータを受け取って見た目を作るため、componentで親からデータを受け取るために@Inputで指定する
+  user$ = this.authService.user$; // userをauthServiceのuser$と定義
+  // 上の2行を、combineLatestで、User and Memoをつくる
 
-  ngOnInit(): void {}
+  constructor(private authService: AuthService, ) {}
+
+  ngOnInit(): void {
+  }
+
+  like(): void {
+    alert('like!');
+  }
 }

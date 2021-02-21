@@ -1,48 +1,53 @@
 <!-- メモカード -->
-<div class="recent-posted-card">
-  <!-- メモのサムネイル画像 -->
-  <img
-    class="recent-posted-card__image"
-    src="assets/images/user-icon-example.jpg"
-    alt=""
-  />
+<!-- memoがいるときに、"recent-posted-card"クラスが表示される。 -->
+<div class="recent-posted-card" *ngIf="memo">
+  <!-- 5行目のas userは、23行目のuser.nameのuserを使うために必要 -->
+  <div class="div" *ngIf="user$ | async as user">
+    <!-- メモのサムネイル画像 -->
+    <img class="recent-posted-card__image" [src]="memo.thumbnailUrl" alt="" />
 
-  <!-- メモカードの内容     -->
-  <div class="recent-posted-card__card-contents">
-    <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
-    <div class="recent-posted-author">
-      <div>
-        <img
-          class="recent-posted-card__user-icon"
-          src="assets/images/user-icon-example.jpg"
-          alt=""
-        />
-        <p class="recent-posted-card__user-name">UserName</p>
+    <!-- メモカードの内容     -->
+    <div class="recent-posted-card__card-contents">
+      <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
+      <div class="recent-posted-author">
+        <div>
+          <img
+            class="recent-posted-card__user-icon"
+            src="assets/images/user-icon-example.jpg"
+            alt=""
+          />
+          <p class="recent-posted-card__user-name">{{ user.name }}</p>
+        </div>
+
+        <div class="recent-posted-card__posted-date">
+          <!-- firestoreのデータなので、toDate()を走らせるd -->
+          <p>{{ memo.createdAt.toDate() | date: 'yyyy/mm/dd' }}</p>
+        </div>
       </div>
 
-      <div class="recent-posted-card__posted-date">
-        <p>2020年11月11日</p>
+      <!-- メモのタイトル -->
+      <div class="recent-posted-card__title">
+        <p>{{ memo.title }}</p>
       </div>
-    </div>
 
-    <!-- メモのタイトル -->
-    <div class="recent-posted-card__title">
-      <p>メモタイトル</p>
-    </div>
+      <!-- メモの概要     -->
+      <div class="recent-posted-card__overview">
+        <p>
+          {{ memo.text | removeHtmlTags }}
+        </p>
+      </div>
 
-    <!-- メモの概要     -->
-    <div class="recent-posted-card__overview">
-      <p>
-        本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト
-      </p>
-    </div>
-
-    <!-- メモカード下部ボタンのボックス     -->
-    <div class="button-row">
-      <div class="recent-posted-card__card-button">もっとみる</div>
-      <div class="recent-posted-card__card-button">
-        <img src="assets/images/favorite.svg" alt="" />
-        <p>123</p>
+      <!-- メモカード下部ボタンのボックス     -->
+      <div class="button-row">
+        <a
+          [routerLink]="['/memo', memo.memoId]"
+          class="recent-posted-card__card-button"
+          >もっとみる</a
+        >
+        <div class="recent-posted-card__card-button" (click)="like()">
+          <img src="assets/images/favorite.svg" alt="" />
+          <p>{{ memo.likeCount }}</p>
+        </div>
       </div>
     </div>
   </div>

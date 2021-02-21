@@ -7,6 +7,7 @@ import { MemoCardComponent } from '../memo-card/memo-card.component';
 import { NextCardComponent } from '../next-card/next-card.component';
 import { NextPageButtonComponent } from '../next-page-button/next-page-button.component';
 import { AuthorComponent } from '../author/author.component';
+import { RemoveHtmlTagsPipe } from '../remove-html-tags.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AuthorComponent } from '../author/author.component';
     MemoCardComponent,
     NextCardComponent,
     NextPageButtonComponent,
+    RemoveHtmlTagsPipe,
   ],
   imports: [CommonModule, SharedRoutingModule],
   exports: [
