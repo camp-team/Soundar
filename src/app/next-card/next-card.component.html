@@ -1,4 +1,4 @@
-<div class="next-card" *ngIf="memo">
+<div class="next-card" *ngIf="memo$ | async as memo">
   <div class="card-box" *ngIf="user$ | async as user">
     <div class="next-card__image">
       <img [src]="memo.thumbnailUrl" alt="" />
