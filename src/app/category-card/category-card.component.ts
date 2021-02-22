@@ -18,5 +18,13 @@ export class CategoryCardComponent implements OnInit {
     private memoService: MemoService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.memo$ = this.route.paramMap.pipe(
+      switchMap((param) => {
+        const id = param.get('id');
+        this.memoId = id;
+        return this.memoService.getMemo(id);
+      })
+    );
+  }
 }

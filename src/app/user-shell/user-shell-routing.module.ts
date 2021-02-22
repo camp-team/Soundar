@@ -8,7 +8,7 @@ const routes: Routes = [
     component: UserShellComponent,
     children: [
       {
-        path: '',
+        path: 'memo',
         loadChildren: () =>
           import('../memo/memo.module').then((m) => m.MemoModule),
       },
