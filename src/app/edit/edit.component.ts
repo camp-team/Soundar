@@ -82,7 +82,7 @@ export class EditComponent implements OnInit {
     const sendData: Omit<
       // sendDataを、uid,title,text,isPublic,categoriesと定義
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl'
+      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl' | 'random'
     > = {
       uid: this.authService.uid,
       title: formData.title,

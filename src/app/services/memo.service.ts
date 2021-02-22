@@ -28,7 +28,7 @@ export class MemoService {
     // createMemoの自販機のinputには、memo（Memoの型）とdataUrl（サムネイル画像）が入る（omitの中身は除外する）
     memo: Omit<
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl'
+      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl' | 'random'
     >,
     dataUrl: string
   ): Promise<void> {
@@ -42,6 +42,7 @@ export class MemoService {
       likeCount: 0,
       createdAt: firestore.Timestamp.now(),
       updatedAt: firestore.Timestamp.now(),
+      random: Math.random(),
     };
     return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdのドキュメントに、resultMemoの中身を入れる(set)
   }
@@ -83,17 +84,19 @@ export class MemoService {
   getRelationMemos(): Observable<Memo[]> {
     return this.db
       .collection<Memo>(`memos`, (ref) => {
-        return ref.orderBy('createdAt', 'desc').limit(3);
-        // return ref.where('isPublic', '==', 'true').orderBy('random').limit(3); // 一旦ランダムで記事を取って来たい
+        // return ref.orderBy('createdAt', 'asc').limit(3);
+        return ref.where('isPublic', '==', 'true').orderBy('random').limit(3); // 一旦ランダムで記事を取って来たい
       })
       .valueChanges();
   }
 
   // リスト表示用にメモを9件取ってくる
   getlistedMemos(): Observable<Memo[]> {
-    return this.db.collection<Memo>(`memos`, (ref) => {
-      return ref.orderBy('createdAt', 'desc').limit(9);
-    }).valueChanges();
+    return this.db
+      .collection<Memo>(`memos`, (ref) => {
+        return ref.orderBy('createdAt', 'desc').limit(9);
+      })
+      .valueChanges();
   }
 
   // メモのドキュメントを取得
