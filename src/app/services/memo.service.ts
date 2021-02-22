@@ -78,6 +78,16 @@ export class MemoService {
       })
       .valueChanges();
   }
+
+  // 読んでいるメモと関連の高いメモを3件取ってくる
+  getRelationMemos(): Observable<Memo[]> {
+    return this.db
+      .collection<Memo>(`memos`, (ref) => {
+        return ref.orderBy('createdAt', 'desc').limit(3);
+      })
+      .valueChanges();
+  }
+
   // メモのドキュメントを取得
   getMemo(id: string): Observable<Memo> {
     return this.db.doc<Memo>(`memos/${id}`).valueChanges();

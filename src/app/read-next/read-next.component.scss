@@ -1,9 +1,13 @@
+@import 'mixins';
 .read-next {
   &__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-bottom: 24px;
+    @include sm {
+      display: block;
+    }
   }
 }
 h3 {

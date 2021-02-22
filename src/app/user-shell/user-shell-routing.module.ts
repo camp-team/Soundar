@@ -13,6 +13,11 @@ const routes: Routes = [
           import('../top/top.module').then((m) => m.TopModule),
       },
       {
+        path: '',
+        loadChildren: () =>
+          import('../top/top.module').then((m) => m.TopModule),
+      },
+      {
         path: 'edit',
         loadChildren: () =>
           import('../edit/edit.module').then((m) => m.EditModule),

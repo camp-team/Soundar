@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Memo } from '../interfaces/memo';
+import { MemoService } from '../services/memo.service';
 
 @Component({
   selector: 'app-read-next',
@@ -6,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./read-next.component.scss'],
 })
 export class ReadNextComponent implements OnInit {
-  constructor() {}
+  memos$: Observable<Memo[]> = this.memoService.getRecentMemos();
+  constructor(private memoService: MemoService) {}
 
   ngOnInit(): void {}
 }
