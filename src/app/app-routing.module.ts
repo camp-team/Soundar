@@ -9,7 +9,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
+    loadChildren: () =>
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'enter',
@@ -38,7 +39,8 @@ const routes: Routes = [
   },
   {
     path: 'memo',
-    loadChildren: () => import('./memo/memo.module').then((m) => m.MemoModule),
+    loadChildren: () =>
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: '404',
@@ -63,7 +65,8 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
+    loadChildren: () =>
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'transaction-law',
@@ -84,7 +87,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled', // 画面表示時のアンカーリンクを有効にする
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

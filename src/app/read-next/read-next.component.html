@@ -2,9 +2,10 @@
   <h3>Read Next</h3>
 
   <div class="read-next__cards">
-    <app-next-card></app-next-card>
-    <app-next-card></app-next-card>
-    <app-next-card></app-next-card>
+    <app-next-card
+      [memo]="memo"
+      *ngFor="let memo of memos$ | async"
+    ></app-next-card>
   </div>
   <div class="more-buttons">
     <button>

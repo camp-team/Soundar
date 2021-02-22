@@ -1,24 +1,39 @@
-<div class="wrapper">
-  <div class="container">
-    <h1>メモタイトル</h1>
-    <div class="memo-category">
-      <p>2020年12月2日</p>
-      <p>カテゴリ1</p>
-      <p>カテゴリ2</p>
-      <p>カテゴリ3</p>
-    </div>
-    <div class="icons">
-      <div class="recent-posted-card__card-button">
-        <img src="assets/images/favorite.svg" alt="" />
-        <p>123</p>
-      </div>
-      <div>
+<ng-container *ngIf="memo$ | async as memo">
+  <div class="wrapper">
+    <div class="container container--memo-header">
+      <div class="memo-header">
         <img
-          class="button button--small-social"
-          src="assets/images/twitter.svg"
+          class="memo-header__thumbnail"
+          src="{{ memo.thumbnailUrl }}"
           alt=""
         />
+        <!-- <button (click)="getMemo()"></button> -->
+        <!-- ここでmemo.を使うために、上の行でmemo$をmemoとして扱う記述をする -->
+        <div class="memo-header__contents">
+          <h1>{{ memo.title }}</h1>
+          <div class="memo-category">
+            <p>{{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}</p>
+            <p>{{ memo.categories[0] }}</p>
+            <p>{{ memo.categories[1] }}</p>
+            <p>{{ memo.categories[2] }}</p>
+          </div>
+          <div class="icons">
+            <div class="recent-posted-card__card-button" (click)="like()">
+              <img src="assets/images/favorite.svg" alt="" />
+              <p>{{ memo.likeCount }}</p>
+            </div>
+            <div>
+              <a href="https://twitter.com/home" target="blank">
+                <img
+                  class="button button--small-social"
+                  src="assets/images/twitter.svg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</ng-container>

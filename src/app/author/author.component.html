@@ -1,59 +1,61 @@
-<div class="profile-card">
-  <div class="profile-box">
-    <div class="profile-card__top">
-      <div class="profile-card__user">
-        <img src="assets/images/profile-image-example.jpg" alt="" />
-      </div>
-      <div>
-        <p class="profile-card__name">Username</p>
-        <p class="profile-card__subject">Subject</p>
-        <div class="icons-box">
-          <img
-            class="profile-card__socials"
-            src="assets/images/twitter.svg"
-            alt=""
-          />
-          <img
-            class="profile-card__socials"
-            src="assets/images/youtube-brands.svg"
-            alt=""
-          />
-          <img
-            class="profile-card__socials"
-            src="assets/images/soundcloud-brands.svg"
-            alt=""
-          />
-          <img
-            class="profile-card__socials"
-            src="assets/images/icons/round-link.svg"
-            alt=""
-          />
+<ng-container *ngIf="user$ | async as user">
+  <div class="profile-card">
+    <div class="profile-box">
+      <div class="profile-card__top">
+        <div class="profile-card__user">
+          <img src="{{user.avatarURL}}" alt="" />
+        </div>
+        <div>
+          <p class="profile-card__name">{{ user.name }}</p>
+          <p class="profile-card__subject">Subject</p>
+          <div class="icons-box">
+            <img
+              class="profile-card__socials"
+              src="assets/images/twitter.svg"
+              alt=""
+            />
+            <img
+              class="profile-card__socials"
+              src="assets/images/youtube-brands.svg"
+              alt=""
+            />
+            <img
+              class="profile-card__socials"
+              src="assets/images/soundcloud-brands.svg"
+              alt=""
+            />
+            <img
+              class="profile-card__socials"
+              src="assets/images/icons/round-link.svg"
+              alt=""
+            />
 
-          <div class="follow-box">
-            <button class="profile-card__text">
-              <img src="assets/images/icons/round-add.svg" alt="" />Follow
-            </button>
+            <div class="follow-box">
+              <button class="profile-card__text">
+                <img src="assets/images/icons/round-add.svg" alt="" />Follow
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-card__profile">
+        <p>
+          プロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキスト
+        </p>
+      </div>
+
+      <div class="support-container">
+        <div class="support-card">
+          <div class="">
+            <h3>クリエイターを応援しよう</h3>
+            <p>{{ user.name }}さんへの知見の対価としてお金を支払うことができます。</p>
+            <div class="button button--support">サポートする</div>
+          </div>
+          <div class="">
+            <img src="assets/images/support-image.svg" alt="" />
           </div>
         </div>
       </div>
     </div>
-    <div class="profile-card__profile">
-      <p>
-        プロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキスト
-      </p>
-    </div>
-
-    <div class="support-container">
-      <div class="support-card">
-        <div class="">
-          <h3>クリエイターを応援しよう</h3>
-          <p>Userさんへの知見の対価としてお金を支払うことができます。</p>
-          <div class="button button--support">サポートする</div>
-        </div>
-        <div class="">
-          <img src="assets/images/support-image.svg" alt="" />
-        </div>
-      </div>
-    </div>
   </div>
-</div>
+</ng-container>

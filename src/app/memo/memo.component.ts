@@ -15,7 +15,7 @@ export class MemoComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
-      alert(paramMap.get('id')); // memo-routingの:idと紐付いている
+      // alert(paramMap.get('id')); // memo-routingの:idと紐付いている
     });
   }
 

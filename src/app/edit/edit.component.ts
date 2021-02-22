@@ -101,12 +101,4 @@ export class EditComponent implements OnInit {
     });
     this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
   }
-
-  // 投稿に入ってしまう<p>を消去する
-  // Memoのtextから<p>をstriptagを使って消去する
-  removeHtmlTags(): string {
-    const striptags = require('striptags'); // striptagsをrequire()によって読み込む
-    const originalText = this.form.value.text; // editorの本文をoriginalTextの変数に代入
-    return striptags(originalText, null, '\n'); // originalTextからhtmlのタグを削除、残したいタグはなし、第3引数で改行の設定
-  }
 }

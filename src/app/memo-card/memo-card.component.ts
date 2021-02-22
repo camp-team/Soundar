@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Memo } from '../interfaces/memo';
 import { AuthService } from '../services/auth.service';
-// import { RemoveHtmlTagsPipe} from '../remove-html-tags.pipe';
 
 @Component({
   selector: 'app-memo-card',
