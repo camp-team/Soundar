@@ -28,7 +28,12 @@ export class MemoService {
     // createMemoの自販機のinputには、memo（Memoの型）とdataUrl（サムネイル画像）が入る（omitの中身は除外する）
     memo: Omit<
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl' | 'random'
+      | 'memoId'
+      | 'createdAt'
+      | 'updatedAt'
+      | 'likeCount'
+      | 'thumbnailUrl'
+      | 'random'
     >,
     dataUrl: string
   ): Promise<void> {
