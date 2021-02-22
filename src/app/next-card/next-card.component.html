@@ -1,7 +1,7 @@
-<div class="next-card">
-  <div class="card-box">
+<div class="next-card" *ngIf="memo">
+  <div class="card-box" *ngIf="user$ | async as user">
     <div class="next-card__image">
-      <img src="assets/images/read-next-card-image.jpg" alt="" />
+      <img [src]="memo.thumbnailUrl" alt="" />
     </div>
     <div class="next-card__users">
       <div class="inline">
@@ -9,30 +9,29 @@
           <img src="assets/images/profile-image-example.jpg" alt="" />
         </div>
         <div class="next-card__name">
-          <p>UserName</p>
+          <p>{{ user.name }}</p>
         </div>
       </div>
       <div class="next-card__date">
-        <p>2020年12月8日</p>
+        <p>{{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}</p>
       </div>
     </div>
     <div class="next-card__title">
-      <p>メモタイトル</p>
+      <p>{{ memo.title }}</p>
     </div>
     <div class="next-card__text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum sed
-      sequi eos, natus quidem est praesentium placeat, exercitationem vitae
-      veritatis ut repellendus perspiciatis optio, aut maiores ratione aliquam
-      possimus dolores!
+      {{ memo.text | removeHtmlTags }}
     </div>
     <div class="next-card__buttons">
-      <button>もっとみる</button>
+      <a [routerLink]="['/memo', memo.memoId]" class="more">もっとみる</a>
       <button>
         <div class="next-card__favorite">
           <div>
             <img src="assets/images/favorite.svg" alt="" />
           </div>
-          <div><p>123</p></div>
+          <div>
+            <p>{{ memo.likeCount }}</p>
+          </div>
         </div>
       </button>
     </div>

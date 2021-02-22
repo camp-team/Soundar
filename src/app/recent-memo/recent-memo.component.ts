@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./recent-memo.component.scss'],
 })
 export class RecentMemoComponent implements OnInit {
-  memos$: Observable<Memo[]> = this.memoService.getRelationMemos();
+  memos$: Observable<Memo[]> = this.memoService.getRecentMemos();
 
 
 

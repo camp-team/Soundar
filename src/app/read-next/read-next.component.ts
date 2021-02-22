@@ -9,7 +9,7 @@ import { MemoService } from '../services/memo.service';
   styleUrls: ['./read-next.component.scss'],
 })
 export class ReadNextComponent implements OnInit {
-  memos$: Observable<Memo[]> = this.memoService.getRecentMemos();
+  memos$: Observable<Memo[]> = this.memoService.getRelationMemos();
   constructor(private memoService: MemoService) {}
 
   ngOnInit(): void {}

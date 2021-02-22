@@ -84,6 +84,7 @@ export class MemoService {
     return this.db
       .collection<Memo>(`memos`, (ref) => {
         return ref.orderBy('createdAt', 'desc').limit(3);
+        // return ref.where('isPublic', '==', 'true').orderBy('random').limit(3); // 一旦ランダムで記事を取って来たい
       })
       .valueChanges();
   }
