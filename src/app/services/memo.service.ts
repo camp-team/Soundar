@@ -89,6 +89,13 @@ export class MemoService {
       .valueChanges();
   }
 
+  // リスト表示用にメモを9件取ってくる
+  getlistedMemos(): Observable<Memo[]> {
+    return this.db.collection<Memo>(`memos`, (ref) => {
+      return ref.orderBy('createdAt', 'desc').limit(9);
+    }).valueChanges();
+  }
+
   // メモのドキュメントを取得
   getMemo(id: string): Observable<Memo> {
     return this.db.doc<Memo>(`memos/${id}`).valueChanges();

@@ -1,15 +1,10 @@
 <app-list-header></app-list-header>
 <h2>メモ</h2>
 <div class="list-container">
-  <app-next-card></app-next-card>
-  <app-next-card></app-next-card>
-  <app-next-card></app-next-card>
-  <app-next-card></app-next-card>
-  <app-next-card></app-next-card>
-  <app-next-card></app-next-card>
-  <app-next-card></app-next-card>
-  <app-next-card></app-next-card>
-  <app-next-card></app-next-card>
+  <app-next-card
+    [memo]="memo"
+    *ngFor="let memo of memos$ | async"
+  ></app-next-card>
 </div>
 <div class="next-page-button-container">
   <app-next-page-button></app-next-page-button>
