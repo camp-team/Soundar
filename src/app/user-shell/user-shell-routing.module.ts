@@ -10,7 +10,7 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
-          import('../top/top.module').then((m) => m.TopModule),
+          import('../memo/memo.module').then((m) => m.MemoModule),
       },
       {
         path: '',

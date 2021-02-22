@@ -38,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: 'memo',
-    loadChildren: () => import('./memo/memo.module').then((m) => m.MemoModule),
+    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: '404',
