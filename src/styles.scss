@@ -46,6 +46,13 @@ h4 {
   color: #31344b;
 }
 
+// spサイズに関するスタイル
+.sp {
+  @include sm {
+    display: none;
+  }
+}
+
 // Containerに関するスタイル
 .container {
   max-width: 1400px;
