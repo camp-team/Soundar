@@ -1,3 +1,4 @@
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -47,7 +48,7 @@ export class MemoService {
       likeCount: 0,
       createdAt: firestore.Timestamp.now(),
       updatedAt: firestore.Timestamp.now(),
-      random: Math.random(),
+      random: Math.floor(Math.random() * 100),
     };
     return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdのドキュメントに、resultMemoの中身を入れる(set)
   }
@@ -85,12 +86,12 @@ export class MemoService {
       .valueChanges();
   }
 
-  // 読んでいるメモと関連の高いメモを3件取ってくる
+  // ランダムでメモを3件取ってくる
   getRelationMemos(): Observable<Memo[]> {
     return this.db
       .collection<Memo>(`memos`, (ref) => {
-        // return ref.orderBy('createdAt', 'asc').limit(3);
-        return ref.where('isPublic', '==', 'true').orderBy('random').limit(3); // 一旦ランダムで記事を取って来たい
+        return ref.where('random', '>', Math.floor(Math.random() * 100))
+        .orderBy('random', 'asc').limit(3);
       })
       .valueChanges();
   }
