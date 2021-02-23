@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    loadChildren: () => import('./list/list.module').then((m) => m.ListModule),
+    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'magazine',
