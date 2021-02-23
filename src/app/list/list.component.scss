@@ -1,3 +1,4 @@
+@import 'mixins';
 h2 {
   font-size: 40px;
   text-align: center;
@@ -10,6 +11,9 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  @include sm {
+    display: block;
+  }
 }
 
 .next-page-button-container {
