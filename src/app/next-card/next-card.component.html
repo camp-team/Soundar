@@ -4,17 +4,15 @@
       <img [src]="memo.thumbnailUrl" alt="" />
     </div>
     <div class="next-card__users">
-      <div class="inline">
-        <div class="next-card__icon">
-          <img src="assets/images/profile-image-example.jpg" alt="" />
-        </div>
-        <div class="next-card__name">
-          <p>{{ user.name }}</p>
-        </div>
+      <div class="next-card__icon">
+        <img src="assets/images/profile-image-example.jpg" alt="" />
       </div>
-      <div class="next-card__date">
-        <p>{{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}</p>
-      </div>
+      <div class="naxt-card__authors">
+      <p class="next-card__name">{{ user.name }}</p>
+      <p class="next-card__date">
+        {{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}
+      </p>
+    </div>
     </div>
     <div class="next-card__title">
       <p>{{ memo.title }}</p>
