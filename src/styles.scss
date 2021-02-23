@@ -93,6 +93,14 @@ h4 {
   border-radius: 8px;
   border: 1px solid #d1d9e6;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  &--cancel {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    & img {
+      width: 24px;
+    }
+  }
   &--small {
     padding: 8px 16px;
     @include sm {

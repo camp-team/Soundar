@@ -1,6 +1,12 @@
 <header>
-  <!-- <button onclick="history.back();" type="button"></button> -->
-  <div class="header-navigation">
+  <div class="header-navi">
+    <!-- <div class="cancel-button">
+    <button class="button button--cancel" mat-button (click)="cancel()">
+      <img src="assets/images/icons/cancel-icon.svg" alt="" />
+    </button>
+  </div> -->
+
+  <div class="header-logos">
     <a class="header__logo" routerLink="/">SoundarLogo</a>
     <div>
       <ng-container *ngIf="authService.user$ | async as user; else notLogin">
@@ -32,6 +38,7 @@
       </ng-template>
     </div>
   </div>
+</div>
 </header>
 <router-outlet></router-outlet>
 <footer>

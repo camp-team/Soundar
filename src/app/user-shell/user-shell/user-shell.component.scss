@@ -1,12 +1,21 @@
 @import 'mixins';
 
 // headerに関するスタイル
-
+.header-navi {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cancel-button {
+  @include sm {
+    margin-right: 16px;
+  }
+}
 header {
   width: 100%;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
-  @include sm {
-  }
 }
 .header__account {
   border-radius: 50%;
@@ -17,13 +26,12 @@ header {
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   &:hover {
     box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
-    // opacity: 0.8;
   }
 }
 .header__logo {
   margin-left: 8px;
 }
-.header-navigation {
+.header-logos {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,10 +97,4 @@ small {
   display: block;
   padding: 48px 0;
   border-top: 1px solid #d1d9e6;
-}
-
-h4,
-p,
-img {
-  margin-bottom: 8px;
 }

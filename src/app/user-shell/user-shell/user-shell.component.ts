@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { User } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-shell',
@@ -13,7 +14,7 @@ export class UserShellComponent implements OnInit {
   user$: Observable<User> = this.authService.user$;
   private subscription = new Subscription();
 
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(public authService: AuthService, private router: Router, private location: Location, ) {}
 
   ngOnInit(): void {}
   logout(): void {
@@ -21,5 +22,8 @@ export class UserShellComponent implements OnInit {
   }
   unImplemented(): void {
     alert('未実装です!');
+  }
+  cancel(): void {
+    this.location.back();
   }
 }
