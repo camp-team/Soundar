@@ -12,13 +12,16 @@
     <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
     <div class="recent-posted-author">
       <div>
-        <img
-          class="recent-posted-card__user-icon"
-          src="assets/images/user-icon-example.jpg"
-          alt=""
-        /></div>
-        <div class="recent-posted-card__users"><p class="recent-posted-card__user-name">UserName</p></div>
-
+        <a routerLink="/user">
+          <img
+            class="recent-posted-card__user-icon"
+            src="assets/images/user-icon-example.jpg"
+            alt=""
+        /></a>
+      </div>
+      <div class="recent-posted-card__users">
+        <a routerLink="/user" class="recent-posted-card__user-name">UserName</a>
+      </div>
     </div>
 
     <!-- ムービーのタイトル -->

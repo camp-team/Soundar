@@ -12,13 +12,14 @@
   >
     <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
     <div class="recent-posted-author">
+      <a routerLink="/user">
       <img
         class="recent-posted-card__user-icon"
         src="assets/images/user-icon-example.jpg"
         alt=""
-      />
+      /></a>
       <div class="recent-posted-card__users">
-        <p class="recent-posted-card__user-name">山本昌平</p>
+        <a routerLink="/user" class="recent-posted-card__user-name">UserName</a>
         <p class="recent-posted-card__posted-date">2020年11月11日</p>
       </div>
     </div>

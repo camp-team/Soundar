@@ -10,13 +10,14 @@
     <div class="recent-posted-card__card-contents">
       <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
       <div class="recent-posted-author">
+        <a routerLink="/user">
         <img
           class="recent-posted-card__user-icon"
           [src]="user.avatarURL"
           alt=""
-        />
+        /></a>
         <div class="recent-posted-card__users">
-          <p class="recent-posted-card__user-name">{{ user.name }}</p>
+          <a routerLink="/user" class="recent-posted-card__user-name">{{ user.name }}</a>
           <p class="recent-posted-card__posted-date">
             {{ memo.createdAt.toDate() | date: 'yyyy年MM月dd日' }}
           </p>
