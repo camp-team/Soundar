@@ -8,6 +8,11 @@ const routes: Routes = [
     component: UserShellComponent,
     children: [
       {
+        path: '',
+        loadChildren: () =>
+          import('../top/top.module').then((m) => m.TopModule),
+      },
+      {
         path: 'list',
         loadChildren: () =>
           import('../list/list.module').then((m) => m.ListModule),

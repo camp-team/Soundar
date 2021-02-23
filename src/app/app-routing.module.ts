@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./top-shell/top-shell.module').then((m) => m.TopShellModule),
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'enter',
