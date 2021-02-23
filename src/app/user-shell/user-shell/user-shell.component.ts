@@ -19,4 +19,7 @@ export class UserShellComponent implements OnInit {
   logout(): void {
     this.authService.logout();
   }
+  unImplemented(): void {
+    alert('未実装です!');
+  }
 }
