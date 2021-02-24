@@ -1,12 +1,18 @@
+@import 'mixins';
 .wrapper {
   max-width: 100%;
 }
 
-.container {
-  border-bottom: 1px solid #fff;
-  padding-bottom: 112px;
-  margin: 112px auto 80px;
-  text-align: center;
+.memo-header {
+  &__thumbnail {
+    border-radius: 8px;
+    width: 120px;
+  }
+  &__contents {
+    @include sm {
+      width: 100%;
+    }
+  }
 }
 
 .memo-category {
@@ -14,6 +20,9 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 24px;
+  @include sm {
+    display: block;
+  }
   & p {
     margin-right: 24px;
   }
@@ -22,6 +31,9 @@
 h1 {
   font-size: 40px;
   margin-bottom: 24px;
+  @include sm {
+    font-size: 20px;
+  }
 }
 
 .icons {

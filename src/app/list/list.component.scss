@@ -1,7 +1,11 @@
+@import 'mixins';
 h2 {
   font-size: 40px;
   text-align: center;
   margin-bottom: 80px;
+  @include sm {
+    font-size: 32px;
+  }
 }
 
 .list-container {
@@ -10,6 +14,10 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  @include sm {
+    display: block;
+    margin: 0px 16px;
+  }
 }
 
 .next-page-button-container {

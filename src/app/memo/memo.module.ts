@@ -12,7 +12,6 @@ import { SharedModule } from '../shared/shared.module';
 import { MemoRoutingModule } from './memo-routing.module';
 import { MemoComponent } from './memo.component';
 
-
 @NgModule({
   declarations: [
     MemoComponent,

@@ -82,7 +82,7 @@ export class EditComponent implements OnInit {
     const sendData: Omit<
       // sendDataを、uid,title,text,isPublic,categoriesと定義
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl'
+      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl' | 'random'
     > = {
       uid: this.authService.uid,
       title: formData.title,
@@ -100,13 +100,5 @@ export class EditComponent implements OnInit {
       duration: 3000,
     });
     this.router.navigateByUrl('/'); // TopComponentのパスにリダイレクトする
-  }
-
-  // 投稿に入ってしまう<p>を消去する
-  // Memoのtextから<p>をstriptagを使って消去する
-  removeHtmlTags(): string {
-    const striptags = require('striptags'); // striptagsをrequire()によって読み込む
-    const originalText = this.form.value.text; // editorの本文をoriginalTextの変数に代入
-    return striptags(originalText, null, '\n'); // originalTextからhtmlのタグを削除、残したいタグはなし、第3引数で改行の設定
   }
 }

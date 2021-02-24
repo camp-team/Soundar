@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Memo } from '../interfaces/memo';
+import { MemoService } from '../services/memo.service';
 
 @Component({
   selector: 'app-list',
@@ -6,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
-  constructor() { }
+  memos$: Observable<Memo[]> = this.memoService.getlistedMemos();
+  constructor(private memoService: MemoService) { }
 
   ngOnInit(): void {
   }

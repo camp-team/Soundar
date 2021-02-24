@@ -1,3 +1,4 @@
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -28,7 +29,12 @@ export class MemoService {
     // createMemoの自販機のinputには、memo（Memoの型）とdataUrl（サムネイル画像）が入る（omitの中身は除外する）
     memo: Omit<
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl'
+      | 'memoId'
+      | 'createdAt'
+      | 'updatedAt'
+      | 'likeCount'
+      | 'thumbnailUrl'
+      | 'random'
     >,
     dataUrl: string
   ): Promise<void> {
@@ -42,6 +48,7 @@ export class MemoService {
       likeCount: 0,
       createdAt: firestore.Timestamp.now(),
       updatedAt: firestore.Timestamp.now(),
+      random: Math.floor(Math.random() * 100),
     };
     return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdのドキュメントに、resultMemoの中身を入れる(set)
   }
@@ -77,5 +84,29 @@ export class MemoService {
         return ref.orderBy('createdAt', 'desc').limit(3);
       })
       .valueChanges();
+  }
+
+  // ランダムでメモを3件取ってくる
+  getRelationMemos(): Observable<Memo[]> {
+    return this.db
+      .collection<Memo>(`memos`, (ref) => {
+        return ref.where('random', '>', Math.floor(Math.random() * 100))
+        .orderBy('random', 'asc').limit(3);
+      })
+      .valueChanges();
+  }
+
+  // リスト表示用にメモを9件取ってくる
+  getlistedMemos(): Observable<Memo[]> {
+    return this.db
+      .collection<Memo>(`memos`, (ref) => {
+        return ref.orderBy('createdAt', 'desc').limit(9);
+      })
+      .valueChanges();
+  }
+
+  // メモのドキュメントを取得
+  getMemo(id: string): Observable<Memo> {
+    return this.db.doc<Memo>(`memos/${id}`).valueChanges();
   }
 }

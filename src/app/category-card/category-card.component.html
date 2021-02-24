@@ -1,18 +1,19 @@
+<ng-container *ngIf="memo$ | async as memo">
 <div class="category-card">
   <div class="category-box">
     <p class="category-card__title">category</p>
     <div class="category-grid">
       <div class="category-flex">
         <img src="assets/images/category-example.jpg" alt="" />
-        <p>Category1</p>
+        <p>{{memo.categories[0]}}</p>
       </div>
       <div class="category-flex">
         <img src="assets/images/category-example.jpg" alt="" />
-        <p>Category2</p>
+        <p>{{memo.categories[1]}}</p>
       </div>
       <div class="category-flex">
         <img src="assets/images/category-example.jpg" alt="" />
-        <p>Category3</p>
+        <p>{{memo.categories[2]}}</p>
       </div>
       <div class="category-flex">
         <img src="assets/images/category-example.jpg" alt="" />
@@ -21,3 +22,4 @@
     </div>
   </div>
 </div>
+</ng-container>

@@ -10,5 +10,5 @@ export interface Memo {
   createdAt: firebase.firestore.Timestamp;
   updatedAt: firebase.firestore.Timestamp;
   uid: string;
-  // author: string;
+  random: number;
 }
