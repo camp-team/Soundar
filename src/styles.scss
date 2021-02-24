@@ -375,6 +375,7 @@ h4 {
   justify-content: space-between;
   @include sm {
     max-width: 343px;
+    margin: 0 24px 40px;
   }
 }
 
@@ -393,7 +394,7 @@ h4 {
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   @include sm {
     min-width: 40px;
-    padding: 16px 0px;
+    padding: 16px 8px;
   }
   & p {
     @include sm {
