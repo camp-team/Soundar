@@ -238,7 +238,7 @@ h4 {
     margin-bottom: 24px;
     text-align: left;
     &--movie {
-    margin-bottom: 16px;
+      margin-bottom: 16px;
     }
     @include sm {
       font-size: 20px;
@@ -373,10 +373,16 @@ h4 {
   margin: 0 auto 128px;
   display: flex;
   justify-content: space-between;
+  @include sm {
+    max-width: 343px;
+  }
 }
 
 .guide-icons img {
   height: 36px;
+  @include sm {
+    height: 24px;
+  }
 }
 
 .icon-box {
@@ -385,6 +391,15 @@ h4 {
   border-radius: 8px;
   padding: 28px 0px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  @include sm {
+    min-width: 40px;
+    padding: 16px 0px;
+  }
+  & p {
+    @include sm {
+      display: none;
+    }
+  }
 }
 
 .icon-box:hover {
@@ -393,11 +408,13 @@ h4 {
 .icon-box p {
   font-weight: bold;
   line-height: 1;
-
 }
 
 .icon-image {
   margin: 0 auto 10px;
+  @include sm {
+    margin: 0 auto;
+  }
 }
 
 // Quillエディターのスタイル
