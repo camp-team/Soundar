@@ -53,7 +53,7 @@
   margin: 0 auto;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   border-radius: 8px;
-  padding: 24px;
+  padding: 48px 24px;
 }
 
 .consideration-image {
@@ -69,15 +69,22 @@
 }
 
 .top-title {
+  display: flex;
+  align-items: center;
   padding: 16px 0;
-  border-top: 1px solid #d1d9e6;
-  border-bottom: 1px solid #d1d9e6;
+  & img {
+    margin-right: 8px;
+  }
 }
 
 .under-title {
+  display: flex;
+  align-items: center;
   padding: 16px 0;
-  border-bottom: 1px solid #d1d9e6;
   margin-bottom: 16px;
+  & img {
+    margin-right: 8px;
+  }
 }
 
 .left-contents {
@@ -109,7 +116,7 @@
 
 h2 {
   font-size: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .learn-more {
