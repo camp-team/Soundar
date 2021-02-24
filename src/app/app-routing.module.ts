@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: 'magazine',
     loadChildren: () =>
-      import('./magazine/magazine.module').then((m) => m.MagazineModule),
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'magazine-viewer',
