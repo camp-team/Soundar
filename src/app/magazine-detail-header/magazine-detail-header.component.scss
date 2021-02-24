@@ -21,6 +21,9 @@
     display: flex;
     align-items: center;
     & img {
+      position: relative;
+      box-shadow: 4px 0px #b8b9be;
+
       height: 80%;
       object-fit: cover;
       border-radius: 0 8px 8px 0;
@@ -85,4 +88,13 @@ button {
   &:hover {
     box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
   }
+}
+
+.line {
+  margin-left: 0px;
+  position: absolute;
+  z-index: 100;
+  height: 302px;
+  border-left: 8px solid #DCDEE2;
+  opacity: 0.8;
 }
