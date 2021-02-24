@@ -18,24 +18,31 @@
   border-radius: 8px;
   &__image {
     width: auto;
-    height: 250px;
-    margin-bottom: 80px;
-    margin-top: 24px;
+    height: 220px;
+    margin-bottom: 60px;
+    margin-top: 40px;
   }
   &__image img {
     display: block;
     margin: 0 auto;
-    height: 250px;
+    height: 220px;
   }
 }
 
 .sub-title {
   font-weight: bold;
   margin-bottom: 24px;
+  & p {
+    font-size: 18px;
+  }
 }
 
 .text {
-  margin-bottom: 24px;
+  margin: 0 24px 40px;
+  & p {
+    font-size: 17px;
+    word-break: normal;
+  }
 }
 
 .consideration-container {
