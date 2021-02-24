@@ -307,6 +307,7 @@ h4 {
   margin: 0 auto 128px;
   max-width: 1338px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  border-radius: 8px;
 }
 
 .guide-card {
@@ -333,6 +334,9 @@ h4 {
     @include sm {
       margin-bottom: 8px;
     }
+  }
+  &__text {
+    font-size: 18px;
   }
 }
 .guide-text h2 {
