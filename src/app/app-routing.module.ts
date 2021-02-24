@@ -3,12 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'about',
+    path: '',
     loadChildren: () =>
-      import('./about/about.module').then((m) => m.AboutModule),
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
-    path: '',
+    path: 'about',
     loadChildren: () =>
       import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
@@ -23,7 +23,8 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
+    loadChildren: () =>
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'magazine',

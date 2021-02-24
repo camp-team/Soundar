@@ -28,6 +28,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('../edit/edit.module').then((m) => m.EditModule),
       },
+      {
+        path: 'about',
+        loadChildren: () =>
+          import('../about/about.module').then((m) => m.AboutModule),
+      },
     ],
   },
 ];
