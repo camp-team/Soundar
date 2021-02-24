@@ -11,5 +11,7 @@ export class NextPageButtonComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  unImplemented(): void {
+    alert('未実装です!');
+  }
 }
