@@ -4,16 +4,16 @@
   background-image: url(/assets/images/terms-header-image.jpg);
   background-size: cover;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   background-blend-mode: lighten;
   margin-bottom: 80px;
 }
-
-
-
 
 h1 {
   padding: 148px;
   text-align: center;
   font-size: 60px;
+  text-shadow: 0.6px 0.6px 0 #fff, -0.6px -0.6px 0 #fff, -0.6px 0.6px 0 #fff,
+    0.6px -0.6px 0 #fff, 0px 0.6px 0 #fff, 0-0.6px 0 #fff, -0.6px 0 0 #fff,
+    0.6px 0 0 #fff;
 }
