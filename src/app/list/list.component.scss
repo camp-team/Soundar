@@ -5,6 +5,7 @@ h2 {
   margin-bottom: 80px;
   @include sm {
     font-size: 32px;
+    margin-bottom: 40px;
   }
 }
 
@@ -22,4 +23,7 @@ h2 {
 
 .next-page-button-container {
   margin-bottom: 128px;
+  @include sm {
+    margin-bottom: 40px;
+  }
 }

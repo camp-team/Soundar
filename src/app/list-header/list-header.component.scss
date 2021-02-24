@@ -5,12 +5,15 @@
   background-image: url(/assets/images/list-header-image.jpg);
   background-size: cover;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   background-blend-mode: lighten;
   margin-bottom: 80px;
   @include sm {
-    height: 200px;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 254px;
+    margin-bottom: 40px;
   }
 }
 
@@ -18,12 +21,11 @@ h1 {
   padding: 148px;
   text-align: center;
   font-size: 60px;
+  text-shadow: 0.6px 0.6px 0 #fff, -0.6px -0.6px 0 #fff, -0.6px 0.6px 0 #fff,
+    0.6px -0.6px 0 #fff, 0px 0.6px 0 #fff, 0-0.6px 0 #fff, -0.6px 0 0 #fff,
+    0.6px 0 0 #fff;
   @include sm {
     padding: 0;
     font-size: 32px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
   }
 }
