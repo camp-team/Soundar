@@ -1,11 +1,19 @@
+@import 'mixins';
 .magazine-contents {
   max-width: 1338px;
   margin: 0 auto 128px;
+  @include sm {
+    margin: 0 16px 128px;
+    text-align: center;
+  }
   &__text {
     max-width: 800px;
     margin: 0 auto 24px;
     & h2 {
 margin-bottom: 24px;
+    }
+    & p {
+      font-size: 18px;
     }
   }
   &__read {
@@ -21,6 +29,9 @@ margin-bottom: 24px;
       box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
       margin-right: 24px;
       font-size: 16px;
+      @include sm {
+        margin-bottom: 16px;
+      }
       &:hover {
         box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
       }
@@ -30,6 +41,12 @@ margin-bottom: 24px;
     display: flex;
     align-items: center;
     margin-right: 24px;
+    @include sm {
+      margin-right: 0px;
+      text-align: center;
+      margin: 0 24px;
+
+    }
     & img {
       width: 24px;
       height: 24px;
@@ -44,4 +61,7 @@ margin-bottom: 24px;
   padding: 24px;
   display: flex;
   align-items: center;
+  @include sm {
+    display: block;
+  }
 }
