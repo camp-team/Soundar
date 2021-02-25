@@ -1,6 +1,6 @@
 <header>
   <div class="header-navi">
-    <div class="cancel-button">
+    <div *ngIf="!noBackArrow" class="cancel-button">
       <button class="button button--cancel" mat-button (click)="cancel()">
         <img src="assets/images/icons/cancel-icon.svg" alt="" />
       </button>

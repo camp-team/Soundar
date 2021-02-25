@@ -9,6 +9,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        data: { noBackArrow: true },
         loadChildren: () =>
           import('../top/top.module').then((m) => m.TopModule),
       },

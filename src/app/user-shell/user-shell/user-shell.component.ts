@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { User } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,7 +14,29 @@ export class UserShellComponent implements OnInit {
   user$: Observable<User> = this.authService.user$;
   private subscription = new Subscription();
 
-  constructor(public authService: AuthService, private router: Router, private location: Location, ) {}
+  noBackArrow: boolean;
+  constructor(
+    public authService: AuthService,
+    private router: Router,
+    private location: Location
+  ) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const route = this.getChildRoute(this.router.routerState.snapshot.root);
+
+        // 最後にこのルートに来た時にisSidenavOpenの値を差し替えてあげる処理をしています
+        this.noBackArrow = route.data.noBackArrow;
+      }
+    });
+  }
+  private getChildRoute(route: ActivatedRouteSnapshot): ActivatedRouteSnapshot {
+    if (!route.children.length) {
+      // 回りきった後、最後routeを返してあげます。
+      return route;
+    } else {
+      return this.getChildRoute(route.children[0]);
+    }
+  }
 
   ngOnInit(): void {}
   logout(): void {
