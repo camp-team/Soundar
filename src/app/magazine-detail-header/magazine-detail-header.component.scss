@@ -13,30 +13,47 @@
   border-bottom: 1px solid #fff;
   @include sm {
     display: block;
+    height: 100%;
   }
   &__titles {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include sm {
+    }
   }
   &__magazine-image {
     height: 100%;
     margin-right: 40px;
     display: flex;
     align-items: center;
+    @include sm {
+      height: 152px;
+      display: flex;
+      align-items: baseline;
+      margin-right: 0;
+      margin: 40px auto;
+    }
+
     & img {
       position: relative;
       box-shadow: 4px 0px #b8b9be;
-
       height: 80%;
       object-fit: cover;
       border-radius: 0 8px 8px 0;
+      @include sm {
+        height: 100%;
+        margin: 0 auto;
+      }
     }
   }
   &__user {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
+    @include sm {
+      justify-content: center;
+    }
     & img {
       width: 56px;
       height: 56px;
@@ -64,6 +81,9 @@
   }
   &__icons {
     display: flex;
+    @include sm {
+      justify-content: center;
+    }
     & img {
       width: 16px;
     }
@@ -101,4 +121,7 @@ button {
   height: 302px;
   border-left: 8px solid #dcdee2;
   opacity: 0.8;
+  @include sm {
+    display: none;
+  }
 }
