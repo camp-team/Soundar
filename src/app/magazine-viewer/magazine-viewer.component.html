@@ -1,78 +1,87 @@
 <div class="magazine-viewer-container">
-  <div class="magazine-viewer__chapter">
-    <div class="magazine-viewer__magazine">
-      <img class="magazine-image"
-        class="magazine-image"
-        src="assets/images/magazine-image.jpg"
-        alt=""
-      />
-      <div class="magazine-viewer__info">
-        <h2>マガジンタイトル</h2>
-        <button>
-          <img src="assets/images/favorite.svg" alt="" />
-          <p>123</p>
-        </button>
+  <div class="viewer">
+    <div class="viewer__magazines">
+      <div class="viewer__magazine-images">
+        <img
+          class="viewer__magazine-image"
+          src="assets/images/magazine-image.jpg"
+          alt=""
+        />
+        <div class="viewer__magazine-titles">
+          <h1>マガジンタイトル</h1>
+          <button (click)="like()" class="button button--favorite">
+            <img src="assets/images/favorite.svg" alt="" />
+            <p>123</p>
+          </button>
+        </div>
+      </div>
+      <div class="viewer__chapters">
+        <div class="viewer__chapter">
+          <p>01</p>
+          <h2>はじめに</h2>
+        </div>
+        <div class="viewer__chapter">
+          <p>02</p>
+          <h2>続いて</h2>
+        </div>
+        <div class="viewer__chapter">
+          <p>03</p>
+          <h2>さらにくわしく</h2>
+        </div>
+        <div class="viewer__chapter">
+          <p>04</p>
+          <h2>ところで</h2>
+        </div>
+        <div class="viewer__chapter">
+          <p>05</p>
+          <h2>このような別のテクニックもあります</h2>
+        </div>
+        <div class="viewer__chapter">
+          <p>06</p>
+          <h2>まとめ</h2>
+        </div>
       </div>
     </div>
-    <div class="magazine-viewer__list">
-      <p>01</p>
-      <h3>はじめに</h3>
-    </div>
-    <div class="magazine-viewer__list">
-      <p>02</p>
-      <h3>はじめに</h3>
-    </div>
-    <div class="magazine-viewer__list">
-      <p>03</p>
-      <h3>はじめに</h3>
-    </div>
-    <div class="magazine-viewer__list">
-      <p>04</p>
-      <h3>はじめに</h3>
-    </div>
-    <div class="magazine-viewer__list">
-      <p>05</p>
-      <h3>はじめに</h3>
-    </div>
-    <div class="magazine-viewer__list">
-      <p>06</p>
-      <h3>はじめに</h3>
+    <div class="viewer__contents">
+      <div class="viewer__page-titles">
+        <p>chapter01</p>
+        <h2 class="viewer__page-title">はじめに</h2>
+        <div class="viewer__users">
+          <img
+            class="viewer__avatar"
+            src="assets/images/user-icon-example.jpg"
+            alt=""
+          />
+          <p class="viewer__name">Username</p>
+        </div>
+      </div>
+      <div class="viewer__text-box">
+        <p class="viewer__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure in
+          placeat repellendus, quis facilis aut magnam velit expedita enim
+          deserunt distinctio commodi saepe incidunt molestiae voluptas
+          reiciendis, ipsum ipsam libero.
+        </p>
+        <p class="viewer__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure in
+          placeat repellendus, quis facilis aut magnam velit expedita enim
+          deserunt distinctio commodi saepe incidunt molestiae voluptas
+          reiciendis, ipsum ipsam libero.
+        </p>
+        <p class="viewer__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure in
+          placeat repellendus, quis facilis aut magnam velit expedita enim
+          deserunt distinctio commodi saepe incidunt molestiae voluptas
+          reiciendis, ipsum ipsam libero.
+        </p>
+      </div>
+      <div class="viewer__next">
+        <div class="viewer__next-text">
+          <p class="viewer__next-small">Next Chapter</p>
+          <h3>続いて</h3>
+        </div>
+        <img src="assets/images/icons/arrow_right.svg" alt="" />
+      </div>
     </div>
   </div>
-  <!-- <div class="magazine-viewer-wrapper">
-    <div class="magazine-viewer__titles">
-      <p>chapter01</p>
-      <h3>はじめに</h3>
-      <div class="magazine-viewer__users">
-        <img src="assets/images/user-icon-example.jpg" alt="" />
-        <p>Username</p>
-      </div>
-    </div>
-    <div class="magazine-viewer__text">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus totam
-        minima, amet hic maxime ipsa porro quis deleniti unde sed autem
-        obcaecati voluptates officiis earum debitis saepe. Incidunt, aspernatur
-        molestiae?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, quod?
-        Provident dolor temporibus eos fugiat asperiores corrupti, unde nemo
-        repellat. Ut cum quos maiores assumenda itaque, minima necessitatibus
-        hic officia.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-        temporibus aperiam deserunt totam vero omnis earum eum at, eveniet
-        mollitia in ipsa quas laborum officiis voluptas nulla vitae iure odio.
-      </p>
-    </div>
-    <div class="magazine-viewer__next">
-      <div class="magazine-viewer__next-text">
-        <p>Next Chapter</p>
-        <h4>はじめに</h4>
-      </div>
-      <img src="assets/images/icons/arrow_right.svg" alt="" />
-    </div>
-  </div> -->
 </div>

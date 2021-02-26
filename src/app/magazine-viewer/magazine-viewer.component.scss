@@ -1,49 +1,41 @@
 .magazine-viewer-container {
-  max-width: 100%;
-  display: flex;
-}
-.magazine-viewer-wrapper {
-  max-width: 700px;
-  padding: 32px 128px;
+  width: 100%;
   margin-bottom: 128px;
 }
-.magazine-viewer {
-  &__chapter {
-    // max-width: 700px;
+
+.viewer {
+  display: flex;
+  max-width: 1338px;
+  justify-content: space-between;
+  margin: 40px auto;
+  &__magazines {
+    margin-right: 180px;
   }
-  &__magazine {
-    max-width: 680px;
+  &__magazine-images {
     display: flex;
-    padding: 32px;
+    margin-right: 40px;
+    margin-bottom: 32px;
+    max-width: 600px;
   }
-  &__info {
-    & h2 {
-      font-size: 16px;
+  &__magazine-image {
+    max-width: 120px;
+    margin-right: 32px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 4px 0px #b8b9be;
+  }
+  &__magazine-titles {
+    & h1 {
+      font-size: 24px;
       margin-bottom: 16px;
     }
-    & button {
-      background: #e6e7ee;
-      border: 1px solid #d1d9e6;
-      padding: 8px 16px;
-      border-radius: 8px;
-      display: flex;
-      box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
-      &:hover {
-        box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
-      }
-      & img {
-        width: 16px;
-        margin-right: 8px;
-      }
-    }
   }
-  &__list {
+  &__chapter {
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
-    padding: 8px 32px;
+    padding: 12px 32px;
     display: flex;
     align-items: center;
     border-radius: 8px;
-    margin: 8px 32px;
+    margin: 12px 0px;
     &:hover {
       box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
     }
@@ -51,31 +43,33 @@
       margin-right: 16px;
     }
   }
-  &__titles {
-    margin-bottom: 64px;
-    display: flex;
-    flex-direction: column;
-  }
   &__users {
     display: flex;
     align-items: center;
-    & img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      margin-right: 8px;
-    }
-    & p {
-      font-weight: bold;
-    }
+  }
+  &__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  &__page-titles {
+    margin-bottom: 56px;
+  }
+  &__page-title {
+    margin-bottom: 24px;
+  }
+  &__name {
+    font-weight: bold;
+  }
+  &__contents {
+    max-width: 710px;
   }
   &__text {
-    margin-bottom: 64px;
-    & p {
-      margin-bottom: 16px;
-    }
+    margin-bottom: 16px;
   }
   &__next {
+    max-width: 260px;
     display: inline-flex;
     float: right;
     justify-content: flex-end;
@@ -90,14 +84,15 @@
   &__next-text {
     margin-right: 16px;
   }
+  &__next-small {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  &__text-box {
+    margin-bottom: 80px;
+  }
 }
 
-.magazine-image {
-  height: 100px;
-  border-radius: 0 8px 8px 0;
-  margin-right: 24px;
-}
-
-.magazine-image {
-  box-shadow: 4px 0px #b8b9be;
+h2 {
+  font-size: 20px;
 }

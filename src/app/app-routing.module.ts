@@ -34,8 +34,8 @@ const routes: Routes = [
   {
     path: 'magazine-viewer',
     loadChildren: () =>
-      import('./magazine-viewer/magazine-viewer.module').then(
-        (m) => m.MagazineViewerModule
+      import('./user-shell/user-shell.module').then(
+        (m) => m.UserShellModule
       ),
   },
   {

@@ -39,6 +39,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('../magazine/magazine.module').then((m) => m.MagazineModule),
       },
+      {
+        path: 'magazine-viewer',
+        loadChildren: () =>
+          import('../magazine-viewer/magazine-viewer.module').then(
+            (m) => m.MagazineViewerModule
+          ),
+      },
     ],
   },
 ];
