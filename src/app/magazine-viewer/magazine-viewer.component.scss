@@ -1,6 +1,10 @@
+@import 'mixins';
 .magazine-viewer-container {
   width: 100%;
   margin-bottom: 128px;
+  @include sm {
+    margin-bottom: 40px;
+  }
 }
 
 .viewer {
@@ -8,25 +12,46 @@
   max-width: 1338px;
   justify-content: space-between;
   margin: 40px auto;
+  @include sm {
+    display: block;
+  }
   &__magazines {
     margin-right: 180px;
+    @include sm {
+      margin: 0 auto;
+    }
   }
   &__magazine-images {
     display: flex;
     margin-right: 40px;
     margin-bottom: 32px;
     max-width: 600px;
+    @include sm {
+      margin: 0 16px 16px;
+    }
   }
   &__magazine-image {
     max-width: 120px;
     margin-right: 32px;
     border-radius: 0 8px 8px 0;
     box-shadow: 4px 0px #b8b9be;
+    @include sm {
+      max-width: 80px;
+    }
   }
   &__magazine-titles {
     & h1 {
       font-size: 24px;
       margin-bottom: 16px;
+      @include sm {
+        font-size: 18px;
+        text-align: left;
+      }
+    }
+  }
+  &__chapters {
+    @include sm {
+      margin: 0 16px 24px;
     }
   }
   &__chapter {
@@ -41,11 +66,17 @@
     }
     & p {
       margin-right: 16px;
+      @include sm {
+        font-size: 14px;
+      }
     }
   }
   &__users {
     display: flex;
     align-items: center;
+    @include sm {
+      margin: 0 16px 16px;
+    }
   }
   &__avatar {
     width: 56px;
@@ -53,17 +84,31 @@
     border-radius: 50%;
     margin-right: 8px;
   }
+  &__page-chapter {
+    @include sm {
+      margin: 0 16px;
+    }
+  }
   &__page-titles {
     margin-bottom: 56px;
+    @include sm {
+      margin-bottom: 24px;
+    }
   }
   &__page-title {
     margin-bottom: 24px;
+    @include sm {
+      margin: 0 16px 8px;
+    }
   }
   &__name {
     font-weight: bold;
   }
   &__contents {
     max-width: 710px;
+    @include sm {
+      margin: 0 16px;
+    }
   }
   &__text {
     margin-bottom: 16px;
@@ -77,6 +122,11 @@
     padding: 24px;
     border-radius: 8px;
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+    @include sm {
+      float: none;
+      max-width: 180px;
+      margin: 0 16px 40px;
+    }
     &:hover {
       box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
     }
@@ -87,12 +137,33 @@
   &__next-small {
     font-size: 14px;
     margin-bottom: 8px;
+    @include sm {
+      font-size: 12px;
+    }
   }
   &__text-box {
     margin-bottom: 80px;
+    @include sm {
+      margin: 0 16px 40px;
+    }
+  }
+  &__next-chapter {
+    @include sm {
+      font-size: 14px;
+    }
   }
 }
 
 h2 {
   font-size: 20px;
+  @include sm {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  /*　画面サイズが480pxからはここを読み込む　*/
+  .mobile-view {
+    display: none;
+  }
 }
