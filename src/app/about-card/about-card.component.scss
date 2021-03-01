@@ -1,18 +1,28 @@
+@import 'mixins';
 .user-about {
   margin: 0 auto 128px;
   max-width: 1120px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  @include sm {
+    display: block;
+  }
   &__about {
     padding: 24px;
     border-radius: 8px;
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+    @include sm {
+      margin: 0 16px 16px;
+    }
   }
   &__equip {
     padding: 24px;
     border-radius: 8px;
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+    @include sm {
+      margin: 0 16px;
+    }
   }
   &__title {
     font-size: 24px;
