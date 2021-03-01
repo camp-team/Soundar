@@ -22,6 +22,11 @@ p {
   }
 }
 
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
 // 見出しに関するスタイル
 
 h1 {
@@ -61,7 +66,7 @@ h4 {
   &--hero {
     margin: 80px auto 128px;
     @include sm {
-      margin: 80px auto 80px;
+      margin: 40px 16px 40px;
     }
   }
   &--recent {
@@ -164,6 +169,9 @@ h4 {
 
 .recent-title {
   margin-bottom: 80px;
+  @include sm {
+    margin-bottom: 40px;
+  }
 }
 .recent-title h2 {
   font-size: 40px;
@@ -178,9 +186,10 @@ h4 {
   gap: 45px;
   margin-bottom: 80px;
   @include sm {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    margin-bottom: 80px;
+    display: block;
+    // display: grid;
+    // grid-template-columns: repeat(1, 1fr);
+    margin: 0 16px 80px;
   }
 }
 .recent-card-list__vertical {
@@ -197,6 +206,9 @@ h4 {
 
 // recent-contentsのカードに関するスタイル
 // memoとmagazineに関するスタイル
+.width-test {
+  // padding: 16px;
+}
 .recent-posted-card {
   position: relative;
   border-radius: 8px;
@@ -213,14 +225,14 @@ h4 {
   }
   &__image {
     // display: block;
-    max-width: 378px;
     // width: 100%;
-    margin: 19px 19px 25px;
+    // margin: 19px 19px 25px;
+    // position: absolute;
     @include sm {
-      max-width: 338px;
-      margin: 18px 18px 20px;
+      // margin: 18px 18px 20px;
     }
   }
+
   &__user-icon {
     width: 56px;
     height: 56px;
