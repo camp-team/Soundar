@@ -7,3 +7,6 @@ typings/
 
 # Node.js dependency directory
 node_modules/
+
+# pushして外部に晒すべきではないファイル
+.firebase/hosting.ZGlzdC9zb3VuZGFy.cache
