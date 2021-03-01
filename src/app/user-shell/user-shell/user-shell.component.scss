@@ -54,9 +54,7 @@ header {
 // footerに関するスタイル
 
 footer {
-  width: 100%;
   @include sm {
-    max-width: 343px;
     margin: 0 16px;
   }
 }
@@ -75,6 +73,11 @@ footer {
     }
   }
 }
+.footer-links {
+  @include sm {
+    margin-bottom: 16px;
+  }
+}
 .footer-links a {
   display: block;
 }
@@ -89,6 +92,11 @@ footer {
 
 .footer-column-title {
   font-weight: bold;
+}
+.footer-twitter {
+  @include sm {
+    margin: 16px 0px;
+  }
 }
 
 small {
