@@ -2,22 +2,25 @@
 <!-- memoがいるときに、"recent-posted-card"クラスが表示される。 -->
 <div class="recent-posted-card" *ngIf="memo">
   <!-- 5行目のas userは、23行目のuser.nameのuserを使うために必要 -->
-  <div class="div" *ngIf="user$ | async as user">
+  <ng-container *ngIf="user$ | async as user">
     <!-- メモのサムネイル画像 -->
+    <!-- <div class="width-test"> -->
     <img class="recent-posted-card__image" [src]="memo.thumbnailUrl" alt="" />
-
+    <!-- </div> -->
     <!-- メモカードの内容     -->
     <div class="recent-posted-card__card-contents">
       <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
       <div class="recent-posted-author">
         <a routerLink="/user">
-        <img
-          class="recent-posted-card__user-icon"
-          [src]="user.avatarURL"
-          alt=""
+          <img
+            class="recent-posted-card__user-icon"
+            [src]="user.avatarURL"
+            alt=""
         /></a>
         <div class="recent-posted-card__users">
-          <a routerLink="/user" class="recent-posted-card__user-name">{{ user.name }}</a>
+          <a routerLink="/user" class="recent-posted-card__user-name">{{
+            user.name
+          }}</a>
           <p class="recent-posted-card__posted-date">
             {{ memo.createdAt.toDate() | date: 'yyyy年MM月dd日' }}
           </p>
@@ -49,5 +52,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </ng-container>
 </div>
