@@ -78,7 +78,7 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'users',

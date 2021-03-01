@@ -46,6 +46,10 @@ const routes: Routes = [
             (m) => m.MagazineViewerModule
           ),
       },
+      {
+        path: 'user',
+        loadChildren: () => import('../user/user.module').then((m) => m.UserModule),
+      },
     ],
   },
 ];

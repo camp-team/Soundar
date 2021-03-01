@@ -1,6 +1,9 @@
 @import 'mixins';
 .user-card {
   margin-bottom: 80px;
+  @include sm {
+    margin-bottom: 40px;
+  }
   &__container {
     max-width: 1120px;
     margin: 0 auto;

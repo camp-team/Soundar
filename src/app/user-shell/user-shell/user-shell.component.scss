@@ -56,8 +56,8 @@ header {
 footer {
   width: 100%;
   @include sm {
-    width: 272px;
-    padding: 0 24px;
+    max-width: 343px;
+    margin: 0 16px;
   }
 }
 .footer-container {
@@ -92,6 +92,7 @@ footer {
 }
 
 small {
+  margin: 0 auto;
   font-size: 14px;
   width: 100%;
   text-align: center;
