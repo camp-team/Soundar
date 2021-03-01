@@ -16,30 +16,31 @@
             [src]="user.avatarURL"
             alt=""
           />
+
+          <mat-menu #menuRef="matMenu">
+            <button mat-menu-item routerLink="/edit">
+              <mat-icon>create</mat-icon>
+              <span>メモを書く</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>account_box</mat-icon>
+              <a [routerLink]="['/user', user.uid]">アカウント設定</a>
+            </button>
+
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              <span>ログアウト</span>
+            </button>
+          </mat-menu>
         </ng-container>
 
-        <mat-menu #menuRef="matMenu">
-          <button mat-menu-item routerLink="/edit">
-            <mat-icon>create</mat-icon>
-            <span>メモを書く</span>
-          </button>
-          <button mat-menu-item routerLink="/settings/profile">
-            <mat-icon>account_box</mat-icon>
-            <span (click)="unImplemented()">アカウント設定</span>
-          </button>
-
-          <button mat-menu-item (click)="logout()">
-            <mat-icon>exit_to_app</mat-icon>
-            <span>ログアウト</span>
-          </button>
-        </mat-menu>
-        <ng-template #notLogin>
-          <div class="sign-in">
-            <a routerLink="/enter" href="#" class="button button--small"
-              >Sign In</a
-            >
-          </div>
-        </ng-template>
+          <ng-template #notLogin>
+            <div class="sign-in">
+              <a routerLink="/enter" href="#" class="button button--small"
+                >Sign In</a
+              >
+            </div>
+          </ng-template>
       </div>
     </div>
   </div>
