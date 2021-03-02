@@ -77,6 +77,9 @@ h4 {
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
     margin-bottom: 128px;
+    @include sm {
+      // padding: 0 16px 0;
+    }
   }
   &--memo-header {
     max-width: 100%;
@@ -187,9 +190,8 @@ h4 {
   margin-bottom: 80px;
   @include sm {
     display: block;
-    // display: grid;
-    // grid-template-columns: repeat(1, 1fr);
-    margin: 0 16px 80px;
+
+    margin: 0 16px 40px;
   }
 }
 .recent-card-list__vertical {
@@ -336,12 +338,13 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 8px;
   margin: 128px auto;
   max-width: 1338px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   @include sm {
     display: block;
-    margin: 80px auto;
+    margin: 80px 16px;
   }
 }
 
@@ -355,6 +358,7 @@ h4 {
     margin: 0;
     @include sm {
       margin-bottom: 8px;
+      font-size: 28px;
     }
   }
   &__text {
