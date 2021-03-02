@@ -6,6 +6,11 @@
   }
 }
 
+.main-wrapper {
+  @include sm {
+    padding: 0 16px;
+  }
+}
 .grid-container {
   max-width: 1338px;
   margin: 0 auto;
@@ -15,8 +20,6 @@
   width: 100%;
   @include sm {
     display: block;
-    margin: 0 16px;
-    max-width: 343px;
   }
 }
 
@@ -106,6 +109,7 @@
     padding: 8px 0;
   }
   & img {
+    width: 18px;
     margin-right: 8px;
   }
 }
@@ -119,6 +123,7 @@
     padding: 8px 0;
   }
   & img {
+    width: 18px;
     margin-right: 8px;
   }
 }
@@ -163,7 +168,8 @@
   border-bottom: 1px solid #fff;
   margin-bottom: 80px;
   @include sm {
-    margin: 0 16px;
+    margin: 0 16px 40px;
+    padding-bottom: 40px;
   }
 }
 

@@ -117,22 +117,30 @@
 <div class="more-wrapper">
   <h2 class="learn-more">Learn More</h2>
   <div class="guide-icons">
-    <div class="icon-box">
-      <img class="icon-image" src="assets/images/icons/faq-icon.svg" alt="" />
-      <p>Q & A</p>
-    </div>
-    <div class="icon-box">
-      <img class="icon-image" src="assets/images/icons/terms-icon.svg" alt="" />
-      <p>利用規約</p>
-    </div>
+    <a routerLink="/faq"
+      ><div class="icon-box">
+        <img class="icon-image" src="assets/images/icons/faq-icon.svg" alt="" />
+        <p>Q & A</p>
+      </div></a
+    >
+    <a routerLink="/terms"
+      ><div class="icon-box">
+        <img
+          class="icon-image"
+          src="assets/images/icons/terms-icon.svg"
+          alt=""
+        />
+        <p>利用規約</p>
+      </div></a
+    >
 
-    <div class="icon-box">
+    <a routerLink="/privacy"><div class="icon-box">
       <img
         class="icon-image"
         src="assets/images/icons/privacy-icon.svg"
         alt=""
       />
       <p>プライバシー</p>
-    </div>
+    </div></a>
   </div>
 </div>

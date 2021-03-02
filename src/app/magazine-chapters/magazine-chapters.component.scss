@@ -9,6 +9,9 @@
   }
   & h2 {
     margin-bottom: 24px;
+    @include sm {
+      text-align: center;
+    }
   }
   &__chapter {
     display: flex;

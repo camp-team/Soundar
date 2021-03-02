@@ -7,9 +7,11 @@
     <div class="magazine-header__titles">
       <h1>マガジンタイトル</h1>
       <div class="magazine-header__user">
-        <img src="assets/images/user-icon-example.jpg" alt="" />
+        <a routerLink="/user/euGre1TgxEZZ1fVTWKQaTQQfFyi1">
+        <img src="assets/images/user-icon-example.jpg" alt="" /></a>
         <div class="magazine-header__names">
-          <p class="magazine-header__name">UserName</p>
+          <a routerLink="/user/euGre1TgxEZZ1fVTWKQaTQQfFyi1">
+          <p class="magazine-header__name">UserName</p></a>
           <p class="magazine-header__date">2020年12月2日</p>
         </div>
       </div>
@@ -23,8 +25,8 @@
           <img src="assets/images/favorite.svg" alt="" />
           <p (click)="like()">123</p>
         </button>
-        <button href="https://twitter.com/" target="blank" class="magazine-header__twitter">
-          <img src="assets/images/twitter.svg" alt="" />
+        <button  class="magazine-header__twitter">
+          <a href="https://twitter.com/" target="blank"><img src="assets/images/twitter.svg" alt="" /></a>
         </button>
       </div>
     </div>
