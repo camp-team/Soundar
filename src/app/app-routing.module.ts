@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'faq',
-    loadChildren: () => import('./faq/faq.module').then((m) => m.FaqModule),
+    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'list',

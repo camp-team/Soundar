@@ -57,4 +57,7 @@ export class FaqContentsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  unImplemented(): void {
+    alert('未実装です!');
+  }
 }

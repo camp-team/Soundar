@@ -4,15 +4,10 @@
       <p>Q & A</p>
     </div>
     <div class="faq-contents__tabs">
-      <div class="">
-        <p>Soundarについて</p>
-      </div>
-      <div class="">
-        <p>購入について</p>
-      </div>
-      <div class="">
-        <p>販売について</p>
-      </div>
+
+        <p  (click)="unImplemented()">Soundarについて</p>
+        <p (click)="unImplemented()">購入について</p>
+        <p (click)="unImplemented()">販売について</p>
     </div>
 
     <ng-container *ngFor="let qa of qaContents; index as i;">
