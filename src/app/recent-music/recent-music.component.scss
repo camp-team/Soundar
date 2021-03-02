@@ -1,0 +1,6 @@
+@import 'mixins';
+.music-card {
+  @include sm {
+    margin: 0 16px 0;
+  }
+}

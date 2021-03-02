@@ -78,7 +78,7 @@ h4 {
     border-bottom: 1px solid #ffffff;
     margin-bottom: 128px;
     @include sm {
-      // padding: 0 16px 0;
+      margin-bottom: 80px;
     }
   }
   &--memo-header {
