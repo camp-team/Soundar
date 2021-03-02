@@ -4,8 +4,8 @@
   <!-- 5行目のas userは、23行目のuser.nameのuserを使うために必要 -->
   <ng-container *ngIf="user$ | async as user">
     <!-- メモのサムネイル画像 -->
-    <div class="width-test">
-    <img class="recent-posted-card__image" [src]="memo.thumbnailUrl" alt="" />
+    <div class="image-wrapper">
+      <img class="recent-posted-card__image" [src]="memo.thumbnailUrl" alt="" />
     </div>
     <!-- メモカードの内容     -->
     <div class="recent-posted-card__card-contents">
