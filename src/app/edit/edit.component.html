@@ -2,7 +2,7 @@
   <!-- ここからフォーム -->
   <form [formGroup]="form" (ngSubmit)="submit()">
     <!-- メモタイトルの入力フォーム -->
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="edit-forms">
       <mat-label>Title</mat-label>
       <input
         matInput
@@ -21,7 +21,7 @@
     <!-- メモタイトルの入力フォームここまで -->
 
     <!-- カテゴリーの入力フォーム -->
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="edit-forms">
       <mat-label>Category</mat-label>
       <input
         matInput
@@ -30,21 +30,25 @@
         placeholder="複数カテゴリーを追加するには、「,」（カンマ）区切りでカテゴリーを記入してください。"
       />
     </mat-form-field>
+
     <!-- カテゴリーの入力フォームここまで -->
 
     <!-- メモコンテンツの入力エディター -->
+
     <div class="editor">
       <quill-editor
         [required]="true"
-        [styles]="{ height: '500px' }"
+
         formControlName="text"
       >
       </quill-editor>
       <p class="error" *ngIf="textControl.hasError('required') && form.touched">
         本文は必須項目です
       </p>
-      <!-- サムネイル追加 -->
-      <div class="thumbnail__text" *ngIf="user$ | async as user">
+
+    <!-- サムネイル追加 -->
+
+    <div class="thumbnail__text" *ngIf="user$ | async as user">
         <div class="thumbnail" (click)="crop.input.nativeElement.click()">
           <img
             class="{{ imageFile ? 'thumbnail__image' : 'thumbnail__icon' }}"
@@ -60,9 +64,9 @@
         </div>
       </div>
 
-      <div class="test-button"></div>
-      <!-- ここからトグル  -->
-      <div class="flexbox">
+    <!-- ここからトグル  -->
+
+    <div class="switchers">
         <div class="switcher">
           <input formControlName="isPublic" type="checkbox" id="" />
           <label for=""></label>
