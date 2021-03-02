@@ -31,7 +31,8 @@
         <div class="author">
           <div class="author__icon">
             <a routerLink="/user">
-            <img src="assets/images/user-icon-example.jpg" alt="" /></a>
+              <img src="assets/images/user-icon-example.jpg" alt=""
+            /></a>
           </div>
           <div class="author__name">
             <a routerLink="/user">UserName</a>
@@ -40,7 +41,7 @@
       </div>
       <div class="fav-button">
         <img src="assets/images/favorite.svg" alt="" />
-        <p>123</p>
+        <p (click)="like()">123</p>
       </div>
     </div>
   </div>

@@ -22,8 +22,10 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 24px;
+  align-items: center;
   @include sm {
-    align-items: center;
+
+    display: block;
   }
 }
 .author-row {
@@ -36,12 +38,18 @@
   justify-content: space-between;
   align-items: center;
   margin-right: 16px;
+  @include sm {
+    margin-bottom: 16px;
+  }
   &__icon img {
     width: 56px;
     height: 56px;
     object-fit: cover;
     border-radius: 50%;
     margin-right: 10px;
+    @include sm {
+      margin-right: 16px;
+    }
   }
   &__name p {
     font-size: 16px;
@@ -49,6 +57,7 @@
 }
 
 .fav-button {
+  min-height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;

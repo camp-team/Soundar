@@ -39,7 +39,7 @@
     <!-- マガジンカード下部ボタンのボックス     -->
     <div class="button-row">
       <a routerLink="magazine" class="recent-posted-card__card-button">もっとみる</a>
-      <div class="recent-posted-card__card-button">
+      <div (click)="like()" class="recent-posted-card__card-button">
         <img src="assets/images/favorite.svg" alt="" />
         <p>123</p>
       </div>

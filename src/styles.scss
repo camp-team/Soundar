@@ -203,6 +203,7 @@ h4 {
   margin-bottom: 80px;
   @include sm {
     grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 40px;
   }
 }
 
@@ -216,8 +217,14 @@ h4 {
   border-radius: 8px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   width: 100%;
+  &--movie {
+    overflow: hidden;
+  }
   @include sm {
     margin-bottom: 16px;
+  }
+  &__image {
+    margin-bottom: 8px;
   }
   &--magazine {
     margin-top: 69px;
@@ -281,6 +288,7 @@ h4 {
     }
   }
   &__card-button {
+    min-height: 30px;
     font-size: 16px;
     padding: 8px 16px;
     border: 1px solid #d1d9e6;
