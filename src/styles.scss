@@ -206,7 +206,7 @@ h4 {
 
 // recent-contentsのカードに関するスタイル
 // memoとmagazineに関するスタイル
-.width-test {
+.image-wrapper {
   padding: 16px;
 }
 .recent-posted-card {
@@ -214,6 +214,9 @@ h4 {
   border-radius: 8px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   width: 100%;
+  @include sm {
+    margin-bottom: 16px;
+  }
   &--magazine {
     margin-top: 69px;
   }
@@ -222,14 +225,8 @@ h4 {
   }
   &__card-contents--magazine {
     padding-top: 224px;
-  }
-  &__image {
-    // display: block;
-    // width: 100%;
-    // margin: 19px 19px 25px;
-    // position: absolute;
     @include sm {
-      // margin: 18px 18px 20px;
+      margin-top: 112px;
     }
   }
 
