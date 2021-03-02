@@ -11,14 +11,14 @@
     <div class="recent-posted-card__card-contents">
       <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
       <div class="recent-posted-author">
-        <a routerLink="/user">
+        <a [routerLink]="['/user', user.uid]">
           <img
             class="recent-posted-card__user-icon"
             [src]="user.avatarURL"
             alt=""
         /></a>
         <div class="recent-posted-card__users">
-          <a routerLink="/user" class="recent-posted-card__user-name">{{
+          <a [routerLink]="['/user', user.uid]" class="recent-posted-card__user-name">{{
             user.name
           }}</a>
           <p class="recent-posted-card__posted-date">

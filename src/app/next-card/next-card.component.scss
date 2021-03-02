@@ -57,6 +57,7 @@
   }
   &__buttons {
     display: flex;
+    font-size: 14px;
   }
   &__buttons {
     display: flex;
@@ -75,6 +76,7 @@
   }
   &__favorite {
     display: flex;
+    align-items: center;
     & img {
       width: 16px;
       height: 16px;

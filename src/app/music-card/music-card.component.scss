@@ -51,8 +51,11 @@
       margin-right: 16px;
     }
   }
-  &__name p {
-    font-size: 16px;
+  &__name {
+    font-size: 20px;
+    @include sm {
+      font-size: 16px;
+    }
   }
 }
 
