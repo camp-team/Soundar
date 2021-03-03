@@ -6,6 +6,7 @@
   margin-bottom: 40px;
   @include sm {
     max-width: 343px;
+    margin: 0 auto;
   }
   &__top {
     display: flex;
@@ -100,6 +101,11 @@
   & img {
     @include sm {
       display: none;
+    }
+  }
+  & p {
+    @include sm {
+      margin-bottom: 8px;
     }
   }
   p {

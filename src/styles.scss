@@ -93,6 +93,23 @@ h4 {
   border-radius: 8px;
   border: 1px solid #d1d9e6;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  &--cancel {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    & img {
+      width: 24px;
+    }
+  }
+  &--favorite {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    & img {
+      width: 16px;
+      margin-right: 8px;
+    }
+  }
   &--small {
     padding: 8px 16px;
     @include sm {
@@ -103,6 +120,7 @@ h4 {
     height: 16px;
     padding: 12px;
     border-radius: 50%;
+    vertical-align: bottom;
   }
   &--general {
     min-width: 180px;
@@ -204,17 +222,17 @@ h4 {
     }
   }
   &__user-icon {
-    width: 48px;
-    height: 48px;
-    margin-right: 10px;
+    width: 56px;
+    height: 56px;
+    margin-right: 16px;
     border-radius: 50%;
+  }
+  &__users {
+    text-align: left;
   }
   &__user-name {
     display: inline-block;
     font-size: 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     @include sm {
       font-size: 16px;
     }
@@ -229,6 +247,9 @@ h4 {
     font-size: 24px;
     margin-bottom: 24px;
     text-align: left;
+    &--movie {
+      margin-bottom: 16px;
+    }
     @include sm {
       font-size: 20px;
     }
@@ -271,9 +292,7 @@ h4 {
   }
 }
 .recent-posted-author {
-  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
@@ -298,6 +317,10 @@ h4 {
   margin: 0 auto 128px;
   max-width: 1338px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  border-radius: 8px;
+  @include sm {
+    margin-bottom: 40px;
+  }
 }
 
 .guide-card {
@@ -324,6 +347,9 @@ h4 {
     @include sm {
       margin-bottom: 8px;
     }
+  }
+  &__text {
+    font-size: 18px;
   }
 }
 .guide-text h2 {
@@ -360,10 +386,17 @@ h4 {
   margin: 0 auto 128px;
   display: flex;
   justify-content: space-between;
+  @include sm {
+    max-width: 343px;
+    margin: 0 24px 40px;
+  }
 }
 
 .guide-icons img {
   height: 36px;
+  @include sm {
+    height: 24px;
+  }
 }
 
 .icon-box {
@@ -372,6 +405,15 @@ h4 {
   border-radius: 8px;
   padding: 28px 0px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  @include sm {
+    min-width: 40px;
+    padding: 16px 8px;
+  }
+  & p {
+    @include sm {
+      display: none;
+    }
+  }
 }
 
 .icon-box:hover {
@@ -379,10 +421,14 @@ h4 {
 }
 .icon-box p {
   font-weight: bold;
+  line-height: 1;
 }
 
 .icon-image {
-  margin: 0 auto 16px;
+  margin: 0 auto 10px;
+  @include sm {
+    margin: 0 auto;
+  }
 }
 
 // Quillエディターのスタイル

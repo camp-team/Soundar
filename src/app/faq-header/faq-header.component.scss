@@ -1,16 +1,31 @@
+@import 'mixins';
 .header-image {
   max-width: 100%;
   height: 378px;
   background-image: url(/assets/images/faq-header-image.jpg);
   background-size: cover;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   background-blend-mode: lighten;
   margin-bottom: 80px;
+  @include sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 254px;
+    margin-bottom: 40px;
+  }
 }
 
 h1 {
   padding: 148px;
   text-align: center;
   font-size: 60px;
+  text-shadow: 0.6px 0.6px 0 #fff, -0.6px -0.6px 0 #fff, -0.6px 0.6px 0 #fff,
+    0.6px -0.6px 0 #fff, 0px 0.6px 0 #fff, 0-0.6px 0 #fff, -0.6px 0 0 #fff,
+    0.6px 0 0 #fff;
+    @include sm {
+      padding: 0;
+      font-size: 32px;
+    }
 }

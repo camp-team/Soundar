@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-magazine-viewer',
   templateUrl: './magazine-viewer.component.html',
-  styleUrls: ['./magazine-viewer.component.scss']
+  styleUrls: ['./magazine-viewer.component.scss'],
 })
 export class MagazineViewerComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  like(): void {
+    alert('like!');
   }
-
 }

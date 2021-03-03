@@ -3,12 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'about',
+    path: '',
     loadChildren: () =>
-      import('./about/about.module').then((m) => m.AboutModule),
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
-    path: '',
+    path: 'about',
     loadChildren: () =>
       import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
@@ -23,18 +23,19 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
+    loadChildren: () =>
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'magazine',
     loadChildren: () =>
-      import('./magazine/magazine.module').then((m) => m.MagazineModule),
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'magazine-viewer',
     loadChildren: () =>
-      import('./magazine-viewer/magazine-viewer.module').then(
-        (m) => m.MagazineViewerModule
+      import('./user-shell/user-shell.module').then(
+        (m) => m.UserShellModule
       ),
   },
   {
@@ -77,7 +78,7 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'users',

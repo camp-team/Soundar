@@ -34,7 +34,26 @@ import {
   ],
 })
 export class FaqContentsComponent implements OnInit {
-  isOpen = false;
+  activeIndex: number;
+
+  qaContents = [
+    {
+      question: 'Soundarでできることは？',
+      answer:
+        'スキルや知見の共有ができ、ユーザーがクリエイターを応援できます。',
+    },
+    {
+      question: 'Soundarでできることは？',
+      answer:
+        'スキルや知見の共有ができ、ユーザーがクリエイターを応援できます。',
+    },
+    {
+      question: 'Soundarでできることは？',
+      answer:
+        'スキルや知見の共有ができ、ユーザーがクリエイターを応援できます。',
+    },
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}

@@ -10,18 +10,17 @@
     <div class="recent-posted-card__card-contents">
       <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
       <div class="recent-posted-author">
-        <div>
-          <img
-            class="recent-posted-card__user-icon"
-            src="assets/images/user-icon-example.jpg"
-            alt=""
-          />
-          <p class="recent-posted-card__user-name">{{ user.name }}</p>
-        </div>
-
-        <div class="recent-posted-card__posted-date">
-          <!-- firestoreのデータなので、toDate()を走らせる -->
-          <p>{{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}</p>
+        <a routerLink="/user">
+        <img
+          class="recent-posted-card__user-icon"
+          [src]="user.avatarURL"
+          alt=""
+        /></a>
+        <div class="recent-posted-card__users">
+          <a routerLink="/user" class="recent-posted-card__user-name">{{ user.name }}</a>
+          <p class="recent-posted-card__posted-date">
+            {{ memo.createdAt.toDate() | date: 'yyyy年MM月dd日' }}
+          </p>
         </div>
       </div>
 

@@ -11,5 +11,7 @@ export class MagazineDetailHeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  like(): void {
+    alert('like!');
+  }
 }

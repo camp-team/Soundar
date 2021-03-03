@@ -12,17 +12,15 @@
   >
     <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
     <div class="recent-posted-author">
-      <div>
-        <img
-          class="recent-posted-card__user-icon"
-          src="assets/images/user-icon-example.jpg"
-          alt=""
-        />
-        <p class="recent-posted-card__user-name">UserName</p>
-      </div>
-
-      <div class="recent-posted-card__posted-date">
-        <p>2020年11月11日</p>
+      <a routerLink="/user">
+      <img
+        class="recent-posted-card__user-icon"
+        src="assets/images/user-icon-example.jpg"
+        alt=""
+      /></a>
+      <div class="recent-posted-card__users">
+        <a routerLink="/user" class="recent-posted-card__user-name">UserName</a>
+        <p class="recent-posted-card__posted-date">2020年11月11日</p>
       </div>
     </div>
 
@@ -40,7 +38,7 @@
 
     <!-- マガジンカード下部ボタンのボックス     -->
     <div class="button-row">
-      <div class="recent-posted-card__card-button">もっとみる</div>
+      <a routerLink="magazine" class="recent-posted-card__card-button">もっとみる</a>
       <div class="recent-posted-card__card-button">
         <img src="assets/images/favorite.svg" alt="" />
         <p>123</p>
