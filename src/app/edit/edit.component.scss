@@ -18,6 +18,9 @@
 .editor {
   margin: 0 auto;
   max-width: 880px;
+  @include sm {
+    margin: 32px auto ;
+  }
 }
 
 .edit-forms {

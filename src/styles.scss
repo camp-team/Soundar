@@ -364,11 +364,14 @@ h4 {
     margin: 0;
     @include sm {
       margin-bottom: 8px;
-      font-size: 28px;
+      font-size: 24px;
     }
   }
   &__text {
     font-size: 18px;
+    @include sm {
+      font-size: 16px;
+    }
   }
 }
 .guide-text h2 {

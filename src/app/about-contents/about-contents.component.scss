@@ -56,6 +56,9 @@
   margin-bottom: 24px;
   & p {
     font-size: 18px;
+    @include sm {
+      font-size: 16px;
+    }
   }
 }
 
@@ -68,6 +71,9 @@
   & p {
     font-size: 17px;
     word-break: normal;
+    @include sm {
+      font-size: 14px;
+    }
   }
 }
 
@@ -107,6 +113,7 @@
   padding: 16px 0;
   @include sm {
     padding: 8px 0;
+    font-size: 16px;
   }
   & img {
     width: 18px;
@@ -121,6 +128,7 @@
   margin-bottom: 16px;
   @include sm {
     padding: 8px 0;
+    font-size: 16px;
   }
   & img {
     width: 18px;
@@ -137,13 +145,14 @@
 
 .consideration-text {
   margin-bottom: 16px;
+  @include sm {
+    font-size: 14px;
+  }
   & p {
     @include sm {
       margin-bottom: 4px;
+      font-size: 14px;
     }
-  }
-  @include sm {
-    font-size: 17px;
   }
 }
 
@@ -182,7 +191,7 @@ h2 {
   font-size: 40px;
   margin-bottom: 40px;
   @include sm {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 

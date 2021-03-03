@@ -78,6 +78,9 @@
 
 .profile-box {
   padding: 24px;
+  @include sm {
+    padding: 12px;
+  }
 }
 
 .support-container {
