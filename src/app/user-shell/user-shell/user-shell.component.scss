@@ -89,6 +89,9 @@ footer {
 
 .contact-column {
   grid-column: 5/7;
+  & a {
+    cursor: pointer;
+  }
 }
 
 .footer-column-title {
@@ -98,7 +101,6 @@ footer {
   @include sm {
     margin: 16px 0px;
   }
-
 }
 
 small {

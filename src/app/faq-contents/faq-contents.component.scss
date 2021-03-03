@@ -71,6 +71,9 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    & p {
+      cursor: pointer;
+    }
   }
   &__list img {
     height: 36px;
