@@ -15,10 +15,12 @@
   }
 }
 header {
+  position: relative;
   width: 100%;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
 }
 .header__account {
+  z-index: 100;
   border-radius: 50%;
   width: 48px;
   height: 48px;
@@ -31,6 +33,22 @@ header {
 }
 .header__logo {
   margin-left: 8px;
+  @include sm {
+    margin: 0 auto;
+  }
+}
+.header-logo-image {
+  max-width: 120px;
+  height: 38px;
+
+  @include sm {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 }
 .header-logos {
   display: flex;
@@ -111,4 +129,13 @@ small {
   display: block;
   padding: 48px 0;
   border-top: 1px solid #d1d9e6;
+}
+
+.footer-logo {
+  height: 54px;
+}
+.footer-logos {
+  @include sm {
+    text-align: center;
+  }
 }

@@ -357,8 +357,16 @@ h4 {
 .guide-text {
   padding-left: 100px;
   padding-right: 56px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   @include sm {
     padding: 28px;
+  }
+  .guide-text__logo {
+    margin: 32px auto;
+    @include sm {
+      margin: 0 auto 16px;
+    }
   }
   .guide-text__title {
     margin: 0;
@@ -382,7 +390,7 @@ h4 {
   }
 }
 .text-box {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   @include sm {
     font-size: 14px;
     text-align: left;
