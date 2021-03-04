@@ -2,7 +2,8 @@
   <div class="about-container">
     <div class="about-card">
       <div class="guide-text">
-        <h2 class="guide-text__logo">SoundarLogo</h2>
+        <h2 class="guide-text__logo"><img src="/assets/images/icons/sounder-logo.svg" alt=""
+          /></h2>
         <div class="text-box">
           <h2 class="guide-text__title">A new platform</h2>
           <h2 class="guide-text__title">For modern creator</h2>
@@ -117,22 +118,30 @@
 <div class="more-wrapper">
   <h2 class="learn-more">Learn More</h2>
   <div class="guide-icons">
-    <div class="icon-box">
-      <img class="icon-image" src="assets/images/icons/faq-icon.svg" alt="" />
-      <p>Q & A</p>
-    </div>
-    <div class="icon-box">
-      <img class="icon-image" src="assets/images/icons/terms-icon.svg" alt="" />
-      <p>利用規約</p>
-    </div>
+    <a routerLink="/faq"
+      ><div class="icon-box">
+        <img class="icon-image" src="assets/images/icons/faq-icon.svg" alt="" />
+        <p>Q & A</p>
+      </div></a
+    >
+    <a routerLink="/terms"
+      ><div class="icon-box">
+        <img
+          class="icon-image"
+          src="assets/images/icons/terms-icon.svg"
+          alt=""
+        />
+        <p>利用規約</p>
+      </div></a
+    >
 
-    <div class="icon-box">
+    <a routerLink="/privacy"><div class="icon-box">
       <img
         class="icon-image"
         src="assets/images/icons/privacy-icon.svg"
         alt=""
       />
       <p>プライバシー</p>
-    </div>
+    </div></a>
   </div>
 </div>

@@ -50,6 +50,27 @@ const routes: Routes = [
         path: 'user',
         loadChildren: () => import('../user/user.module').then((m) => m.UserModule),
       },
+      {
+        path: 'faq',
+        loadChildren: () => import('../faq/faq.module').then((m) => m.FaqModule),
+      },
+      {
+        path: 'terms',
+        loadChildren: () =>
+          import('../terms/terms.module').then((m) => m.TermsModule),
+      },
+      {
+        path: 'privacy',
+        loadChildren: () =>
+          import('../privacy/privacy.module').then((m) => m.PrivacyModule),
+      },
+      {
+        path: 'transaction-law',
+        loadChildren: () =>
+          import('../transaction-law/transaction-law.module').then(
+            (m) => m.TransactionLawModule
+          ),
+      },
     ],
   },
 ];

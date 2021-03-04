@@ -36,8 +36,9 @@
     border-radius: 0 8px 8px 0;
     box-shadow: 4px 0px #b8b9be;
     @include sm {
-      max-width: 100px;
+      height: 152px;
       object-fit: cover;
+      margin-right: 24px;
     }
   }
   &__magazine-titles {

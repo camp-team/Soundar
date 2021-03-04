@@ -7,7 +7,9 @@
     </div>
 
     <div class="header-logos">
-      <a class="header__logo" routerLink="/">SoundarLogo</a>
+      <a class="header__logo" routerLink="/"
+        ><img class="header-logo-image" src="/assets/images/icons/sounder-logo.svg" alt=""
+      /></a>
       <div>
         <ng-container *ngIf="authService.user$ | async as user; else notLogin">
           <img
@@ -34,13 +36,13 @@
           </mat-menu>
         </ng-container>
 
-          <ng-template #notLogin>
-            <div class="sign-in">
-              <a routerLink="/enter" href="#" class="button button--small"
-                >Sign In</a
-              >
-            </div>
-          </ng-template>
+        <ng-template #notLogin>
+          <div class="sign-in">
+            <a routerLink="/enter" href="#" class="button button--small"
+              >Sign In</a
+            >
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>
@@ -49,15 +51,23 @@
 <footer>
   <div class="footer-container">
     <div class="logo-column">
-      <a routerLink="/">SoundarLogo</a>
-      <p>クリエイターのための情報共有コミュニティ</p>
-
-      <a href="https://twitter.com/" target="blank"
-        ><img
-          class="button button--small-social"
-          src="assets/images/twitter.svg"
-          alt=""
-      /></a>
+      <div class="footer-logos">
+        <a routerLink="/"
+          ><img
+            class="footer-logo"
+            src="/assets/images/icons/sounder-logo.svg"
+            alt=""
+        /></a>
+        <p>クリエイターのための情報共有コミュニティ</p>
+      </div>
+      <div class="footer-twitter">
+        <a href="https://twitter.com/" target="blank"
+          ><img
+            class="button button--small-social"
+            src="assets/images/twitter.svg"
+            alt=""
+        /></a>
+      </div>
     </div>
     <div class="footer-links">
       <h4 class="footer-column-title">About</h4>
@@ -72,9 +82,7 @@
     </div>
     <div class="contact-column">
       <h4 class="footer-column-title">Contact</h4>
-      <a (click)="unImplemented()" routerLink="/" class="footer-links"
-        >お問い合わせ</a
-      >
+      <a (click)="unImplemented()" class="footer-links">お問い合わせ</a>
     </div>
   </div>
   <small>&copy; 2020 Soundar.com</small>

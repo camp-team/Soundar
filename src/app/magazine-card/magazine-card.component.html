@@ -1,7 +1,7 @@
 <!-- マガジンカード -->
 <div class="recent-posted-card recent-posted-card--magazine">
-  <div class="box">
-    <img class="box-image" src="assets/images/user-icon-example.jpg" alt="" />
+  <div class="magazine-box">
+    <img class="magazine-box__image" src="assets/images/user-icon-example.jpg" alt="" />
   </div>
 
   <!-- マガジンのサムネイル画像 -->
@@ -12,14 +12,14 @@
   >
     <!-- ユーザーアイコン、ユーザーネーム、投稿日のボックス -->
     <div class="recent-posted-author">
-      <a routerLink="/user">
+      <a routerLink="/user/euGre1TgxEZZ1fVTWKQaTQQfFyi1">
       <img
         class="recent-posted-card__user-icon"
         src="assets/images/user-icon-example.jpg"
         alt=""
       /></a>
       <div class="recent-posted-card__users">
-        <a routerLink="/user" class="recent-posted-card__user-name">UserName</a>
+        <a routerLink="/user/euGre1TgxEZZ1fVTWKQaTQQfFyi1" class="recent-posted-card__user-name">UserName</a>
         <p class="recent-posted-card__posted-date">2020年11月11日</p>
       </div>
     </div>
@@ -39,7 +39,7 @@
     <!-- マガジンカード下部ボタンのボックス     -->
     <div class="button-row">
       <a routerLink="magazine" class="recent-posted-card__card-button">もっとみる</a>
-      <div class="recent-posted-card__card-button">
+      <div (click)="like()" class="recent-posted-card__card-button">
         <img src="assets/images/favorite.svg" alt="" />
         <p>123</p>
       </div>

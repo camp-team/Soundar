@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'faq',
-    loadChildren: () => import('./faq/faq.module').then((m) => m.FaqModule),
+    loadChildren: () => import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'list',
@@ -51,7 +51,7 @@ const routes: Routes = [
   {
     path: 'privacy',
     loadChildren: () =>
-      import('./privacy/privacy.module').then((m) => m.PrivacyModule),
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: 'search',
@@ -61,7 +61,7 @@ const routes: Routes = [
   {
     path: 'terms',
     loadChildren: () =>
-      import('./terms/terms.module').then((m) => m.TermsModule),
+      import('./user-shell/user-shell.module').then((m) => m.UserShellModule),
   },
   {
     path: '',
@@ -72,8 +72,8 @@ const routes: Routes = [
   {
     path: 'transaction-law',
     loadChildren: () =>
-      import('./transaction-law/transaction-law.module').then(
-        (m) => m.TransactionLawModule
+      import('./user-shell/user-shell.module').then(
+        (m) => m.UserShellModule
       ),
   },
   {

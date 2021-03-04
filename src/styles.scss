@@ -22,6 +22,11 @@ p {
   }
 }
 
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
 // 見出しに関するスタイル
 
 h1 {
@@ -61,7 +66,7 @@ h4 {
   &--hero {
     margin: 80px auto 128px;
     @include sm {
-      margin: 80px auto 80px;
+      margin: 40px 16px 40px;
     }
   }
   &--recent {
@@ -72,6 +77,9 @@ h4 {
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
     margin-bottom: 128px;
+    @include sm {
+      margin-bottom: 80px;
+    }
   }
   &--memo-header {
     max-width: 100%;
@@ -146,11 +154,9 @@ h4 {
     text-align: center;
   }
   &--support {
-    min-width: 180px;
-    padding: 10px;
+    padding: 10px 16px;
     text-align: center;
     @include sm {
-      min-width: 140px;
       font-size: 14px;
     }
   }
@@ -164,6 +170,9 @@ h4 {
 
 .recent-title {
   margin-bottom: 80px;
+  @include sm {
+    margin-bottom: 40px;
+  }
 }
 .recent-title h2 {
   font-size: 40px;
@@ -178,9 +187,9 @@ h4 {
   gap: 45px;
   margin-bottom: 80px;
   @include sm {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    margin-bottom: 80px;
+    display: block;
+
+    margin: 0 16px 40px;
   }
 }
 .recent-card-list__vertical {
@@ -192,16 +201,29 @@ h4 {
   margin-bottom: 80px;
   @include sm {
     grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 40px;
   }
 }
 
 // recent-contentsのカードに関するスタイル
 // memoとmagazineに関するスタイル
+.image-wrapper {
+  padding: 16px;
+}
 .recent-posted-card {
   position: relative;
   border-radius: 8px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   width: 100%;
+  &--movie {
+    overflow: hidden;
+  }
+  @include sm {
+    margin-bottom: 16px;
+  }
+  &__image {
+    margin-bottom: 8px;
+  }
   &--magazine {
     margin-top: 69px;
   }
@@ -210,17 +232,11 @@ h4 {
   }
   &__card-contents--magazine {
     padding-top: 224px;
-  }
-  &__image {
-    // display: block;
-    max-width: 378px;
-    // width: 100%;
-    margin: 19px 19px 25px;
     @include sm {
-      max-width: 338px;
-      margin: 18px 18px 20px;
+      margin-top: 112px;
     }
   }
+
   &__user-icon {
     width: 56px;
     height: 56px;
@@ -270,6 +286,7 @@ h4 {
     }
   }
   &__card-button {
+    min-height: 30px;
     font-size: 16px;
     padding: 8px 16px;
     border: 1px solid #d1d9e6;
@@ -327,29 +344,42 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 8px;
   margin: 128px auto;
   max-width: 1338px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   @include sm {
     display: block;
-    margin: 80px auto;
+    margin: 80px 16px;
   }
 }
 
 .guide-text {
   padding-left: 100px;
   padding-right: 56px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   @include sm {
     padding: 28px;
+  }
+  .guide-text__logo {
+    margin: 32px auto;
+    @include sm {
+      margin: 0 auto 16px;
+    }
   }
   .guide-text__title {
     margin: 0;
     @include sm {
       margin-bottom: 8px;
+      font-size: 24px;
     }
   }
   &__text {
     font-size: 18px;
+    @include sm {
+      font-size: 16px;
+    }
   }
 }
 .guide-text h2 {
@@ -360,7 +390,7 @@ h4 {
   }
 }
 .text-box {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   @include sm {
     font-size: 14px;
     text-align: left;
@@ -388,7 +418,7 @@ h4 {
   justify-content: space-between;
   @include sm {
     max-width: 343px;
-    margin: 0 24px 40px;
+    margin: 0 24px 80px;
   }
 }
 
@@ -453,6 +483,10 @@ h4 {
 
 .ql-container.ql-snow {
   border: 0px;
+  height: 500px;
+  @include sm {
+    height: 280px;
+  }
 }
 
 .ql-editor {

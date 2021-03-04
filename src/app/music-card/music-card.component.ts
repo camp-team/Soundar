@@ -11,5 +11,7 @@ export class MusicCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  like(): void {
+    alert('like!');
+  }
 }

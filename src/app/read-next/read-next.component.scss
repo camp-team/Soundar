@@ -1,5 +1,6 @@
 @import 'mixins';
 .read-next {
+  max-width: 967px;
   &__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -12,6 +13,9 @@
 }
 h3 {
   margin-bottom: 24px;
+  @include sm {
+    text-align: center;
+  }
 }
 
 .more-buttons {

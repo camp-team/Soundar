@@ -11,5 +11,8 @@ export class MagazineCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  like(): void {
+    alert('like!');
+  }
 
 }

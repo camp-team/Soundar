@@ -1,30 +1,54 @@
+@import 'mixins';
 .container {
   max-width: 1338px;
   margin: 0 auto;
+  @include sm {
+    padding: 0 16px;
+  }
 }
 
 .faq-contents {
+  padding-bottom: 20px;
   margin-bottom: 128px;
   text-align: center;
-  width: 100%;
+  border-radius: 8px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  @include sm {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 80px;
+  }
   &__title {
     padding: 80px 0 80px;
     font-size: 40px;
     font-weight: bold;
+    @include sm {
+      padding: 40px 0 40px;
+    }
   }
   &__tabs {
     margin: 0 auto;
     padding-bottom: 80px;
-    max-width: 736px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    @include sm {
+      display: block;
+      padding-bottom: 40px;
+    }
   }
   &__tabs p {
-    padding: 8px;
+    padding: 8px 16px;
+    margin-right: 24px;
     border: 1px solid #d1d9e6;
     border-radius: 8px;
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+    @include sm {
+      margin-right: 0;
+      margin-bottom: 16px;
+      font-size: 13px;
+      line-height: 20px;
+    }
   }
   &__tabs p:hover {
     box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
@@ -35,6 +59,10 @@
     padding: 16px;
     border-radius: 8px;
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+    @include sm {
+      font-size: 14px;
+      text-align: left;
+    }
   }
   &__list:hover {
     box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
@@ -43,6 +71,9 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    & p {
+      cursor: pointer;
+    }
   }
   &__list img {
     height: 36px;
@@ -50,10 +81,9 @@
   }
   &__list--answer {
     box-shadow: none;
+    margin-bottom: 32px;
   }
   &__list--answer:hover {
     box-shadow: none;
   }
 }
-
-

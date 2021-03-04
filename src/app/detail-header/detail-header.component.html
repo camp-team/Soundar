@@ -11,8 +11,9 @@
         <!-- ここでmemo.を使うために、上の行でmemo$をmemoとして扱う記述をする -->
         <div class="memo-header__contents">
           <h1>{{ memo.title }}</h1>
+          <p>{{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}</p>
+
           <div class="memo-category">
-            <p>{{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}</p>
             <p>{{ memo.categories[0] }}</p>
             <p>{{ memo.categories[1] }}</p>
             <p>{{ memo.categories[2] }}</p>
@@ -22,13 +23,13 @@
               <img src="assets/images/favorite.svg" alt="" />
               <p>{{ memo.likeCount }}</p>
             </div>
-              <a href="https://twitter.com/home" target="blank">
-                <img
-                  class="button button--small-social"
-                  src="assets/images/twitter.svg"
-                  alt=""
-                />
-              </a>
+            <a href="https://twitter.com/home" target="blank">
+              <img
+                class="button button--small-social"
+                src="assets/images/twitter.svg"
+                alt=""
+              />
+            </a>
           </div>
         </div>
       </div>
