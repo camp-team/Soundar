@@ -1,10 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Memo } from '../interfaces/memo';
-import * as firebase from 'firebase/app';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { MemoService } from '../services/memo.service';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Memo } from '../interfaces/memo';
+import { MemoService } from '../services/memo.service';
 
 @Component({
   selector: 'app-recent-memo',
