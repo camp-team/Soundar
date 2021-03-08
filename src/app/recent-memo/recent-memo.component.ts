@@ -14,11 +14,7 @@ import { Observable } from 'rxjs';
 export class RecentMemoComponent implements OnInit {
   memos$: Observable<Memo[]> = this.memoService.getRecentMemos();
 
-
-
   constructor(
-    private storage: AngularFireStorage,
-    private db: AngularFirestore,
     private memoService: MemoService
   ) {}
 
