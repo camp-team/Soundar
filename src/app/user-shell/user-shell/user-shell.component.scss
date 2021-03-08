@@ -99,10 +99,14 @@ footer {
 .footer-links {
   @include sm {
     margin-bottom: 16px;
+    display: inline;
   }
 }
 .footer-links a {
   display: block;
+  @include sm {
+    display: inline;
+  }
 }
 
 .logo-column {
@@ -147,4 +151,8 @@ small {
 
 .footer-sub-title {
   margin-bottom: 8px;
+}
+
+a {
+  display: inline;
 }
