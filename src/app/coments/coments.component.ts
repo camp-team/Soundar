@@ -12,7 +12,8 @@ export class ComentsComponent implements OnInit {
   like(): void {
     alert('like!');
   }
-  unImplemented(): void {
+
+  alertMessage(): void {
     alert('未実装です!');
   }
 }
