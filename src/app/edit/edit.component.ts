@@ -26,8 +26,6 @@ export class EditComponent implements OnInit {
 
   // userのIDをとる
   user$: Observable<User> = this.authService.user$; // userはObservableのUserの型
-  uid = this.authService.uid; // uidはauthServiceのuid
-  msg: string; // msgの型の定義
   imageFile: string;
 
   thumbnailIcon = 'assets/images/icons/add-thumbnail.svg';
