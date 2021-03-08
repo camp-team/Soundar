@@ -42,11 +42,6 @@ export class EditComponent implements OnInit {
     return this.form.get('text') as FormControl;
   }
 
-  // categoryControlに、categoryのformControlNameを返す
-  get categoryControl(): FormControl {
-    return this.form.get('category') as FormControl;
-  }
-
   // isPublicControlに、isPublicのformControlNameを返す
   get isPublicControl(): FormControl {
     return this.form.get('isPublic') as FormControl;
@@ -58,6 +53,7 @@ export class EditComponent implements OnInit {
     width: 420,
     resultType: 'base64', // base64 | blob
   };
+
   onCroppedImage(image: string): void {
     this.imageFile = image; // image
   }
@@ -80,7 +76,12 @@ export class EditComponent implements OnInit {
     const sendData: Omit<
       // sendDataを、uid,title,text,isPublic,categoriesと定義
       Memo,
-      'memoId' | 'createdAt' | 'updatedAt' | 'likeCount' | 'thumbnailUrl' | 'random'
+      | 'memoId'
+      | 'createdAt'
+      | 'updatedAt'
+      | 'likeCount'
+      | 'thumbnailUrl'
+      | 'random'
     > = {
       uid: this.authService.uid,
       title: formData.title,
