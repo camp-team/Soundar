@@ -78,10 +78,10 @@ footer {
   }
 }
 .footer-container {
-  width: 62%;
+  width: 80%;
   margin: 0 auto 48px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 24px;
   @include sm {
     width: 100%;
@@ -133,9 +133,14 @@ small {
 
 .footer-logo {
   height: 54px;
+  margin-bottom: 8px;
 }
 .footer-logos {
   @include sm {
     text-align: center;
   }
+}
+
+.footer-sub-title  {
+  margin-bottom: 8px;
 }
