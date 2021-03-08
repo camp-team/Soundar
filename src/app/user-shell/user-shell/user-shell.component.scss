@@ -27,6 +27,10 @@ header {
   margin: 0 8px;
   border: 2px solid #d1d9e6;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  @include sm {
+    width: 40px;
+    height: 40px;
+  }
   &:hover {
     box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
   }
@@ -60,7 +64,7 @@ header {
   @include sm {
     width: 100%;
     font-size: 12px;
-    padding: 20px 0;
+    padding: 10px 0;
     margin: 0;
   }
 }
