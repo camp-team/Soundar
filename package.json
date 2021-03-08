@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "format": "pretty-quick --staged"
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
