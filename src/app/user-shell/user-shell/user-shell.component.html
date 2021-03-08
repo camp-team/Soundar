@@ -8,7 +8,10 @@
 
     <div class="header-logos">
       <a class="header__logo" routerLink="/"
-        ><img class="header-logo-image" src="/assets/images/icons/sounder-logo.svg" alt=""
+        ><img
+          class="header-logo-image"
+          src="/assets/images/icons/sounder-logo.svg"
+          alt="Soundarのサイトロゴ"
       /></a>
       <div>
         <ng-container *ngIf="authService.user$ | async as user; else notLogin">
@@ -56,9 +59,9 @@
           ><img
             class="footer-logo"
             src="/assets/images/icons/sounder-logo.svg"
-            alt=""
+            alt="Soundarのサイトロゴ"
         /></a>
-        <p>クリエイターのための情報共有コミュニティ</p>
+        <p class="footer-sub-title">クリエイターのための情報共有コミュニティ</p>
       </div>
       <div class="footer-twitter">
         <a href="https://twitter.com/" target="blank"
