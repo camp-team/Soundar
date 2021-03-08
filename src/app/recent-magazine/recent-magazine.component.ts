@@ -10,7 +10,7 @@ export class RecentMagazineComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  alertmessage(): void {
+  alertMessage(): void {
     alert('未実装です!');
   }
 }
