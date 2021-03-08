@@ -1,29 +1,26 @@
 <div class="container">
   <div class="faq-contents">
     <div class="faq-contents__title">
-      <p>Q & A</p>
+      <h1>Q & A</h1>
     </div>
     <div class="faq-contents__tabs">
-
-        <p  (click)="alertMessage()">Soundarについて</p>
-        <p (click)="alertMessage()">購入について</p>
-        <p (click)="alertMessage()">販売について</p>
+      <p (click)="alertMessage()">Soundarについて</p>
+      <p (click)="alertMessage()">購入について</p>
+      <p (click)="alertMessage()">販売について</p>
     </div>
 
-    <ng-container *ngFor="let qa of qaContents; index as i;">
+    <ng-container *ngFor="let qa of qaContents; index as i">
       <div class="faq-contents__list" (click)="activeIndex = i">
         <img src="assets/images/icons/question-icon.svg" alt="" />
-        <p>{{qa.question}}</p>
+        <p>{{ qa.question }}</p>
       </div>
       <div
         class="faq-contents__list faq-contents__list--answer"
         [@toggle]="activeIndex === i"
       >
         <img src="assets/images/icons/answer-icon.svg" alt="" />
-        <p>{{qa.answer}}</p>
+        <p>{{ qa.answer }}</p>
       </div>
     </ng-container>
-
-
   </div>
 </div>
