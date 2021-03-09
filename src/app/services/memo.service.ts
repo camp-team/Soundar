@@ -49,7 +49,7 @@ export class MemoService {
       updatedAt: firestore.Timestamp.now(),
       random: Math.floor(Math.random() * 100),
     };
-    return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdのドキュメントに、resultMemoの中身を入れる(set)
+    return this.db.doc(`memos/${memoId}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdのドキュメントに、resultMemoの中身を入れる(set)
   }
   // サムネイル画像をstorageに保存(addThumbnailUrl())
   // URLを返すので、型はstring(Promise<string>)
@@ -65,7 +65,7 @@ export class MemoService {
 
   // メモを書いたユーザーの名前を取得する
   getAuthor(uid: string): Observable<User> {
-    return this.db.doc<User>(`users/${name}`).valueChanges();
+    return this.db.doc<User>(`users/${uid}`).valueChanges();
   }
 
   // FireStoreのmemosコレクションのドキュメントをとってくる（一覧）
