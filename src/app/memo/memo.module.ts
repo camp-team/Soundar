@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { CategoryCardComponent } from '../category-card/category-card.component';
-import { ComentsComponent } from '../coments/coments.component';
+import { CommentsComponent } from '../comments/comments.component';
 import { ContentsListComponent } from '../contents-list/contents-list.component';
 import { DetailHeaderComponent } from '../detail-header/detail-header.component';
 import { MemoContentsComponent } from '../memo-contents/memo-contents.component';
@@ -16,7 +16,7 @@ import { MemoComponent } from './memo.component';
   declarations: [
     MemoComponent,
     CategoryCardComponent,
-    ComentsComponent,
+    CommentsComponent,
     ContentsListComponent,
     DetailHeaderComponent,
     MemoContentsComponent,

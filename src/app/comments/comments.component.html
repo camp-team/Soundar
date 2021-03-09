@@ -1,18 +1,18 @@
-<div class="coment-card">
-  <div class="coment-box">
+<div class="comment-card">
+  <div class="comment-box">
     <h3>コメント</h3>
-    <div class="coment-card__users">
-      <div class="coment-card__icon">
-        <img src="assets/images/coment-user-image-example.jpg" alt="" />
+    <div class="comment-card__users">
+      <div class="comment-card__icon">
+        <img src="assets/images/comment-user-image-example.jpg" alt="" />
       </div>
-      <div class="coment-card__name">
+      <div class="comment-card__name">
         <p>UserName</p>
       </div>
-      <div class="coment-card__date">
+      <div class="comment-card__date">
         <p>2020年12月7日</p>
       </div>
     </div>
-    <div class="coment-card__coment">
+    <div class="comment-card__comment">
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
         provident architecto eaque? Accusamus voluptatum dolores adipisci,
@@ -20,18 +20,22 @@
         expedita perferendis quisquam commodi eum est cum?
       </p>
     </div>
-    <div class="coment-card__buttons">
+    <div class="comment-card__buttons">
       <img (click)="like()" src="assets/images/favorite.svg" alt="" />
-      <img (click)="alertMessage()" src="assets/images/icons/coment-image.svg" alt="" />
+      <img
+        (click)="alertMessage()"
+        src="assets/images/icons/comment-image.svg"
+        alt=""
+      />
     </div>
-    <div class="coment-card__response">
+    <div class="comment-card__response">
       <form>
         <mat-form-field>
           <textarea matInput>コメントする</textarea>
         </mat-form-field>
       </form>
     </div>
-    <div class="coment-card__response-button">
+    <div class="comment-card__response-button">
       <p (click)="alertMessage()">投稿する</p>
     </div>
   </div>
