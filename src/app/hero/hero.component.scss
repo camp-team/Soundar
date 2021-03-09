@@ -11,36 +11,32 @@
     background-color: rgba(255, 255, 255, 0.86);
     background-blend-mode: lighten;
   }
-}
-
-.main-title {
-  padding-top: 170px;
-  padding-bottom: 24px;
-  @include sm {
-    padding-top: 24px;
+  &__title {
+    padding-top: 170px;
     padding-bottom: 24px;
+    @include sm {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
   }
-}
-
-.hero-title {
-  font-size: 60px;
-  @include sm {
-    font-size: 32px;
+  &__hero-title {
+    font-size: 60px;
+    @include sm {
+      font-size: 32px;
+    }
   }
-}
-
-.main-text {
-  text-align: center;
-  padding-bottom: 285px;
-  @include sm {
-    padding-bottom: 24px;
-  }
-}
-
-.main-text p {
-  margin-bottom: 16px;
-  font-size: 24px;
-  @include sm {
-    font-size: 13px;
+  &__text {
+    text-align: center;
+    padding-bottom: 285px;
+    @include sm {
+      padding-bottom: 24px;
+    }
+    p {
+      margin-bottom: 16px;
+      font-size: 24px;
+      @include sm {
+        font-size: 13px;
+      }
+    }
   }
 }
