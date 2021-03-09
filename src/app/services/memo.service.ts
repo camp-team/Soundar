@@ -1,4 +1,3 @@
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -90,8 +89,10 @@ export class MemoService {
   getRelationMemos(): Observable<Memo[]> {
     return this.db
       .collection<Memo>(`memos`, (ref) => {
-        return ref.where('random', '>', Math.floor(Math.random() * 100))
-        .orderBy('random', 'asc').limit(3);
+        return ref
+          .where('random', '>', Math.floor(Math.random() * 100))
+          .orderBy('random', 'asc')
+          .limit(3);
       })
       .valueChanges();
   }
