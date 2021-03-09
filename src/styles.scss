@@ -262,11 +262,16 @@ h4 {
     font-size: 24px;
     margin-bottom: 24px;
     text-align: left;
+    @include sm {
+      font-size: 16px;
+    }
     &--movie {
       margin-bottom: 16px;
     }
     @include sm {
-      font-size: 20px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
     }
   }
 
@@ -282,6 +287,7 @@ h4 {
     overflow: hidden;
     @include sm {
       font-size: 14px;
+      margin-bottom: 16px;
     }
   }
   &__card-button {
@@ -312,6 +318,9 @@ h4 {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  @include sm {
+    margin-bottom: 10px;
+  }
 }
 .button-row {
   display: flex;
