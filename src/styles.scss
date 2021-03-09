@@ -50,7 +50,7 @@ h4 {
 }
 
 // spサイズに関するスタイル
-.sp {
+.only-web {
   @include sm {
     display: none;
   }
