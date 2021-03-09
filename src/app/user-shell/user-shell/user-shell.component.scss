@@ -21,6 +21,7 @@ header {
 }
 .header__account {
   cursor: pointer;
+
   z-index: 100;
   border-radius: 50%;
   width: 48px;
@@ -59,6 +60,7 @@ header {
   }
 }
 .header-logos {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
