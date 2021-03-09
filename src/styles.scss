@@ -94,6 +94,7 @@ h4 {
 // ボタンに関するスタイル
 
 .button {
+  cursor: pointer;
   display: inline-block;
   color: #31344b;
   border-radius: 8px;
@@ -284,6 +285,7 @@ h4 {
     }
   }
   &__card-button {
+    cursor: pointer;
     min-height: 30px;
     font-size: 16px;
     padding: 8px 16px;

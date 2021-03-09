@@ -29,6 +29,7 @@
     }
   }
   &__buttons {
+    cursor: pointer;
     padding-bottom: 16px;
     border-bottom: 1px solid #d1d9e6;
     margin-bottom: 16px;
@@ -58,6 +59,7 @@
     }
   }
   &__response-button {
+    cursor: pointer;
     text-align: right;
     & p {
       display: inline;

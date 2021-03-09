@@ -57,6 +57,7 @@
     }
   }
   &__chapter {
+    cursor: pointer;
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
     padding: 12px 32px;
     display: flex;
@@ -117,6 +118,7 @@
     margin-bottom: 16px;
   }
   &__next {
+    cursor: pointer;
     max-width: 260px;
     display: inline-flex;
     float: right;

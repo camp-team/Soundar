@@ -55,7 +55,7 @@
     @include sm {
       justify-content: center;
     }
-    & img {
+    img {
       width: 56px;
       height: 56px;
       border-radius: 50%;
@@ -83,21 +83,23 @@
       display: block;
       margin: 0 auto 16px;
     }
-    & p {
+    p {
       margin-right: 24px;
     }
   }
   &__icons {
+    cursor: pointer;
     display: flex;
     align-items: center;
     @include sm {
       justify-content: center;
     }
-    & img {
+    img {
       width: 16px;
     }
   }
   &__favorite {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;

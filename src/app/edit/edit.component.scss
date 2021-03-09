@@ -19,7 +19,7 @@
   margin: 0 auto;
   max-width: 880px;
   @include sm {
-    margin: 32px auto ;
+    margin: 32px auto;
   }
 }
 
@@ -37,6 +37,7 @@
 }
 
 .thumbnail {
+  cursor: pointer;
   margin-bottom: 24px;
   display: flex;
   justify-content: center;
@@ -113,6 +114,9 @@ $white: #d1d9e6;
   height: 50px;
   border-radius: 8px;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  input {
+    cursor: pointer;
+  }
   @include sm {
     margin: 0 auto 8px;
   }
@@ -190,6 +194,8 @@ $white: #d1d9e6;
 }
 
 .switchers {
+  cursor: pointer;
+
   display: flex;
   justify-content: space-between;
   @include sm {

@@ -24,7 +24,6 @@
   padding-bottom: 24px;
   align-items: center;
   @include sm {
-
     display: block;
   }
 }
@@ -60,6 +59,7 @@
 }
 
 .fav-button {
+  cursor: pointer;
   min-height: 30px;
   display: flex;
   justify-content: center;
