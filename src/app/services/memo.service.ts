@@ -38,7 +38,7 @@ export class MemoService {
     dataUrl: string
   ): Promise<void> {
     const memoId = this.db.createId(); // idをfirestoreのcreateId()で作られるidと定義
-    const thumbnailUrl = await this.addThumbnailUrl(id, dataUrl);
+    const thumbnailUrl = await this.addThumbnailUrl(memoId, dataUrl);
     const resultMemo: Memo = {
       // resultMemoのオブジェクトを定義
       memoId,
