@@ -103,7 +103,7 @@ h4 {
     padding: 8px 16px;
     display: flex;
     align-items: center;
-     img {
+    img {
       width: 24px;
     }
   }
@@ -111,7 +111,7 @@ h4 {
     padding: 8px 16px;
     display: flex;
     align-items: center;
-    & img {
+    img {
       width: 16px;
       margin-right: 8px;
     }
@@ -437,7 +437,7 @@ h4 {
     min-width: 40px;
     padding: 16px 8px;
   }
-  & p {
+  p {
     @include sm {
       display: none;
     }
