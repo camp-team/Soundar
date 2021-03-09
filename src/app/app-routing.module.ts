@@ -12,7 +12,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./enter/enter.module').then((m) => m.EnterModule),
   },
-
   {
     path: 'search',
     loadChildren: () =>

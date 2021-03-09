@@ -9,6 +9,7 @@ export class MagazineViewerComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
   like(): void {
     alert('like!');
   }

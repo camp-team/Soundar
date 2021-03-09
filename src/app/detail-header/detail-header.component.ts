@@ -27,6 +27,7 @@ export class DetailHeaderComponent implements OnInit {
       })
     );
   }
+
   like(): void {
     alert('like!');
   }

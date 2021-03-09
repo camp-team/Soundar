@@ -11,9 +11,7 @@ import { MemoService } from '../services/memo.service';
 export class RecentMemoComponent implements OnInit {
   memos$: Observable<Memo[]> = this.memoService.getRecentMemos();
 
-  constructor(
-    private memoService: MemoService
-  ) {}
+  constructor(private memoService: MemoService) {}
 
   ngOnInit(): void {}
 }

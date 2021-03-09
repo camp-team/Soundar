@@ -13,6 +13,7 @@ export class ReadNextComponent implements OnInit {
   constructor(private memoService: MemoService) {}
 
   ngOnInit(): void {}
+
   alertMessage(): void {
     alert('未実装です!');
   }

@@ -42,6 +42,7 @@ export class AuthService {
     provider.setCustomParameters({ prompt: 'select_account' }); // 常にどのアカウントでログインするかを確認する
     this.afAuth.signInWithPopup(provider); // どのようにログイン画面を表示するか
   }
+
   logout(): void {
     this.afAuth.signOut();
   }

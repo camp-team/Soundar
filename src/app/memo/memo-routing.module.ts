@@ -6,11 +6,11 @@ const routes: Routes = [
   {
     path: ':id',
     component: MemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class MemoRoutingModule {}

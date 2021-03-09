@@ -12,10 +12,9 @@ export class MemoCardComponent implements OnInit {
   user$ = this.authService.user$; // userをauthServiceのuser$と定義
   // 上の2行を、combineLatestで、User and Memoをつくる
 
-  constructor(private authService: AuthService, ) {}
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   like(): void {
     alert('like!');
