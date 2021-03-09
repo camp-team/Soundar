@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'mixins';
+
 html,
 body {
   height: 100%;
@@ -361,6 +362,34 @@ h4 {
     display: block;
     margin: 80px 16px;
   }
+  &__text {
+    padding-left: 100px;
+    padding-right: 56px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    @include sm {
+      padding: 28px;
+    }
+  }
+  &__image {
+    width: 100%;
+    border-radius: 50% 0 50% 50%;
+    &--rhombus {
+      border-radius: 50% 0 50% 0;
+    }
+  }
+  &__image-box {
+    padding: 25px;
+    max-width: 496px;
+    max-height: 496px;
+  }
+  &__text-box {
+    margin-bottom: 32px;
+    @include sm {
+      font-size: 14px;
+      text-align: left;
+    }
+  }
 }
 
 .guide-text {
@@ -371,13 +400,13 @@ h4 {
   @include sm {
     padding: 28px;
   }
-  .guide-text__logo {
+  &__logo {
     margin: 32px auto;
     @include sm {
       margin: 0 auto 16px;
     }
   }
-  .guide-text__title {
+  &__title {
     margin: 0;
     @include sm {
       margin-bottom: 8px;
@@ -396,26 +425,6 @@ h4 {
   margin-bottom: 48px;
   @include sm {
     font-size: 32px;
-  }
-}
-.text-box {
-  margin-bottom: 32px;
-  @include sm {
-    font-size: 14px;
-    text-align: left;
-  }
-}
-
-.image-box {
-  padding: 25px;
-  max-width: 496px;
-  max-height: 496px;
-}
-.guide-image {
-  width: 100%;
-  border-radius: 50% 0 50% 50%;
-  &--rhombus {
-    border-radius: 50% 0 50% 0;
   }
 }
 
