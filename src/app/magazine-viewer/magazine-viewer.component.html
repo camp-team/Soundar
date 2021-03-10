@@ -15,17 +15,21 @@
           </button>
           <div class="viewer__users">
             <a routerLink="/user/euGre1TgxEZZ1fVTWKQaTQQfFyi1">
-            <img
-              class="viewer__avatar"
-              src="assets/images/user-icon-example.jpg"
-              alt=""
+              <img
+                class="viewer__avatar"
+                src="assets/images/user-icon-example.jpg"
+                alt=""
             /></a>
-            <a routerLink="/user/euGre1TgxEZZ1fVTWKQaTQQfFyi1" class="viewer__name">Username</a>
+            <a
+              routerLink="/user/euGre1TgxEZZ1fVTWKQaTQQfFyi1"
+              class="viewer__name"
+              >Username</a
+            >
           </div>
         </div>
       </div>
 
-      <div class="viewer__chapters">
+      <!-- <div class="viewer__chapters">
         <div class="viewer__chapter">
           <p>01</p>
           <h2>はじめに</h2>
@@ -49,6 +53,16 @@
         <div class="viewer__chapter">
           <p>06</p>
           <h2>まとめ</h2>
+        </div>
+      </div> -->
+
+      <div class="viewer-chapters">
+        <div
+          class="viewer__chapter"
+          *ngFor="let chapter of chapters; index as i"
+        >
+          <p>{{ chapter.name }}</p>
+          <h2>{{ chapter.title }}</h2>
         </div>
       </div>
     </div>
