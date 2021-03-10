@@ -49,3 +49,17 @@ h1 {
 .recent-posted-card__card-button {
   margin-right: 24px;
 }
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 112px;
+  margin: 112px auto 80px;
+  @include sm {
+    padding-bottom: 40px;
+    margin: 40px auto;
+  }
+}

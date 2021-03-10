@@ -63,12 +63,7 @@ h4 {
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
-  &--hero {
-    margin: 80px auto 128px;
-    @include sm {
-      margin: 40px 16px 40px;
-    }
-  }
+
   &--recent {
     max-width: 1338px;
   }
@@ -79,16 +74,6 @@ h4 {
     margin-bottom: 128px;
     @include sm {
       margin-bottom: 80px;
-    }
-  }
-  &--memo-header {
-    max-width: 100%;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 112px;
-    margin: 112px auto 80px;
-    @include sm {
-      padding-bottom: 40px;
-      margin: 40px auto;
     }
   }
 }
