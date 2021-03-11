@@ -1,9 +1,9 @@
 <ng-container *ngIf="memo$ | async as memo">
-<div class="category-card">
-  <div class="category-box">
-    <p class="category-card__title">category</p>
-    <div class="category-grid">
-      <div class="category-flex">
+  <div class="category-card">
+    <div class="category-box">
+      <h3 class="category-card__title">category</h3>
+      <div class="category-grid">
+        <!-- <div class="category-flex">
         <img src="assets/images/category-example.jpg" alt="" />
         <p>{{memo.categories[0]}}</p>
       </div>
@@ -18,8 +18,14 @@
       <div class="category-flex">
         <img src="assets/images/category-example.jpg" alt="" />
         <p>Category4</p>
+      </div> -->
+        <!-- カテゴリーをfor文で回す -->
+        <!-- <button (click)="test('test')">test</button> -->
+        <div class="category-flex" *ngFor="let category of categories">
+          <img src="assets/images/category-example.jpg" alt="" />
+          <p>{{ category }}</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </ng-container>
