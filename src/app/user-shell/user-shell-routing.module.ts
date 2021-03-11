@@ -48,11 +48,13 @@ const routes: Routes = [
       },
       {
         path: 'user',
-        loadChildren: () => import('../user/user.module').then((m) => m.UserModule),
+        loadChildren: () =>
+          import('../user/user.module').then((m) => m.UserModule),
       },
       {
         path: 'faq',
-        loadChildren: () => import('../faq/faq.module').then((m) => m.FaqModule),
+        loadChildren: () =>
+          import('../faq/faq.module').then((m) => m.FaqModule),
       },
       {
         path: 'terms',

@@ -5,12 +5,12 @@ import { EditComponent } from './edit.component';
 const routes: Routes = [
   {
     path: '',
-    component: EditComponent
-  }
+    component: EditComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class EditRoutingModule { }
+export class EditRoutingModule {}

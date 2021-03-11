@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'mixins';
+@import 'quill';
+
 html,
 body {
   height: 100%;
@@ -18,8 +20,6 @@ a {
 
 p {
   margin: 0;
-  @include sm {
-  }
 }
 
 img {
@@ -52,7 +52,7 @@ h4 {
 }
 
 // spサイズに関するスタイル
-.sp {
+.only-web {
   @include sm {
     display: none;
   }
@@ -63,12 +63,7 @@ h4 {
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
-  &--hero {
-    margin: 80px auto 128px;
-    @include sm {
-      margin: 40px 16px 40px;
-    }
-  }
+
   &--recent {
     max-width: 1338px;
   }
@@ -81,21 +76,12 @@ h4 {
       margin-bottom: 80px;
     }
   }
-  &--memo-header {
-    max-width: 100%;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 112px;
-    margin: 112px auto 80px;
-    @include sm {
-      padding-bottom: 40px;
-      margin: 40px auto;
-    }
-  }
 }
 
 // ボタンに関するスタイル
 
 .button {
+  cursor: pointer;
   display: inline-block;
   color: #31344b;
   border-radius: 8px;
@@ -105,7 +91,7 @@ h4 {
     padding: 8px 16px;
     display: flex;
     align-items: center;
-    & img {
+    img {
       width: 24px;
     }
   }
@@ -113,7 +99,7 @@ h4 {
     padding: 8px 16px;
     display: flex;
     align-items: center;
-    & img {
+    img {
       width: 16px;
       margin-right: 8px;
     }
@@ -263,11 +249,16 @@ h4 {
     font-size: 24px;
     margin-bottom: 24px;
     text-align: left;
+    @include sm {
+      font-size: 16px;
+    }
     &--movie {
       margin-bottom: 16px;
     }
     @include sm {
-      font-size: 20px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
     }
   }
 
@@ -283,9 +274,11 @@ h4 {
     overflow: hidden;
     @include sm {
       font-size: 14px;
+      margin-bottom: 16px;
     }
   }
   &__card-button {
+    cursor: pointer;
     min-height: 30px;
     font-size: 16px;
     padding: 8px 16px;
@@ -312,6 +305,9 @@ h4 {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  @include sm {
+    margin-bottom: 10px;
+  }
 }
 .button-row {
   display: flex;
@@ -352,6 +348,34 @@ h4 {
     display: block;
     margin: 80px 16px;
   }
+  &__text {
+    padding-left: 100px;
+    padding-right: 56px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    @include sm {
+      padding: 28px;
+    }
+  }
+  &__image {
+    width: 100%;
+    border-radius: 50% 0 50% 50%;
+    &--rhombus {
+      border-radius: 50% 0 50% 0;
+    }
+  }
+  &__image-box {
+    padding: 25px;
+    max-width: 496px;
+    max-height: 496px;
+  }
+  &__text-box {
+    margin-bottom: 32px;
+    @include sm {
+      font-size: 14px;
+      text-align: left;
+    }
+  }
 }
 
 .guide-text {
@@ -362,13 +386,13 @@ h4 {
   @include sm {
     padding: 28px;
   }
-  .guide-text__logo {
+  &__logo {
     margin: 32px auto;
     @include sm {
       margin: 0 auto 16px;
     }
   }
-  .guide-text__title {
+  &__title {
     margin: 0;
     @include sm {
       margin-bottom: 8px;
@@ -387,26 +411,6 @@ h4 {
   margin-bottom: 48px;
   @include sm {
     font-size: 32px;
-  }
-}
-.text-box {
-  margin-bottom: 32px;
-  @include sm {
-    font-size: 14px;
-    text-align: left;
-  }
-}
-
-.image-box {
-  padding: 25px;
-  max-width: 496px;
-  max-height: 496px;
-}
-.guide-image {
-  width: 100%;
-  border-radius: 50% 0 50% 50%;
-  &--rhombus {
-    border-radius: 50% 0 50% 0;
   }
 }
 
@@ -439,7 +443,7 @@ h4 {
     min-width: 40px;
     padding: 16px 8px;
   }
-  & p {
+  p {
     @include sm {
       display: none;
     }
@@ -459,47 +463,6 @@ h4 {
   @include sm {
     margin: 0 auto;
   }
-}
-
-// Quillエディターのスタイル
-@import '~quill/dist/quill.core.css';
-@import '~quill/dist/quill.bubble.css';
-@import '~quill/dist/quill.snow.css';
-
-.ql-toolbar.ql-snow {
-  border: 1px solid #d1d9e6;
-  border-radius: 8px;
-  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
-  color: #31344b;
-  margin-bottom: 20px;
-}
-.ql-snow .ql-stroke {
-  stroke: #31344b;
-}
-.ql-snow .ql-fill,
-.ql-snow .ql-stroke.ql-fill {
-  fill: #31344b;
-}
-
-.ql-container.ql-snow {
-  border: 0px;
-  height: 500px;
-  @include sm {
-    height: 280px;
-  }
-}
-
-.ql-editor {
-  border-radius: 8px;
-  box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
-}
-
-.ql-toolbar.ql-snow + .ql-container.ql-snow {
-  margin-bottom: 20px;
-}
-
-.ql-toolbar .ql-picker {
-  color: #31344b;
 }
 
 // angular materialに関するスタイル
@@ -529,19 +492,11 @@ h4 {
   }
 }
 
-/* PC用のCSSはメディアクエリの外に記述する */
-
-@media screen and (max-width: 959px) {
-  /* 959px以下に適用されるCSS（タブレット用） */
-  .recent-container {
-    max-width: 960px;
-    margin: 0 auto;
-    text-align: center;
-  }
-}
-@media screen and (max-width: 480px) {
-  /* 480px以下に適用されるCSS（スマホ用） */
-  .recent-container {
+.recent-container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  @include sm {
     max-width: 480px;
     margin: 0 auto;
     text-align: center;

@@ -20,6 +20,8 @@ header {
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
 }
 .header__account {
+  cursor: pointer;
+
   z-index: 100;
   border-radius: 50%;
   width: 48px;
@@ -27,9 +29,16 @@ header {
   margin: 0 8px;
   border: 2px solid #d1d9e6;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
+  @include sm {
+    width: 40px;
+    height: 40px;
+  }
   &:hover {
     box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
   }
+}
+.mat-menu-trigger header__account ng-star-inserted {
+  cursor: pointer;
 }
 .header__logo {
   margin-left: 8px;
@@ -51,6 +60,7 @@ header {
   }
 }
 .header-logos {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,7 +70,7 @@ header {
   @include sm {
     width: 100%;
     font-size: 12px;
-    padding: 20px 0;
+    padding: 10px 0;
     margin: 0;
   }
 }
@@ -78,10 +88,10 @@ footer {
   }
 }
 .footer-container {
-  width: 62%;
+  width: 80%;
   margin: 0 auto 48px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 24px;
   @include sm {
     width: 100%;
@@ -95,10 +105,14 @@ footer {
 .footer-links {
   @include sm {
     margin-bottom: 16px;
+    display: inline;
   }
 }
 .footer-links a {
   display: block;
+  @include sm {
+    display: inline;
+  }
 }
 
 .logo-column {
@@ -133,9 +147,18 @@ small {
 
 .footer-logo {
   height: 54px;
+  margin-bottom: 8px;
 }
 .footer-logos {
   @include sm {
     text-align: center;
   }
+}
+
+.footer-sub-title {
+  margin-bottom: 8px;
+}
+
+a {
+  display: inline;
 }

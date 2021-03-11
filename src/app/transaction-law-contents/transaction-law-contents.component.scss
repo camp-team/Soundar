@@ -1,4 +1,5 @@
 @import 'mixins';
+
 .transaction-law-container {
   max-width: 1338px;
   margin: 0 auto;
@@ -20,12 +21,10 @@
     }
   }
   & h3 {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+    margin-top: 24px;
     @include sm {
       font-size: 16px;
     }
-  }
-  &__article {
-    margin-bottom: 24px;
   }
 }

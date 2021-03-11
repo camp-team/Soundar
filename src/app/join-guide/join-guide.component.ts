@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -8,7 +7,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./join-guide.component.scss'],
 })
 export class JoinGuideComponent implements OnInit {
-  constructor(public authService: AuthService, public firebase: AngularFirestore) {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit(): void {}
 }

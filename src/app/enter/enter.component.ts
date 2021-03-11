@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { User } from '../interfaces/user';
-import { Router } from '@angular/router';
+import { provideRoutes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-enter',
@@ -10,10 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./enter.component.scss'],
 })
 export class EnterComponent implements OnInit {
+  constructor(private authService: AuthService, private router: Router) {}
   user$: Observable<User> = this.authService.user$;
   private subscription = new Subscription();
 
-  constructor(private authService: AuthService, private router: Router) {}
+  google: string;
 
   ngOnInit(): void {
     this.subscription = this.authService.user$.subscribe((user) => {
@@ -24,11 +25,11 @@ export class EnterComponent implements OnInit {
   }
 
   loginGoogle(): void {
-    this.authService.loginGoogle();
+    this.authService.login('google');
   }
 
   loginTwitter(): void {
-    this.authService.loginTwitter();
+    this.authService.login('');
   }
 
   logout(): void {

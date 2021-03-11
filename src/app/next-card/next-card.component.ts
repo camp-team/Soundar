@@ -16,6 +16,7 @@ export class NextCardComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
+
   like(): void {
     alert('like!');
   }

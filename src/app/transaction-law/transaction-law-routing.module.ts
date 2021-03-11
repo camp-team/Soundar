@@ -5,12 +5,12 @@ import { TransactionLawComponent } from './transaction-law.component';
 const routes: Routes = [
   {
     path: '',
-    component: TransactionLawComponent
-  }
+    component: TransactionLawComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TransactionLawRoutingModule { }
+export class TransactionLawRoutingModule {}

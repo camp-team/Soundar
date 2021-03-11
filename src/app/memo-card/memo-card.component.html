@@ -18,9 +18,11 @@
             alt=""
         /></a>
         <div class="recent-posted-card__users">
-          <a [routerLink]="['/user', user.uid]" class="recent-posted-card__user-name">{{
-            user.name
-          }}</a>
+          <a
+            [routerLink]="['/user', user.uid]"
+            class="recent-posted-card__user-name"
+            >{{ user.name }}</a
+          >
           <p class="recent-posted-card__posted-date">
             {{ memo.createdAt.toDate() | date: 'yyyy年MM月dd日' }}
           </p>

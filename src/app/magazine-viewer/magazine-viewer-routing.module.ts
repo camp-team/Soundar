@@ -5,12 +5,12 @@ import { MagazineViewerComponent } from './magazine-viewer.component';
 const routes: Routes = [
   {
     path: '',
-    component: MagazineViewerComponent
-  }
+    component: MagazineViewerComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MagazineViewerRoutingModule { }
+export class MagazineViewerRoutingModule {}

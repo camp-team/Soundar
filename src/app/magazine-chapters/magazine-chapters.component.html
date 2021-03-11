@@ -1,27 +1,9 @@
 <div class="magazine-chapters">
   <h2>Chapters</h2>
-  <a routerLink="/magazine-viewer" class="magazine-chapters__chapter">
-    <p>chapter1</p>
-    <h3 class="single-line">はじめに</h3>
-  </a>
-  <a routerLink="/magazine-viewer" class="magazine-chapters__chapter">
-    <p>chapter2</p>
-    <h3 class="single-line">続いて</h3>
-  </a>
-  <a routerLink="/magazine-viewer" class="magazine-chapters__chapter">
-    <p routerLink="/magazine-viewer">chapter3</p>
-    <h3 class="single-line">さらにくわしく</h3>
-  </a>
-  <a routerLink="/magazine-viewer" class="magazine-chapters__chapter">
-    <p routerLink="/magazine-viewer">chapter4</p>
-    <h3 class="single-line">ところで</h3>
-  </a>
-  <a routerLink="/magazine-viewer" class="magazine-chapters__chapter">
-    <p routerLink="/magazine-viewer">chapter5</p>
-    <h3 class="single-line">このような別のテクニックもあります</h3>
-  </a>
-  <a routerLink="/magazine-viewer" class="magazine-chapters__chapter">
-    <p routerLink="/magazine-viewer">chapter6</p>
-    <h3 class="single-line">まとめ</h3>
-  </a>
+  <ng-container *ngFor="let chapter of chapters; index as i">
+    <a routerLink="/magazine-viewer" class="magazine-chapters__chapter">
+      <p>{{ chapter.name }}</p>
+      <h3>{{ chapter.title }}</h3></a
+    ></ng-container
+  >
 </div>

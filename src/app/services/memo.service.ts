@@ -1,4 +1,3 @@
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -38,11 +37,11 @@ export class MemoService {
     >,
     dataUrl: string
   ): Promise<void> {
-    const id = this.db.createId(); // idをfirestoreのcreateId()で作られるidと定義
-    const thumbnailUrl = await this.addThumbnailUrl(id, dataUrl);
+    const memoId = this.db.createId(); // idをfirestoreのcreateId()で作られるidと定義
+    const thumbnailUrl = await this.addThumbnailUrl(memoId, dataUrl);
     const resultMemo: Memo = {
       // resultMemoのオブジェクトを定義
-      memoId: id,
+      memoId,
       ...memo,
       thumbnailUrl,
       likeCount: 0,
@@ -50,7 +49,7 @@ export class MemoService {
       updatedAt: firestore.Timestamp.now(),
       random: Math.floor(Math.random() * 100),
     };
-    return this.db.doc(`memos/${id}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdのドキュメントに、resultMemoの中身を入れる(set)
+    return this.db.doc(`memos/${memoId}`).set(resultMemo); // FirestoreのdbのdocのmemosのmemoIdのドキュメントに、resultMemoの中身を入れる(set)
   }
   // サムネイル画像をstorageに保存(addThumbnailUrl())
   // URLを返すので、型はstring(Promise<string>)
@@ -66,7 +65,7 @@ export class MemoService {
 
   // メモを書いたユーザーの名前を取得する
   getAuthor(uid: string): Observable<User> {
-    return this.db.doc<User>(`users/${name}`).valueChanges();
+    return this.db.doc<User>(`users/${uid}`).valueChanges();
   }
 
   // FireStoreのmemosコレクションのドキュメントをとってくる（一覧）
@@ -90,8 +89,10 @@ export class MemoService {
   getRelationMemos(): Observable<Memo[]> {
     return this.db
       .collection<Memo>(`memos`, (ref) => {
-        return ref.where('random', '>', Math.floor(Math.random() * 100))
-        .orderBy('random', 'asc').limit(3);
+        return ref
+          .where('random', '>', Math.floor(Math.random() * 100))
+          .orderBy('random', 'asc')
+          .limit(3);
       })
       .valueChanges();
   }

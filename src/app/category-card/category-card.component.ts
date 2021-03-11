@@ -11,20 +11,21 @@ import { MemoService } from '../services/memo.service';
   styleUrls: ['./category-card.component.scss'],
 })
 export class CategoryCardComponent implements OnInit {
-  memoId: string;
-  memo$: Observable<Memo>;
+  memo$: Observable<Memo> = this.route.paramMap.pipe(
+    switchMap((param) => {
+      const id = param.get('id'); // idを、URLのidと定義して
+      return this.memoService.getMemo(id); // memosコレクションの、このURLをidにもつドキュメントを、catRefとする
+    })
+  );
+  uid: string;
+
+  // カテゴリーをfor文で回すために、categoriesを定義する
+  categories: string[];
+
   constructor(
     private route: ActivatedRoute,
     private memoService: MemoService
   ) {}
 
-  ngOnInit(): void {
-    this.memo$ = this.route.paramMap.pipe(
-      switchMap((param) => {
-        const id = param.get('id');
-        this.memoId = id;
-        return this.memoService.getMemo(id);
-      })
-    );
-  }
+  ngOnInit(): void {}
 }

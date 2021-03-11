@@ -1,14 +1,11 @@
 <header>
   <div class="header-navi">
-    <div *ngIf="!noBackArrow" class="cancel-button">
-      <button class="button button--cancel" mat-button (click)="cancel()">
-        <img src="assets/images/icons/cancel-icon.svg" alt="" />
-      </button>
-    </div>
-
     <div class="header-logos">
       <a class="header__logo" routerLink="/"
-        ><img class="header-logo-image" src="/assets/images/icons/sounder-logo.svg" alt=""
+        ><img
+          class="header-logo-image"
+          src="/assets/images/icons/sounder-logo.svg"
+          alt="Soundarのサイトロゴ"
       /></a>
       <div>
         <ng-container *ngIf="authService.user$ | async as user; else notLogin">
@@ -56,9 +53,9 @@
           ><img
             class="footer-logo"
             src="/assets/images/icons/sounder-logo.svg"
-            alt=""
+            alt="Soundarのサイトロゴ"
         /></a>
-        <p>クリエイターのための情報共有コミュニティ</p>
+        <p class="footer-sub-title">クリエイターのための情報共有コミュニティ</p>
       </div>
       <div class="footer-twitter">
         <a href="https://twitter.com/" target="blank"
@@ -71,18 +68,18 @@
     </div>
     <div class="footer-links">
       <h4 class="footer-column-title">About</h4>
-      <a routerLink="/about">Soundarについて</a>
-      <a routerLink="faq">よくある質問</a>
+      <p><a routerLink="/about">Soundarについて</a></p>
+      <p><a routerLink="faq">よくある質問</a></p>
     </div>
     <div class="footer-links">
       <h4 class="footer-column-title">Legal</h4>
-      <a routerLink="terms">利用規約</a>
-      <a routerLink="privacy">プライバシーポリシー</a>
-      <a routerLink="transaction-law">特定法表記</a>
+      <p><a routerLink="terms">利用規約</a></p>
+      <p><a routerLink="privacy">プライバシーポリシー</a></p>
+      <p><a routerLink="transaction-law">特定法表記</a></p>
     </div>
     <div class="contact-column">
       <h4 class="footer-column-title">Contact</h4>
-      <a (click)="unImplemented()" class="footer-links">お問い合わせ</a>
+      <a (click)="alertMessage()" class="footer-links">お問い合わせ</a>
     </div>
   </div>
   <small>&copy; 2020 Soundar.com</small>

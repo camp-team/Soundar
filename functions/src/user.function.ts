@@ -1,7 +1,5 @@
 import * as functions from 'firebase-functions';
-
 import * as admin from 'firebase-admin';
-
 
 // Cloud Functionsでデータベースにアクセスできるようにする
 admin.initializeApp();
@@ -14,10 +12,9 @@ export const createUser = functions.auth.user().onCreate((user) => {
     name: user.displayName,
     avatarURL: user.photoURL,
     email: user.email,
-    createdAt: new Date()
+    createdAt: new Date(),
   });
 });
-
 
 export const deleteUser = functions.auth.user().onDelete((user) => {
   return db.doc('users/${user.uid}').delete();

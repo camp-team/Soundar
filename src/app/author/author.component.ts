@@ -30,7 +30,8 @@ export class AuthorComponent implements OnInit {
       })
     );
   }
-  unImplemented(): void {
+
+  alertMessage(): void {
     alert('未実装です!');
   }
 }

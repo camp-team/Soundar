@@ -31,17 +31,15 @@ export class AuthService {
   ) {}
 
   // auth.serviceのメソッド
-  loginGoogle(): void {
-    const provider = new auth.GoogleAuthProvider();
-    provider.setCustomParameters({ prompt: 'select_account' }); // 常にどのアカウントでログインするかを確認する
-    this.afAuth.signInWithPopup(provider); // どのようにログイン画面を表示するか
+  login(providerName: string): void {
+    const provider =
+      providerName === 'google'
+        ? new auth.GoogleAuthProvider()
+        : new auth.TwitterAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+    this.afAuth.signInWithPopup(provider);
   }
 
-  loginTwitter(): void {
-    const provider = new auth.TwitterAuthProvider();
-    provider.setCustomParameters({ prompt: 'select_account' }); // 常にどのアカウントでログインするかを確認する
-    this.afAuth.signInWithPopup(provider); // どのようにログイン画面を表示するか
-  }
   logout(): void {
     this.afAuth.signOut();
   }

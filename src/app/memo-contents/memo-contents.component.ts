@@ -27,6 +27,7 @@ export class MemoContentsComponent implements OnInit {
       })
     );
   }
+
   like(): void {
     alert('like!');
   }

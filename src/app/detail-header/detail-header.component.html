@@ -1,6 +1,6 @@
 <ng-container *ngIf="memo$ | async as memo">
   <div class="wrapper">
-    <div class="container container--memo-header">
+    <div class="header-container">
       <div class="memo-header">
         <img
           class="memo-header__thumbnail"
@@ -11,12 +11,12 @@
         <!-- ここでmemo.を使うために、上の行でmemo$をmemoとして扱う記述をする -->
         <div class="memo-header__contents">
           <h1>{{ memo.title }}</h1>
-          <p>{{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}</p>
+          <p class="memo-header__contents-date">
+            {{ memo.createdAt.toDate() | date: 'yyyy/MM/dd' }}
+          </p>
 
-          <div class="memo-category">
-            <p>{{ memo.categories[0] }}</p>
-            <p>{{ memo.categories[1] }}</p>
-            <p>{{ memo.categories[2] }}</p>
+          <div class="memo-category" *ngFor="let category of categories">
+            <p class="categories">{{ category }}</p>
           </div>
           <div class="icons">
             <div class="recent-posted-card__card-button" (click)="like()">

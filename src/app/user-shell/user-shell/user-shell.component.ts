@@ -1,9 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { User } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-shell',
@@ -42,9 +42,11 @@ export class UserShellComponent implements OnInit {
   logout(): void {
     this.authService.logout();
   }
-  unImplemented(): void {
+
+  alertMessage(): void {
     alert('未実装です!');
   }
+
   cancel(): void {
     this.location.back();
   }

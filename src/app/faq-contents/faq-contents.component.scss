@@ -1,4 +1,5 @@
 @import 'mixins';
+
 .container {
   max-width: 1338px;
   margin: 0 auto;
@@ -27,6 +28,7 @@
     }
   }
   &__tabs {
+    cursor: pointer;
     margin: 0 auto;
     padding-bottom: 80px;
     display: flex;
@@ -37,7 +39,9 @@
       padding-bottom: 40px;
     }
   }
-  &__tabs p {
+  &__tabs h3 {
+    font-weight: normal;
+    font-size: 16px;
     padding: 8px 16px;
     margin-right: 24px;
     border: 1px solid #d1d9e6;
@@ -54,6 +58,7 @@
     box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff;
   }
   &__list {
+    cursor: pointer;
     margin: 0 auto;
     max-width: 1248px;
     padding: 16px;

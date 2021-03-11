@@ -7,11 +7,11 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: TopComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TopRoutingModule { }
+export class TopRoutingModule {}

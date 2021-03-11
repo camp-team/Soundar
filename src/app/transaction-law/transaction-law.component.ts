@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-transaction-law',
   templateUrl: './transaction-law.component.html',
-  styleUrls: ['./transaction-law.component.scss']
+  styleUrls: ['./transaction-law.component.scss'],
 })
 export class TransactionLawComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

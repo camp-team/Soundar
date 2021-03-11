@@ -9,7 +9,8 @@ export class RecentMovieComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  unImplemented(): void {
+
+  alertMessage(): void {
     alert('未実装です!');
   }
 }

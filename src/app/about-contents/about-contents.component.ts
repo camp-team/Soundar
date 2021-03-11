@@ -34,7 +34,6 @@ import {
   ],
 })
 export class AboutContentsComponent implements OnInit {
-  isOpen = false;
   constructor() {}
 
   ngOnInit(): void {}
