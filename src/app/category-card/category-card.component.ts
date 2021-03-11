@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -25,7 +24,6 @@ export class CategoryCardComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private db: AngularFirestore,
     private memoService: MemoService
   ) {}
 
