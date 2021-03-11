@@ -12,8 +12,12 @@ import { MemoService } from '../services/memo.service';
   styleUrls: ['./category-card.component.scss'],
 })
 export class CategoryCardComponent implements OnInit {
-  memoId: string;
-  memo$: Observable<Memo>;
+  memo$: Observable<Memo> = this.route.paramMap.pipe(
+    switchMap((param) => {
+      const id = param.get('id'); // idを、URLのidと定義して
+      return this.memoService.getMemo(id); // memosコレクションの、このURLをidにもつドキュメントを、catRefとする
+    })
+  );
   uid: string;
 
   // カテゴリーをfor文で回すために、categoriesを定義する
@@ -21,24 +25,9 @@ export class CategoryCardComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private memoService: MemoService,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private memoService: MemoService
   ) {}
 
-  ngOnInit(): void {
-    this.memo$ = this.route.paramMap.pipe(
-      switchMap((param) => {
-        // idパラメータを取得
-        const id = param.get('id'); // idを、URLのidと定義して
-        this.memoId = id; // memoIdに、そのidを代入する
-        // カテゴリを取得する
-        const catRef = this.db.collection('memos').doc(id); // memosコレクションの、このURLをidにもつドキュメントを、catRefとする
-        catRef.get().subscribe((docSnapshot) => {
-          const categories = docSnapshot.get('categories'); // docSnapshotのcategoriesフィールドをcategoriesと定義する
-          this.categories = categories; // categoriesの中身を、categoriesに代入する
-        });
-        return this.memoService.getMemo(id);
-      })
-    );
-  }
+  ngOnInit(): void {}
 }
