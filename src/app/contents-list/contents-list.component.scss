@@ -3,15 +3,12 @@
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
   border-radius: 8px;
   margin-bottom: 40px;
+  padding: 24px;
   &__title {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 16px;
   }
-}
-
-.list-box {
-  padding: 24px;
 }
 
 ol {
